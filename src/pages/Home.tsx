@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import ArticlesPage from './Articles';
+import HeroSection from '../components/HeroSection';
 import IArticle from '../interfaces/IArticle';
 
 const {useEffect, useState} = React;
@@ -33,6 +34,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 			
 			<hr />
 			this home page
+			<HeroSection />
 			<ArticlesPage items={_latestArticles} />
 		</section>
 	);
