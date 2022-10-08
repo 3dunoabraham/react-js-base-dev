@@ -10,15 +10,15 @@ export interface ILayoutComponentsProps {};
 const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props => {
 	return (
 		<div className="flex-column">
+		
 			<div className="flex flex-justify-between w-100">
-
 				<LogoFrame />
 
 				<NavigationButtonList />
 
 				<CTAButton />
-
 			</div>
+
 			<Outlet />
 		</div>
 	);

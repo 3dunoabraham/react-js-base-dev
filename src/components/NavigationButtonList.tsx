@@ -7,10 +7,13 @@ const NavigationButtonListComponents: React.FunctionComponent<INavigationButtonL
 	const _navigate = useNavigate();
 
 	return (
-		<div className="flex">
+		<div className="flex eb-navigation-button-list">
 			
 			<button onClick={() => { _navigate("/") }}> Home </button>
-			<button onClick={() => { _navigate("/post") }}> Post </button>
+			<button className="eb-active-navigation-button" onClick={() => { _navigate("/post") }}> Post </button>
+			<button className="opacity-25" onClick={() => { _navigate("/") }}> Contact </button>
+			<button className="opacity-25" onClick={() => { _navigate("/") }}> Blog </button>
+			<button className="opacity-25" onClick={() => { _navigate("/") }}> Careers </button>
 		</div>
 	);
 };

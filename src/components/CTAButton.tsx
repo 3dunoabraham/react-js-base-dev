@@ -4,8 +4,8 @@ export interface ICTAButtonComponentsProps {};
 
 const CTAButtonComponents: React.FunctionComponent<ICTAButtonComponentsProps> = props => {
 	return (
-		<div>
-			My CTAButton
+		<div className="eb-cta-button ma-3">
+			Request Invite
 		</div>
 	);
 };

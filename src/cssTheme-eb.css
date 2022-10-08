@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+}
+:root {
+	--eb-primary-color: rgb(49,207,112);
+	--eb-secondary-color: rgb(44,186,199);
+}
+
+.eb-cta-button {
+	padding: 12px 24px;
+	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-secondary-color));
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	border-radius: 90px;
+	color: white;
+}
+.eb-cta-button:hover {
+	/*background: linear-gradient(90deg, rgb(132,225,167), rgb(129,214,219));*/
+	opacity: .75;
+}
+.eb-navigation-button-list button {
+	font-weight: bold;
+	background: transparent;
+	border: none;
+	padding: 12px 24px;
+	cursor: pointer;
+	color: #777;
+	transition: all 0.1s ease-out;
+}
+.eb-active-navigation-button {
+	box-shadow: inset 0 -2px var(--eb-primary-color);
+}
+.eb-navigation-button-list button:hover {
+	color: #333;
+}
