@@ -30,12 +30,11 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 	}, [])
 
 	return (
-		<section>
+		<section className="w-100">
 			
-			<hr />
-			this home page
 			<HeroSection />
 			<ArticlesPage items={_latestArticles} />
+
 		</section>
 	);
 };
