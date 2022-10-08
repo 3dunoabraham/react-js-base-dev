@@ -72,6 +72,8 @@
 .flex-align-end { display: flex; align-items: flex-end !important; }
 .flex-justify-start { display: flex; justify-content: flex-start !important; }
 .flex-justify-end { display: flex; justify-content: flex-end !important; }
+.flex-justify-between { display: flex; justify-content: space-between !important; }
+.flex-justify-around { display: flex; justify-content: space-around !important; }
 
 .flex-self-align-start { align-self: flex-start !important; }
 .flex-self-align-center { align-self: center !important; }

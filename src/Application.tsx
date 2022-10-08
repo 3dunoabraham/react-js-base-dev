@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import LayoutComponent from './components/Layout';
+import NavigationLayoutComponent from './components/NavigationLayout';
 import HomePage from './pages/Home';
 import PostPage from './pages/Post';
 
@@ -11,7 +11,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<LayoutComponent />}>
+				<Route path="/" element={<NavigationLayoutComponent />}>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/post" element={<PostPage />} />
 				</Route>
