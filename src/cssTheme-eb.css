@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap');
 
 body {
     font-family: 'Public Sans', sans-serif;
@@ -30,6 +30,17 @@ body {
 	color: var(--eb-grey-text);
 	font-size: 1.25em;
 	line-height: 1.6;
+}
+.eb-hero-subsection {
+	padding: 100px 0 200px 150px;
+	color: var(--eb-grey-text);
+}
+.eb-hero-subsection-title {
+	font-size: 2.1em;
+	color: var(--eb-main-text);
+}
+.eb-hero-subsection-desc {
+	font-size: 1.2em;
 }
 .eb-footer {
 	background: var(--eb-dark-bg);

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import ArticlesPage from './Articles';
+import ArticlesSection from '../components/ArticlesSection';
 import HeroSection from '../components/HeroSection';
 import IArticle from '../interfaces/IArticle';
 
@@ -33,7 +33,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 		<section className="w-100">
 			
 			<HeroSection />
-			<ArticlesPage items={_latestArticles} />
+			<ArticlesSection items={_latestArticles} />
 
 		</section>
 	);

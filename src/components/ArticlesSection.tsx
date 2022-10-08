@@ -2,10 +2,10 @@ import React from 'react';
 
 import IArticle from '../interfaces/IArticle';
 
-export interface IArticlesPageProps {
+export interface IArticlesSectionComponentProps {
     items: IArticle[];
 }
-const ArticlesPage: React.FunctionComponent<IArticlesPageProps> = props => {
+const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponentProps> = props => {
 	if (!props.items.length)
 	{
 		return <div> No Items </div>;
@@ -21,4 +21,4 @@ const ArticlesPage: React.FunctionComponent<IArticlesPageProps> = props => {
 	);
 };
 
-export default ArticlesPage;
+export default ArticlesSectionComponent;
