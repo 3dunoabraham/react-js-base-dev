@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import NavigationButtonList from './NavigationButtonList';
+import FooterSection from './FooterSection';
 import CTAButton from './CTAButton';
 import LogoFrame from './LogoFrame';
 
@@ -20,6 +21,8 @@ const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props 
 			</div>
 
 			<Outlet />
+
+			<FooterSection />
 		</div>
 	);
 };

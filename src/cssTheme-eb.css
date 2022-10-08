@@ -4,8 +4,15 @@ body {
 :root {
 	--eb-primary-color: rgb(49,207,112);
 	--eb-secondary-color: rgb(44,186,199);
+
+	--eb-main-bg: rgb(44,48,77);
 }
 
+.eb-footer {
+	background: var(--eb-main-bg);
+	width: 100%;
+	color: white;
+}
 .eb-cta-button {
 	padding: 12px 24px;
 	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-secondary-color));
