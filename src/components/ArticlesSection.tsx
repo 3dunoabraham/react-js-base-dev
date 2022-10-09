@@ -30,7 +30,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 					Latest Articles
 				</h2>
 
-				<div className="flex-between w-100 flex-align-start flex-align-stretch pr-200">
+				<div className="flex-between w-100 flex-align-start flex-align-stretch ">
 					{ArticleComponentList}
 				</div>
 			</div>

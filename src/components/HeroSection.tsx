@@ -14,8 +14,8 @@ export interface IHeroSectionComponentsProps {};
 const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps> = props => {
 	return (
 
-		<div>
-			<div className="eb-hero-wrapper pos-relative">
+		<div >
+			<div className="eb-hero-wrapper  pos-relative">
 				<div className="eb-hero ">
 					<img className="eb-hero-phones" src={HeroDarkShape} />
 					<img className="eb-hero-phones" src={HeroLightShape} />
@@ -32,63 +32,65 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 				</div>
 			</div>
 
-			<div className="eb-hero-subsection">
-				<h2 className="eb-hero-subsection-title">
-					Why choose Easybank?
-				</h2>
-				<div className="eb-hero-subsection-desc">
-					<p className="my-1">
-						We leverage Open Banking to turn your bank acount into your financial hub.
-					</p>
-					<p className="my-1">
-						Control your finances like never before.
-					</p>
-				</div>
+			<div className="eb-hero-subsection-wrapper ">
+				<div className="eb-hero-subsection ">
+					<h2 className="eb-hero-subsection-title">
+						Why choose Easybank?
+					</h2>
+					<div className="eb-hero-subsection-desc">
+						<p className="my-1">
+							We leverage Open Banking to turn your bank acount into your financial hub.
+						</p>
+						<p className="my-1">
+							Control your finances like never before.
+						</p>
+					</div>
 
-				<div className="flex-between pr-200 my-100 ">
-					<div className="flex-column flex-align-start ">
-						<div className="eb-choose-us-circle">
-							<img src={Vector1} />
+					<div className="flex-between  my-100 ">
+						<div className="flex-column flex-align-start eb-choose-us-element ">
+							<div className="eb-choose-us-circle">
+								<img src={Vector1} />
+							</div>
+							<h3 className="eb-tx-main tx-lg">
+								Online Banking
+							</h3>
+							<p className="eb-choose-us-desc">
+								Our modern web and mobile applications <br/> allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
+							</p>
 						</div>
-						<h3>
-							Online Banking
-						</h3>
-						<p className="eb-choose-us-desc">
-							Our modern web and mobile applications <br/> allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
-						</p>
-					</div>
-					<div className="flex-column flex-align-start ">
-						<div className="eb-choose-us-circle">
-							<img src={Vector2} />
+						<div className="flex-column flex-align-start eb-choose-us-element ">
+							<div className="eb-choose-us-circle">
+								<img src={Vector2} />
+							</div>
+							<h3 className="eb-tx-main tx-lg">
+								Simple Budgeting
+							</h3>
+							<p className="eb-choose-us-desc">
+								See exactly where your money goes <br/> each month. Receive notifications <br/> when you’re close to hitting <br/> your limits.
+							</p>
 						</div>
-						<h3>
-							Simple Budgeting
-						</h3>
-						<p className="eb-choose-us-desc">
-							See exactly where your money goes <br/> each month. Receive notifications <br/> when you’re close to hitting <br/> your limits.
-						</p>
-					</div>
-					<div className="flex-column flex-align-start ">
-						<div className="eb-choose-us-circle">
-							<img src={Vector3} />
+						<div className="flex-column flex-align-start eb-choose-us-element ">
+							<div className="eb-choose-us-circle">
+								<img src={Vector3} />
+							</div>
+							<h3 className="eb-tx-main tx-lg">
+								Fast Onboarding
+							</h3>
+							<p className="eb-choose-us-desc">
+								We don’t do branches. Open your <br/> account in minutes online and start <br/> taking control of your finances right <br/> away. 
+							</p>
 						</div>
-						<h3>
-							Fast Onboarding
-						</h3>
-						<p className="eb-choose-us-desc">
-							We don’t do branches. Open your <br/> account in minutes online and start <br/> taking control of your finances right <br/> away. 
-						</p>
-					</div>
-					<div className="flex-column flex-align-start ">
-						<div className="eb-choose-us-circle">
-							<img src={Vector4} />
+						<div className="flex-column flex-align-start eb-choose-us-element ">
+							<div className="eb-choose-us-circle">
+								<img src={Vector4} />
+							</div>
+							<h3 className="eb-tx-main tx-lg">
+								Open API
+							</h3>
+							<p className="eb-choose-us-desc">
+								Manage your savings, investments, <br/> pension, and much more from one <br/> account. Tracking your money has <br/> never been easier. 
+							</p>
 						</div>
-						<h3>
-							Open API
-						</h3>
-						<p className="eb-choose-us-desc">
-							Manage your savings, investments, <br/> pension, and much more from one <br/> account. Tracking your money has <br/> never been easier. 
-						</p>
 					</div>
 				</div>
 			</div>
