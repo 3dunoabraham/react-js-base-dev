@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 import ArticleCard from './ArticleCard';
 
 export interface IArticlesSectionComponentProps {

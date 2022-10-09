@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 import ArticleRow from './ArticleRow';
 
 export interface IArticlesTableComponentProps {
@@ -8,7 +8,7 @@ export interface IArticlesTableComponentProps {
     onEdit: (arg0: IArticle) => void;
 	// currentlySelected?: IArticle;
     // set_currentlySelected?: (arg0: IArticle) => IArticle;
-    
+
 }
 const EmptyArticlesTableComponent: React.FunctionComponent<any> = props => {
 	return (
@@ -37,6 +37,7 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 					{ArticleComponentList}
 				</div>
 			</div>
+
 		</div>
 	);
 };

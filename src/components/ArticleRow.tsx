@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 
 export interface IArticleRowComponentsProps{
     article: IArticle;
