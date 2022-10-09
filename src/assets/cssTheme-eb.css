@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400&display=swap');
 
 body {
     font-family: 'Public Sans', sans-serif;
@@ -28,6 +28,9 @@ body {
 .eb-tx-main {
 	color: var(--eb-main-text);
 }
+.eb-tx-primary {
+	color: var(--eb-primary-color);
+}
 
 
 
@@ -39,6 +42,26 @@ body {
 }
 .eb-article-card:hover .eb-article-highlight {
 	color: var(--eb-primary-color-2);
+}
+.eb-article-row:nth-child(even) {
+	background: var(--eb-light-bg);
+}
+.eb-article-row:nth-child(odd) {
+	background: white;
+}
+.eb-article-row-author {
+	width: 15%;
+	text-align: start;
+	font-size: 0.8em;
+}
+.eb-article-row-content {
+	width: 20%;
+	flex: 1;
+	/*text-align: start;*/
+}
+.eb-article-row-title {
+	width: 20%;
+	text-align: start;
 }
 .eb-article-card {
 	width: 280px;
@@ -88,13 +111,19 @@ body {
 	font-size: 2.4em;
 	font-weight: 400;
 }
+.eb-articles-table-wrapper {
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	color: var(--eb-main-text);
+	border-radius: 15px;
+	overflow: hidden;
+}
 .eb-latest-articles-wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: var(--eb-lighter-bg);
-	padding-bottom: 80px;
+	padding-bottom: 80px;	
 }
 .eb-latest-articles {
 	/*padding: 100px 0 100px 150px;*/

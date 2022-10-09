@@ -18,8 +18,12 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [_articles, set_articles] = useState<IArticle[]>([]);
 	const [currentlySelected, set_currentlySelected] = useState<IArticle>();
 
+	const setCancelSelected = (_article: IArticle) => {
+		set_currentlySelected(_article)
+	}
 	const setNewArticleToEdit = (_article: IArticle) => {
 		console.log(_article);
+		window.scrollTo(0, 0)
 		set_currentlySelected(_article)
 	}
 	const getArticlesResults = async () => {
@@ -88,12 +92,13 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		<div className="eb-blog-wrapper" >
 			<div className="eb-blog">
 
-				<BlogForm currentlySelected={currentlySelected} />
+				<BlogForm currentlySelected={currentlySelected} onCancelEdit={setCancelSelected} />
 
 				<h1 className="eb-blog-previous-title">Previous Articles</h1>
-				<div className="eb-blog-subtitle">
+				<div className="eb-blog-subtitle mb-8 pb-4">
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
+
 				<ArticlesTable articles={_articles} onEdit={setNewArticleToEdit} />
 			</div>
 			<ArticlesSection articles={_latestArticles} />

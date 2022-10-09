@@ -6,6 +6,9 @@ import ArticleRow from './ArticleRow';
 export interface IArticlesTableComponentProps {
     articles: IArticle[];
     onEdit: (arg0: IArticle) => void;
+	// currentlySelected?: IArticle;
+    // set_currentlySelected?: (arg0: IArticle) => IArticle;
+    
 }
 const EmptyArticlesTableComponent: React.FunctionComponent<any> = props => {
 	return (
@@ -21,15 +24,15 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 		ArticleComponentList = (<EmptyArticlesTableComponent/>);//;
 	} else {
 		ArticleComponentList = (
-			<div>
+			<div className="w-100">
 				{props.articles.map((article) => <ArticleRow onEdit={props.onEdit} key={article.id} article={article} />)}
 			</div>
 		) ;
 	}
 	
 	return (
-		<div className="eb-latest-articles-wrapper">
-			<div className="eb-latest-articles">
+		<div className="eb-articles-table-wrapper">
+			<div className="eb-articles-table">
 				<div className="flex-between w-100 flex-align-start flex-align-stretch">
 					{ArticleComponentList}
 				</div>
