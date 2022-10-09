@@ -299,6 +299,7 @@ body {
 .eb-navigation-layout {
 	background: white;
 	z-index: 999;
+	max-width: 1080px;
 }
 .eb-navigation-button-list button {
 	background: transparent;
