@@ -9,6 +9,7 @@ import LogoFrame from './LogoFrame';
 export interface ILayoutComponentsProps {};
 
 const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props => {
+	
 	return (
 		<div className="flex-column">
 		

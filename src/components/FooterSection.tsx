@@ -12,8 +12,8 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 
 			<div className="eb-footer">
 				<div className="flex-column flex-justify-center">
-					<LogoFrame />
-					<div className="flex ">
+					<LogoFrame darkmode={true} />
+					<div className="flex mt-8">
 						<i className="pa-2">fb</i>
 						<i className="pa-2">yt</i>
 						<i className="pa-2">tw</i>

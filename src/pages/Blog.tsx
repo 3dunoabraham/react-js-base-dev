@@ -28,7 +28,8 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 		
 		try {
-			const _getArticlesResults = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',})
+			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
+			const _getArticlesResults = await axios(axiosRequestData)
 			const lastArticles = _getArticlesResults.data.data
 			set_articles(lastArticles)
 
