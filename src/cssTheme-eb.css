@@ -79,6 +79,9 @@ body {
 .eb-blog-form-content {
 	height: 300px;
 }
+.eb-article-card:hover .eb-article-card-desc {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
+}
 .eb-article-card:hover .eb-article-highlight {
 	color: var(--eb-primary-color-2);
 }
@@ -88,6 +91,7 @@ body {
 	padding: 10px;
 }
 .eb-article-card-desc {
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
 	padding: 30px;
 	background: white;
 }
@@ -234,19 +238,20 @@ body {
 	transition: all 0.1s ease-out;
 }
 .eb-active-navigation-button {
-	box-shadow: inset 0 -2px var(--eb-primary-color);
+	/*box-shadow: inset 0 -2px var(--eb-primary-color);*/
 }
 .eb-navigation-button-list button:hover {
-	color: #333;
+	box-shadow: inset 0 -2px var(--eb-primary-color);
+	color: black;
 }
 .eb-footer-navigation-button-list {
 
 }
 .eb-footer-navigation-button-list button {
-	color: white;
+	color: #a0a0a0;
 	padding: 16px 80px 16px 22px;
 }
 
 .eb-footer-navigation-button-list button:hover {
-	color: #a0a0a0;
+	color: white;
 }
