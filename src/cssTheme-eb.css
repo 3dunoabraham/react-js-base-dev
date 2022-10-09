@@ -236,6 +236,9 @@ body {
 	/*background: linear-gradient(90deg, rgb(132,225,167), rgb(129,214,219));*/
 	opacity: .75;
 }
+.eb-form-update-button {
+	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-dark-bg));
+}
 .eb-navigation-layout {
 	background: white;
 	z-index: 999;

@@ -4,7 +4,9 @@ import axios from 'axios';
 import IArticle from '../interfaces/IArticle';
 
 const {useEffect, useState} = React;
-export interface IBlogFormComponentsProps {};
+export interface IBlogFormComponentsProps {
+	currentlySelected?: IArticle;
+};
 
 const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = props => {
 	const [_currentArticle, set_currentArticle] = useState<IArticle>({
@@ -15,6 +17,64 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		image_url: "",
 		title: "",
 	});
+
+	useEffect(() => {
+		// return () => {
+			if (props.currentlySelected)
+			{
+				// console.log("detected new selected article")
+				set_currentArticle(
+					(current) => ({...current,...{
+						author: props.currentlySelected!.author,
+						title: props.currentlySelected!.title,
+						content: props.currentlySelected!.content,
+					}})
+				)
+			} else {
+				// console.log("detected empty article selection")
+			}
+		// };
+	}, [props.currentlySelected])
+
+	const bannerTitle = () => {
+		if (props.currentlySelected) {
+			return (
+				<div>
+					<h1 className="eb-blog-title">Update Blog Article</h1>
+					<div className="eb-blog-subtitle">
+						Change an existing blog article to update its content.
+					</div>
+				</div>
+			);
+		}
+		return (
+			<div>
+				<h1 className="eb-blog-title">Add New Blog Article</h1>
+				<div className="eb-blog-subtitle">
+					Publish a new blog article to feature in the Easybank homepage.
+				</div>
+			</div>
+		);
+	}
+
+	const executeRequestButton = () => {
+		if (props.currentlySelected) {
+			return (
+				<div className="eb-form-save-button eb-form-update-button" onClick={() => {
+					alert("not yet")
+				}}>
+					Update
+				</div>
+			);
+		}
+		return (
+			<div className="eb-form-save-button  " onClick={() => {
+				sendRequestForm()
+			}}>
+				Save
+			</div>
+		);
+	}
 
 	const sendRequestForm = async () => {
 		// const _getArticlesResults = await axios.get("https://servicepad-post-api.herokuapp.com/articles/")
@@ -54,46 +114,58 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}
 
 	return (
-		<div className="eb-blog-form-wrapper">
-			<div className="eb-blog-form">
-				<div>
-					<div className="pb-1">Author</div>
-					<input type="text" className="eb-input eb-blog-form-author"
-					onChange={
-						(e) => {
-							set_currentArticle(
-								(current) => ({...current,...{author:e.target.value}})
-							)
-						}}
-					/>
-				</div>
-				<div>
-					<div className="pb-1">Blog Title</div>
-					<input type="text" className="eb-input eb-blog-form-title"
-					onChange={
-						(e) => {
-							set_currentArticle(
-								(current) => ({...current,...{title:e.target.value}})
-							)
-						}}
-					/>
-				</div>
-				<div>
-					<div className="pb-1">Blog Content ({_currentArticle.content.length})</div>
-					<textarea className="eb-input eb-blog-form-content" 
+		<div>
+			{bannerTitle()}
+
+			<div className="eb-blog-form-wrapper">
+				<div className="eb-blog-form">
+					<div>
+						<div className="pb-1">Author:
+							<div className="opacity-75">
+								{props.currentlySelected && props.currentlySelected.author}
+							</div>
+						</div>
+						<input type="text" className="eb-input eb-blog-form-author"
 						onChange={
 							(e) => {
 								set_currentArticle(
-									(current) => ({...current,...{content:e.target.value}})
+									(current) => ({...current,...{author:e.target.value}})
 								)
+							}}
+						/>
+					</div>
+					<div>
+						<div className="pb-1">Blog Title:
+							<div className="opacity-75">
+								{props.currentlySelected && props.currentlySelected.title}
+							</div>
+						</div>
+						<input type="text" className="eb-input eb-blog-form-title"
+						onChange={
+							(e) => {
+								set_currentArticle(
+									(current) => ({...current,...{title:e.target.value}})
+								)
+							}}
+						/>
+					</div>
+					<div>
+						<div className="pb-1">Blog Content ({_currentArticle.content.length})
+							<div className="opacity-75">
+								{props.currentlySelected && props.currentlySelected.content}
+							</div>
+						</div>
+						<textarea className="eb-input eb-blog-form-content" 
+							onChange={
+								(e) => {
+									set_currentArticle(
+										(current) => ({...current,...{content:e.target.value}})
+									)
+								}
 							}
-						}
-					/>
-				</div>
-				<div className="eb-form-save-button " onClick={() => {
-					sendRequestForm()
-				}}>
-					Save
+						/>
+					</div>
+					{executeRequestButton()}
 				</div>
 			</div>
 		</div>

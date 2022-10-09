@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import BlogForm from '../components/BlogForm';
 import ArticlesSection from '../components/ArticlesSection';
+import ArticlesTable from '../components/ArticlesTable';
 import IArticle from '../interfaces/IArticle';
 
 const {useEffect, useState} = React;
@@ -11,7 +12,13 @@ export interface IBlogPageProps {};
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
 	const [_articles, set_articles] = useState<IArticle[]>([]);
+	const [currentlySelected, set_currentlySelected] = useState<IArticle>();
 
+	const setNewArticleToEdit = (_article: IArticle) => {
+		console.log(_article);
+		set_currentlySelected(_article)
+		alert("no")
+	}
 	const getArticlesResults = async () => {
 		// const _getArticlesResults = await axios.get("https://servicepad-post-api.herokuapp.com/articles/")
 
@@ -76,18 +83,14 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	return (
 		<div className="eb-blog-wrapper">
 			<div className="eb-blog">
-				<h1 className="eb-blog-title">Add New Blog Article</h1>
-				<div className="eb-blog-subtitle">
-					Publish a new blog article to feature in the Easybank homepage.
-				</div>
 
-				<BlogForm />
+				<BlogForm currentlySelected={currentlySelected} />
 
 				<h1 className="eb-blog-previous-title">Previous Articles</h1>
 				<div className="eb-blog-subtitle">
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
-
+				<ArticlesTable articles={_articles} onEdit={setNewArticleToEdit} />
 			</div>
 			<ArticlesSection articles={_latestArticles} />
 		</div>
