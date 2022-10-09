@@ -9,7 +9,7 @@ export interface IArticlesSectionComponentProps {
 const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
 	return (
 		<div>
-			(<b className="tx-ls-2 flex">IM LOADING <div className="hover-hover"> . . . </div> </b>)
+			<b className="tx-ls-2 flex">IM LOADING <div className="hover-hover"> . . . </div> </b>
 		</div>
 	)
 }

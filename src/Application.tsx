@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import NavigationLayoutComponent from './components/NavigationLayout';
 import HomePage from './pages/Home';
-import PostPage from './pages/Post';
+import BlogPage from './pages/Blog';
 
 export interface IApplicationProps {};
 
@@ -13,7 +13,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
 			<Routes>
 				<Route path="/" element={<NavigationLayoutComponent />}>
 					<Route path="/" element={<HomePage />} />
-					<Route path="/post" element={<PostPage />} />
+					<Route path="/blog" element={<BlogPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
