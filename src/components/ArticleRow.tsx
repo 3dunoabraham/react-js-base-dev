@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 
 export interface IArticleRowComponentsProps{
     article: IArticle;
@@ -11,7 +11,7 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 	return (
 		<div className="eb-article-row w-100">
 			<div className="flex flex-between flex-justify-start flex-align-end ">
-				<h6 className="eb-article-row-author ma-0 pa-4 tx-bold-300">
+				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold">
 					{props.article.author}
 				</h6>
 				<h4 className="eb-article-row-title eb-article-highlight ma-0 pa-4 tx-bold-200">

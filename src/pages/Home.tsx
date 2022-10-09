@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ArticlesSection from '../components/ArticlesSection';
 import HeroSection from '../components/HeroSection';
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 
 const {useEffect, useState} = React;
 export interface IHomePageProps {};

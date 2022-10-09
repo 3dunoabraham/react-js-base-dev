@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 
 const {useEffect, useState, useRef} = React;
 export interface IBlogFormComponentsProps {

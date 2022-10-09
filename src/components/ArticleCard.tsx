@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IArticle from '../interfaces/IArticle';
+import IArticle from '../constants/IArticle';
 import articleImg1 from '../assets/articleImg1.jpg';
 import articleImg2 from '../assets/articleImg2.jpg';
 import articleImg3 from '../assets/articleImg3.jpg';
