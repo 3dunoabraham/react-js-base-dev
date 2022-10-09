@@ -1,5 +1,6 @@
 import React from 'react';
 
+import HeroPhones from '../hero-phones.png';
 import CTAButton from './CTAButton';
 
 export interface IHeroSectionComponentsProps {};
@@ -9,6 +10,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 
 		<div className="">
 			<div className="eb-hero ">
+				<img className="eb-hero-phones" src={HeroPhones} />
 				<h1 className="eb-hero-title">Next generation <br/> digital banking</h1>
 				<p className="eb-hero-desc">
 					Take your financial life online.

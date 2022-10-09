@@ -9,22 +9,57 @@ body {
 	--eb-secondary-color: rgb(44,186,199);
 
 	--eb-dark-bg: rgb(44,48,77);
-	--eb-light-bg: rgb(250, 250, 250);
+	--eb-light-bg: rgb(245, 245, 245);
+	--eb-lighter-bg: rgb(250, 250, 250);
 	
 	--eb-main-text: rgb(45, 49, 78);
 	--eb-grey-text: rgb(149, 148, 153);
 
 }
+.eb-article-card {
+	width: 280px;
+	padding: 10px;
+}
+.eb-article-card-desc {
+	padding: 30px;
+	background: white;
+}
+.eb-article-card-author {
 
+	margin: 10px 0;
+	font-weight: unset;
+}
+.eb-article-card-title {
+	margin: 0;
+	color: var(--eb-main-text);
+	font-weight: unset;
+	font-size: 1.3em;
+}
+.eb-article-card-content {
+}
+.eb-hero-phones {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 .eb-hero {
 	width: 100%;
 	display: block;
 	color: var(--eb-main-text);
-	background: var(--eb-light-bg);
+	background: var(--eb-lighter-bg);
 	padding: 100px 0 200px 150px;
 }
 .eb-hero-title {
 	font-size: 4em;
+}
+.eb-latest-articles-title {
+	color: var(--eb-main-text);
+	font-size: 2.1em;
+}
+.eb-latest-articles {
+	padding: 100px 0 100px 150px;
+	color: var(--eb-grey-text);
+	background: var(--eb-lighter-bg);
 }
 .eb-hero-desc {
 	color: var(--eb-grey-text);
@@ -34,9 +69,10 @@ body {
 .eb-hero-subsection {
 	padding: 100px 0 200px 150px;
 	color: var(--eb-grey-text);
+	background: var(--eb-light-bg);
 }
 .eb-hero-subsection-title {
-	font-size: 2.1em;
+	font-size: 2.25em;
 	color: var(--eb-main-text);
 }
 .eb-hero-subsection-desc {
@@ -46,6 +82,7 @@ body {
 	background: var(--eb-dark-bg);
 	width: 100%;
 	color: white;
+	padding: 100px;
 }
 .eb-cta-button {
 	padding: 14px 30px;
@@ -60,6 +97,10 @@ body {
 .eb-cta-button:hover {
 	/*background: linear-gradient(90deg, rgb(132,225,167), rgb(129,214,219));*/
 	opacity: .75;
+}
+.eb-navigation-layout {
+	background: white;
+	z-index: 999;
 }
 .eb-navigation-button-list button {
 	background: transparent;
