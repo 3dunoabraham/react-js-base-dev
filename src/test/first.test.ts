@@ -16,9 +16,34 @@ describe("logic tests",() => {
 		const uniqueWordList = wordList.filter((item, index) => wordList.indexOf(item) === index);
 		uniqueWordList.map((item, index) => {
 			const occurrences = wordList.reduce(function(n, val) {return n + (val === item); }, 0);
-			repetitionsPerWorld[item] = occurrences
+			repetitionsPerWorld[item] = {
+				word: item,
+				occurrences,
+			}
 		})
 		console.table(repetitionsPerWorld);
+	});
+	it("displays the numbers from 1 to 100 with a surprise", () => {
+		const numberList = [...Array(100)]
+		let surpriseNumberList = {}
+		numberList.map((item, index) => {
+			let calculatedSurprise = index+1
+			if ((index+1)%3 == 0)
+			{
+				calculatedSurprise = "fizz";
+				if ((index+1)%5 == 0)
+				{
+					calculatedSurprise = "fizz buzz";
+				}
+			} else {
+				if ((index+1)%5 == 0)
+				{
+					calculatedSurprise = "buzz";
+				}
+			}
+			surpriseNumberList[index+1] = calculatedSurprise;
+		})
+		console.table(surpriseNumberList);
 	});
 });
 
