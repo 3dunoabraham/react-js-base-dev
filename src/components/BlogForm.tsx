@@ -6,17 +6,19 @@ import IArticle from '../interfaces/IArticle';
 const {useEffect, useState, useRef} = React;
 export interface IBlogFormComponentsProps {
 	currentlySelected?: IArticle;
+    onCancelEdit?: (arg0: IArticle) => void;
 };
 
 const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = props => {
-	const [_currentArticle, set_currentArticle] = useState<IArticle>({
+	const nullArticle = {
 		author: "",
 		content: "",
 		date: "",
 		id: -1,
 		image_url: "",
 		title: "",
-	});
+	};
+	const [_currentArticle, set_currentArticle] = useState<IArticle>({...nullArticle});
 
 	useEffect(() => {
 		// return () => {
@@ -34,7 +36,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		if (props.currentlySelected) {
 			return (
 				<div>
-					<h1 className="eb-blog-title">Update Blog Article</h1>
+					<h1 className="eb-blog-title " >Update Blog Article</h1>
 					<div className="eb-blog-subtitle">
 						Change an existing blog article to update its content.
 					</div>
@@ -54,10 +56,17 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	const executeRequestButton = () => {
 		if (props.currentlySelected) {
 			return (
-				<div className="eb-form-save-button eb-form-update-button" onClick={() => {
-					sendUpdateRequestForm()
-				}}>
-					Update
+				<div>
+					<div className="eb-form-save-button eb-form-update-button" onClick={() => {
+						sendUpdateRequestForm()
+					}}>
+						Update
+					</div>
+					<div className="eb-form-save-button eb-form-update-button mt-0 " style={{opacity:"0.5",filter:"saturate(0)"}} onClick={() => {
+						cancelUpdateForm()
+					}}>
+						Cancel
+					</div>
 				</div>
 			);
 		}
@@ -68,6 +77,11 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				Save
 			</div>
 		);
+	}
+
+	const cancelUpdateForm = () => {
+		// set_currentArticle({...nullArticle})
+		props.onCancelEdit!({...nullArticle})
 	}
 
 	const sendCreateRequestForm = async () => {
@@ -121,13 +135,15 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 
 	return (
 		<div>
+
 			{bannerTitle()}
 
 			<div className="eb-blog-form-wrapper">
 				<div className="eb-blog-form">
 					<div>
-						<div className="pb-1">Author:
-							<div className="opacity-75">
+						<div className="pb-1">
+							<span className="tx-bold-400">Author</span>
+							<div className="opacity-50">
 								{props.currentlySelected && props.currentlySelected.author}
 							</div>
 						</div>
@@ -142,8 +158,9 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 						/>
 					</div>
 					<div>
-						<div className="pb-1">Blog Title:
-							<div className="opacity-75">
+						<div className="pb-1">
+							<span className="tx-bold-400">Blog Title</span>
+							<div className="opacity-50">
 								{props.currentlySelected && props.currentlySelected.title}
 							</div>
 						</div>
@@ -157,9 +174,12 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 							}}
 						/>
 					</div>
-					<div>
-						<div className="pb-1">Blog Content ({_currentArticle.content.length})
-							<div className="opacity-75">
+					<div style={_currentArticle.content.length > 50 ? {color: "red"} : {}}>
+						<div className="pb-1" >
+							<span className="tx-bold-400">Blog Content</span>
+							({_currentArticle.content.length}/50)
+							{_currentArticle.content.length > 50 && " *Too many characters*"}
+							<div className="opacity-50">
 								{props.currentlySelected && props.currentlySelected.content}
 							</div>
 						</div>

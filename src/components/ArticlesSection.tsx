@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import IArticle from '../interfaces/IArticle';
 import ArticleCard from './ArticleCard';
 
 export interface IArticlesSectionComponentProps {
     articles: IArticle[];
+	addmode?: boolean;
 }
 const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
 	return (
@@ -14,6 +16,8 @@ const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
 	)
 }
 const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponentProps> = props => {
+	const _navigate = useNavigate();
+
 	let ArticleComponentList;
 	if (!props.articles.length)
 	{
@@ -26,9 +30,15 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 		<div className="eb-latest-articles-wrapper">
 			<div className="eb-latest-articles">
 
-				<h2 className="eb-latest-articles-title">
-					Latest Articles
-				</h2>
+				<div className="flex-between">
+					<h2 className="eb-latest-articles-title">
+						Latest Articles
+					</h2>
+
+					{props.addmode && <div className="eb-cta-button " onClick={() => { _navigate("/blog") }}>
+						<span>+</span> Add New Article
+					</div>}
+				</div>
 
 				<div className="flex-between w-100 flex-align-start flex-align-stretch ">
 					{ArticleComponentList}

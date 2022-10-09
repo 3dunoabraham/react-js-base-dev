@@ -1,12 +1,12 @@
 import React from 'react';
 
-import HeroPhones from '../hero-phones.png';
-import HeroDarkShape from '../hero-dark-shape.png';
-import HeroLightShape from '../hero-light-shape.png';
-import Vector1 from '../Vector(1).png';
-import Vector2 from '../Vector(2).png';
-import Vector3 from '../Vector(3).png';
-import Vector4 from '../Vector(4).png';
+import HeroPhones from '../assets/hero-phones.png';
+import HeroDarkShape from '../assets/hero-dark-shape.png';
+import HeroLightShape from '../assets/hero-light-shape.png';
+import Vector1 from '../assets/Vector(1).png';
+import Vector2 from '../assets/Vector(2).png';
+import Vector3 from '../assets/Vector(3).png';
+import Vector4 from '../assets/Vector(4).png';
 import CTAButton from './CTAButton';
 
 export interface IHeroSectionComponentsProps {};
@@ -47,33 +47,33 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					</div>
 
 					<div className="flex-between  my-100 ">
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5 ">
 							<div className="eb-choose-us-circle">
 								<img src={Vector1} />
 							</div>
-							<h3 className="eb-tx-main tx-lg">
+							<h3 className="eb-tx-main tx-bold-400 tx-lg">
 								Online Banking
 							</h3>
 							<p className="eb-choose-us-desc">
-								Our modern web and mobile applications <br/> allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
+								Our modern web and mobile <br/> applications allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
 							</p>
 						</div>
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5">
 							<div className="eb-choose-us-circle">
 								<img src={Vector2} />
 							</div>
-							<h3 className="eb-tx-main tx-lg">
+							<h3 className="eb-tx-main tx-bold-400 tx-lg">
 								Simple Budgeting
 							</h3>
 							<p className="eb-choose-us-desc">
 								See exactly where your money goes <br/> each month. Receive notifications <br/> when you’re close to hitting <br/> your limits.
 							</p>
 						</div>
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5">
 							<div className="eb-choose-us-circle">
 								<img src={Vector3} />
 							</div>
-							<h3 className="eb-tx-main tx-lg">
+							<h3 className="eb-tx-main tx-bold-400 tx-lg">
 								Fast Onboarding
 							</h3>
 							<p className="eb-choose-us-desc">
@@ -84,7 +84,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 							<div className="eb-choose-us-circle">
 								<img src={Vector4} />
 							</div>
-							<h3 className="eb-tx-main tx-lg">
+							<h3 className="eb-tx-main tx-bold-400 tx-lg">
 								Open API
 							</h3>
 							<p className="eb-choose-us-desc">

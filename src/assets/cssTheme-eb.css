@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400&display=swap');
 
 body {
     font-family: 'Public Sans', sans-serif;
+	font-weight: 200;
 	margin: 0;
 }
 :root {
@@ -27,6 +28,9 @@ body {
 .eb-tx-main {
 	color: var(--eb-main-text);
 }
+.eb-tx-primary {
+	color: var(--eb-primary-color);
+}
 
 
 
@@ -38,6 +42,26 @@ body {
 }
 .eb-article-card:hover .eb-article-highlight {
 	color: var(--eb-primary-color-2);
+}
+.eb-article-row:nth-child(even) {
+	background: var(--eb-light-bg);
+}
+.eb-article-row:nth-child(odd) {
+	background: white;
+}
+.eb-article-row-author {
+	width: 15%;
+	text-align: start;
+	font-size: 0.8em;
+}
+.eb-article-row-content {
+	width: 20%;
+	flex: 1;
+	/*text-align: start;*/
+}
+.eb-article-row-title {
+	width: 20%;
+	text-align: start;
 }
 .eb-article-card {
 	width: 280px;
@@ -84,7 +108,14 @@ body {
 }
 .eb-latest-articles-title {
 	color: var(--eb-main-text);
-	font-size: 2.1em;
+	font-size: 2.4em;
+	font-weight: 400;
+}
+.eb-articles-table-wrapper {
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	color: var(--eb-main-text);
+	border-radius: 15px;
+	overflow: hidden;
 }
 .eb-latest-articles-wrapper {
 	width: 100%;
@@ -92,7 +123,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background: var(--eb-lighter-bg);
-	padding-bottom: 80px;
+	padding-bottom: 80px;	
 }
 .eb-latest-articles {
 	/*padding: 100px 0 100px 150px;*/
@@ -122,15 +153,16 @@ body {
 }
 .eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
-	padding: 0 100px;
+	padding: 0 150px;
 	/*width: 100%;*/
 }
 .eb-hero-title {
-	font-size: 4em;
+	font-size: 3.4em;
+	font-weight: 400;
 }
 .eb-hero-desc {
 	color: var(--eb-grey-text);
-	font-size: 1.25em;
+	font-size: 1.18em;
 	line-height: 1.6;
 	/*transition: all 0.2s ease-out;
 }
@@ -157,15 +189,19 @@ body {
 	align-items: center;*/
 }
 .eb-hero-subsection-title {
-	font-size: 2.25em;
+	font-size: 2.4em;
+	font-weight: 400;
 	color: var(--eb-main-text);
 }
 .eb-hero-subsection-desc {
-	font-size: 1.2em;
+	font-size: 1.1em;
+	font-weight: 400;
 }
 
 .eb-choose-us-desc {
 	line-height: 1.5;
+	font-size: 0.95em;
+	font-weight: 400;
 }
 .eb-choose-us-circle {
 	background: linear-gradient(45deg, var(--eb-primary-color), var(--eb-secondary-color));
@@ -189,7 +225,7 @@ body {
 	border-radius: 90px;
 	color: white;
 	font-size: 1.1em;
-	font-weight: bold;
+	font-weight: 400;
 }
 .eb-cta-button:hover {
 	/*background: linear-gradient(90deg, rgb(132,225,167), rgb(129,214,219));*/
@@ -295,9 +331,19 @@ body {
 
 
 
-.eb-navigation-layout {
+.eb-navigation-layout-wrapper {
 	background: white;
 	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.eb-navigation-layout {
+	max-width: 1080px;
+	width: 100%;
 }
 .eb-navigation-button-list button {
 	background: transparent;
@@ -305,7 +351,7 @@ body {
 	padding: 12px 24px;
 	cursor: pointer;
 	color: #777;
-	font-size: 1.1em;
+	font-size: 1em;
 	transition: all 0.1s ease-out;
 }
 .eb-active-navigation-button {

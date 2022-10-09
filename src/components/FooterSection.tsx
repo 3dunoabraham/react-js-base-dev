@@ -3,6 +3,11 @@ import React from 'react';
 import FooterNavigationButtonList from './FooterNavigationButtonList';
 import CTAButton from './CTAButton';
 import LogoFrame from './LogoFrame';
+import fb from '../assets/fb.svg';
+import yt from '../assets/yt.svg';
+import tw from '../assets/tw.svg';
+import pin from '../assets/pin.svg';
+import ig from '../assets/ig.svg';
 
 export interface IFooterSectionComponentsProps {};
 
@@ -14,11 +19,12 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 				<div className="flex-column flex-justify-center">
 					<LogoFrame darkmode={true} />
 					<div className="flex mt-8">
-						<i className="pa-2">fb</i>
-						<i className="pa-2">yt</i>
-						<i className="pa-2">tw</i>
-						<i className="pa-2">pin</i>
-						<i className="pa-2">ig</i>
+						<i className="clickable opacity-hover--50 pa-2"><img src={fb} /></i>
+						<i className="clickable opacity-hover--50 pa-2"><img src={yt} /></i>
+						<i className="clickable opacity-hover--50 pa-2"><img src={tw} /></i>
+						<i className="clickable opacity-hover--50 pa-2"><img src={pin} /></i>
+						<i className="clickable opacity-hover--50 pa-2"><img src={ig} /></i>
+						
 					</div>
 				</div>			
 				<FooterNavigationButtonList />

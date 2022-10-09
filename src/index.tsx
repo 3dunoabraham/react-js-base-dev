@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './css.css';
-import './cssTheme-eb.css';
+import './assets/css.css';
+import './assets/cssTheme-eb.css';
 import App from './Application';
 import reportWebVitals from './reportWebVitals';
 
