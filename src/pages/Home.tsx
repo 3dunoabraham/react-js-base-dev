@@ -73,7 +73,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 		<section className="w-100">
 			
 			<HeroSection />
-			<ArticlesSection extramode articles={_latestArticles} />
+			<ArticlesSection addmode articles={_latestArticles} />
 
 		</section>
 	);

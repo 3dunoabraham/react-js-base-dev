@@ -1,12 +1,12 @@
 import React from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import IArticle from '../interfaces/IArticle';
 import ArticleCard from './ArticleCard';
 
 export interface IArticlesSectionComponentProps {
     articles: IArticle[];
-	extramode?: boolean;
+	addmode?: boolean;
 }
 const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
 	return (
@@ -35,8 +35,8 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 						Latest Articles
 					</h2>
 
-					{props.extramode && <div className="eb-cta-button " onClick={() => { _navigate("/blog") }}>
-						<span>+</span> Add Article
+					{props.addmode && <div className="eb-cta-button " onClick={() => { _navigate("/blog") }}>
+						<span>+</span> Add New Article
 					</div>}
 				</div>
 
