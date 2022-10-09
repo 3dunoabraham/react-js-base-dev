@@ -47,8 +47,14 @@ body {
 	width: 100%;
 	display: block;
 	color: var(--eb-main-text);
+	/*padding: 100px 0 200px 150px;*/
+	padding-top: 100px;
+	padding-bottom: 200px;
+	overflow: hidden;
+}
+.eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
-	padding: 100px 0 200px 150px;
+	padding: 0 100px;
 }
 .eb-hero-title {
 	font-size: 4em;
@@ -79,10 +85,12 @@ body {
 .eb-hero-subsection-desc {
 	font-size: 1.2em;
 }
-.eb-footer {
-	background: var(--eb-dark-bg);
+.eb-footer-wrapper {
 	width: 100%;
+	background: var(--eb-dark-bg);
 	color: white;
+}
+.eb-footer {
 	padding: 100px;
 }
 .eb-cta-button {
