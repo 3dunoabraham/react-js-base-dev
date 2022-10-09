@@ -15,17 +15,19 @@ const ArticleCardComponents: React.FunctionComponent<IArticleCardComponentsProps
 	return (
 		<div className="eb-article-card">
 			
-			{false && <img src={articleImgs[props.article.id]} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>}
-			{true && <img src={props.article.image_url} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>}
+			{/*false && <img src={articleImgs[props.article.id]} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>*/}
+			<div className="eb-article-thumbnail">
+				<img src={props.article.image_url} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>
+			</div>
 
 			<div className="eb-article-card-desc">
 				<h6 className="eb-article-card-author">
 					By {props.article.author}
 				</h6>
-				<h4 className="eb-article-card-title">
+				<h4 className="eb-article-card-title eb-article-highlight mb-0">
 					{props.article.title}
 				</h4>
-				<p className="eb-article-card-content">
+				<p className="eb-article-card-content mt-0 pt-3">
 					{props.article.content}
 				</p>
 			</div>

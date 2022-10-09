@@ -6,6 +6,7 @@ body {
 }
 :root {
 	--eb-primary-color: rgb(49,207,112);
+	--eb-primary-color-2: rgb(119, 189, 163);
 	--eb-secondary-color: rgb(44,186,199);
 
 	--eb-dark-bg: rgb(44,48,77);
@@ -15,6 +16,9 @@ body {
 	--eb-main-text: rgb(45, 49, 78);
 	--eb-grey-text: rgb(149, 148, 153);
 
+}
+.eb-article-card:hover .eb-article-highlight {
+	color: var(--eb-primary-color-2);
 }
 .eb-article-card {
 	width: 280px;
@@ -29,14 +33,29 @@ body {
 
 	margin: 10px 0;
 	font-weight: unset;
+	transition: all 0.1s ease-out;
+	border-left: 0px solid #777777;
+}
+.eb-article-card-author:hover {
+	cursor: pointer;
+	color: var(--eb-primary-color-2);
+	border-left: 2px solid var(--eb-primary-color-2);
+	padding-left: 3px;
 }
 .eb-article-card-title {
+	cursor: pointer;
 	margin: 0;
 	color: var(--eb-main-text);
 	font-weight: unset;
 	font-size: 1.3em;
 }
+.eb-article-thumbnail {
+	min-height: 170px;	
+	cursor: pointer;
+}
 .eb-article-card-content {
+	min-height: 60px;
+	cursor: pointer;
 }
 .eb-hero-phones {
 	position: absolute;
@@ -117,7 +136,7 @@ body {
 	padding: 12px 24px;
 	cursor: pointer;
 	color: #777;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	transition: all 0.1s ease-out;
 }
 .eb-active-navigation-button {

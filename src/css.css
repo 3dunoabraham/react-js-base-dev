@@ -70,6 +70,7 @@
 .flex-align-stetch { display: flex; align-items: stretch !important; }
 .flex-align-start { display: flex; align-items: flex-start !important; }
 .flex-align-end { display: flex; align-items: flex-end !important; }
+.flex-justify-stretch { display: flex; justify-content: stretch !important; }
 .flex-justify-start { display: flex; justify-content: flex-start !important; }
 .flex-justify-end { display: flex; justify-content: flex-end !important; }
 .flex-justify-between { display: flex; justify-content: space-between !important; }
