@@ -1,4 +1,7 @@
-
+interface wordOcurrence {
+	word: string;
+	occurrences: number;
+}
 
 describe("logic tests",() => {
 	it("solves for any number in the fibonacci series", () => {
@@ -11,11 +14,11 @@ describe("logic tests",() => {
 	it("displays the number of repetitions of each word", () => {
 		const testString = "Hi how are things? How are you?Are you a developer? I am also a developer";
 
-		let repetitionsPerWorld = {}
-		const wordList = testString.match(/\b(\w+)\b/g).map(item => item.toLowerCase());
+		let repetitionsPerWorld: {[key:string]: wordOcurrence} = {}
+		const wordList = testString.match(/\b(\w+)\b/g)!.map(item => item.toLowerCase());
 		const uniqueWordList = wordList.filter((item, index) => wordList.indexOf(item) === index);
 		uniqueWordList.map((item, index) => {
-			const occurrences = wordList.reduce(function(n, val) {return n + (val === item); }, 0);
+			const occurrences:number = wordList.reduce(function(n:number, val:string) {return parseInt(n.toString()) + parseInt((val === item).toString()); }, 0);
 			repetitionsPerWorld[item] = {
 				word: item,
 				occurrences,
@@ -24,10 +27,11 @@ describe("logic tests",() => {
 		console.table(repetitionsPerWorld);
 	});
 	it("displays the numbers from 1 to 100 with a surprise", () => {
+
 		const numberList = [...Array(100)]
-		let surpriseNumberList = {}
+		let surpriseNumberList:string[] = []
 		numberList.map((item, index) => {
-			let calculatedSurprise = index+1
+			let calculatedSurprise = index+1+""
 			if ((index+1)%3 == 0)
 			{
 				calculatedSurprise = "fizz";
@@ -41,7 +45,9 @@ describe("logic tests",() => {
 					calculatedSurprise = "buzz";
 				}
 			}
-			surpriseNumberList[index+1] = calculatedSurprise;
+
+			// surpriseNumberList[(index+1) as keyof string] = calculatedSurprise;
+			surpriseNumberList.push(calculatedSurprise);
 		})
 		console.table(surpriseNumberList);
 	});
