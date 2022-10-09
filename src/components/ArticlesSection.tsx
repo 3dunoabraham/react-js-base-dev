@@ -4,12 +4,15 @@ import IArticle from '../interfaces/IArticle';
 import ArticleCard from './ArticleCard';
 
 export interface IArticlesSectionComponentProps {
-    items: IArticle[];
+    articles: IArticle[];
 }
 const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponentProps> = props => {
-	if (!props.items.length)
+	let ArticleComponentList;
+	if (!props.articles.length)
 	{
-		return <div> No Items </div>;
+		ArticleComponentList = (<b className="tx-ls-2 flex"> LOADING <div className="hover-hover"> . . . </div> </b>);
+	} else {
+		ArticleComponentList = props.articles.map((article) => <ArticleCard key={article.id} article={article} />) ;
 	}
 	
 	return (
@@ -20,7 +23,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 			</h2>
 
 			<div className="flex-between pr-200">
-				{ props.items.map((article) => <ArticleCard key={article.id} article={article} />) }
+				{ArticleComponentList}
 			</div>
 		</div>
 	);
