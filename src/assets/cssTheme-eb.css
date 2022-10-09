@@ -11,6 +11,7 @@ body {
 	--eb-secondary-color: rgb(44,186,199);
 
 	--eb-dark-bg: rgb(44,48,77);
+	--eb-lightgrey-bg: rgb(222, 222, 222);
 	--eb-light-bg: rgb(245, 245, 245);
 	--eb-lighter-bg: rgb(250, 250, 250);
 	
@@ -33,8 +34,18 @@ body {
 }
 
 
-
-
+.eb-border-t-primary {
+	box-shadow: 0 -2px var(--eb-primary-color);
+}
+.eb-border-t {
+	box-shadow: 0 -2px var(--eb-lightgrey-bg);
+}
+.eb-border-b {
+	box-shadow: 0 2px var(--eb-lightgrey-bg);
+}
+.eb-border-b-grey {
+	box-shadow: inset 0 -1px #cccccc;
+}
 
 
 .eb-article-card:hover .eb-article-card-desc {
@@ -43,11 +54,14 @@ body {
 .eb-article-card:hover .eb-article-highlight {
 	color: var(--eb-primary-color-2);
 }
+.eb-article-row-header {
+	background: #F9FAFB;
+}
 .eb-article-row:nth-child(even) {
-	background: var(--eb-light-bg);
+	background: white;
 }
 .eb-article-row:nth-child(odd) {
-	background: white;
+	background: #F4F5F7;
 }
 .eb-article-row-author {
 	width: 15%;
@@ -112,7 +126,7 @@ body {
 	font-weight: 400;
 }
 .eb-articles-table-wrapper {
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 	color: var(--eb-main-text);
 	border-radius: 15px;
 	overflow: hidden;

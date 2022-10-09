@@ -61,36 +61,36 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 				<ArticlesTable articles={_articles} onEdit={setNewArticleToEdit} />
 
-				<div className="eb-articles-table-paginate flex-between ">
-					<div className="pa-5 eb-articles-table-prev tx-bold-400 flex">
+				<div className="eb-articles-table-paginate flex-between mt-8 opacity-75">
+					<div className="pa-5 eb-articles-table-prev tx-bold-400 flex eb-border-t flex-1 clickable opacity-hover--50" >
 						<div className="pr-2">←</div> Previous 
 					</div>
-					<div className="pa-5 eb-articles-table-pages flex tx-bold-400">
-						<div className="px-4 py-5 clickable opacity-hover--50">
+					<div className="eb-articles-table-pages flex tx-bold-400">
+						<div className="px-4 py-5 clickable opacity-hover--50 eb-border-t-primary">
 							1
 						</div>
-						<div className="pa-5 px-0">
+						{false && <div className="pa-5 px-0 eb-border-t">
 							...
-						</div>
+						</div>}
 						<div className="flex">
-							<div className="pa-5 px-4 clickable opacity-hover--50">
+							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
 								2
 							</div>
-							<div className="pa-5 px-4 clickable opacity-hover--50">
+							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
 								3
 							</div>
-							<div className="pa-5 px-4 clickable opacity-hover--50">
+							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
 								4
 							</div>
 						</div>
-						<div className="pa-5 px-0">
+						<div className="pa-5 px-0 eb-border-t">
 							...
 						</div>
-						<div className="pa-5 clickable opacity-hover--50">
+						<div className="pa-5 clickable opacity-hover--50 eb-border-t eb-border-t">
 							10
 						</div>
 					</div>
-					<div className="pa-5 eb-articles-table-next tx-bold-400 flex">
+					<div className="pa-5 eb-articles-table-next tx-bold-400 flex flex-1 eb-border-t flex flex-justify-end clickable opacity-hover--50" >
 						Next <div className="pl-2">→</div>
 					</div>
 				</div>

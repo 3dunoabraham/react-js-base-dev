@@ -2,6 +2,7 @@ import React from 'react';
 
 import IArticle from '../constants/IArticle';
 import ArticleRow from './ArticleRow';
+import ArticleTableHeader from './ArticleTableHeader';
 
 export interface IArticlesTableComponentProps {
     articles: IArticle[];
@@ -25,6 +26,7 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 	} else {
 		ArticleComponentList = (
 			<div className="w-100">
+				<ArticleTableHeader />
 				{props.articles.map((article) => <ArticleRow onEdit={props.onEdit} key={article.id} article={article} />)}
 			</div>
 		) ;
