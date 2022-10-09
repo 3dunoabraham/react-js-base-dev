@@ -6,11 +6,18 @@ import ArticleCard from './ArticleCard';
 export interface IArticlesSectionComponentProps {
     articles: IArticle[];
 }
+const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
+	return (
+		<div>
+			<b className="tx-ls-2 flex">IM LOADING <div className="hover-hover"> . . . </div> </b>
+		</div>
+	)
+}
 const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponentProps> = props => {
 	let ArticleComponentList;
 	if (!props.articles.length)
 	{
-		ArticleComponentList = (<b className="tx-ls-2 flex"> LOADING <div className="hover-hover"> . . . </div> </b>);
+		ArticleComponentList = (<EmptyArticlesSectionComponent/>);//;
 	} else {
 		ArticleComponentList = props.articles.map((article) => <ArticleCard key={article.id} article={article} />) ;
 	}
@@ -22,7 +29,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 				Latest Articles
 			</h2>
 
-			<div className="flex-between pr-200">
+			<div className="flex-between flex-align-start flex-align-stretch pr-200">
 				{ArticleComponentList}
 			</div>
 		</div>

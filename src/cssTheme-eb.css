@@ -6,6 +6,7 @@ body {
 }
 :root {
 	--eb-primary-color: rgb(49,207,112);
+	--eb-primary-color-2: rgb(119, 189, 163);
 	--eb-secondary-color: rgb(44,186,199);
 
 	--eb-dark-bg: rgb(44,48,77);
@@ -15,6 +16,70 @@ body {
 	--eb-main-text: rgb(45, 49, 78);
 	--eb-grey-text: rgb(149, 148, 153);
 
+}
+.eb-blog-wrapper {
+	width: 100%;
+	background: var(--eb-lighter-bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.eb-blog {
+	width: 100%;
+	max-width: 1080px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+.eb-blog-title {
+	margin-top: 40px;
+	color: var(--eb-main-text);
+	font-size: 2.35em;
+}
+.eb-blog-previous-title {
+	margin-top: 40px;
+	color: var(--eb-main-text);
+	font-size: 2.35em;
+}
+.eb-blog-subtitle {
+	color: var(--eb-grey-text);
+}
+.eb-blog-form-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.eb-blog-form {
+	background: white;
+	width: 100%;
+	max-width: 720px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px 50px;
+	margin: 70px 0;
+	border-radius: 50px;
+}
+.eb-blog-form > * {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 25px;
+	color: var(--eb-main-text);
+}
+.eb-input {
+	border: 1px solid rgba(209, 213, 219);
+	border-radius: 10px;
+	font-size: 1.3em;
+	padding: 10px;
+}
+.eb-blog-form-content {
+	height: 300px;
+}
+.eb-article-card:hover .eb-article-highlight {
+	color: var(--eb-primary-color-2);
 }
 .eb-article-card {
 	width: 280px;
@@ -29,14 +94,43 @@ body {
 
 	margin: 10px 0;
 	font-weight: unset;
+	transition: all 0.1s ease-out;
+	border-left: 0px solid #777777;
+}
+.eb-choose-us-desc {
+	line-height: 1.5;
+}
+.eb-choose-us-circle {
+	background: linear-gradient(45deg, var(--eb-primary-color), var(--eb-secondary-color));
+	width: 75px;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+	border-radius: 100%;
+}
+.eb-article-card-author:hover {
+	cursor: pointer;
+	color: var(--eb-primary-color-2);
+	border-left: 2px solid var(--eb-primary-color-2);
+	padding-left: 3px;
 }
 .eb-article-card-title {
+	cursor: pointer;
 	margin: 0;
 	color: var(--eb-main-text);
 	font-weight: unset;
 	font-size: 1.3em;
 }
+.eb-article-thumbnail {
+	background: white;
+	min-height: 170px;	
+	cursor: pointer;
+}
 .eb-article-card-content {
+	min-height: 60px;
+	cursor: pointer;
 }
 .eb-hero-phones {
 	position: absolute;
@@ -49,8 +143,7 @@ body {
 	color: var(--eb-main-text);
 	/*padding: 100px 0 200px 150px;*/
 	padding-top: 100px;
-	padding-bottom: 200px;
-	overflow: hidden;
+	padding-bottom: 120px;
 }
 .eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
@@ -74,7 +167,7 @@ body {
 	line-height: 1.6;
 }
 .eb-hero-subsection {
-	padding: 100px 0 200px 150px;
+	padding: 100px 0 70px 150px;
 	color: var(--eb-grey-text);
 	background: var(--eb-light-bg);
 }
@@ -91,7 +184,9 @@ body {
 	color: white;
 }
 .eb-footer {
-	padding: 100px;
+	padding: 40px 100px;
+	display: flex;
+	justify-content: space-between;
 }
 .eb-cta-button {
 	padding: 14px 30px;
@@ -117,7 +212,7 @@ body {
 	padding: 12px 24px;
 	cursor: pointer;
 	color: #777;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	transition: all 0.1s ease-out;
 }
 .eb-active-navigation-button {
@@ -125,4 +220,15 @@ body {
 }
 .eb-navigation-button-list button:hover {
 	color: #333;
+}
+.eb-footer-navigation-button-list {
+
+}
+.eb-footer-navigation-button-list button {
+	color: white;
+	padding: 16px 80px 16px 22px;
+}
+
+.eb-footer-navigation-button-list button:hover {
+	color: #a0a0a0;
 }

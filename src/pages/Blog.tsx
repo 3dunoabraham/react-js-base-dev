@@ -2,13 +2,12 @@ import React from 'react';
 import axios from 'axios';
 
 import ArticlesSection from '../components/ArticlesSection';
-import HeroSection from '../components/HeroSection';
 import IArticle from '../interfaces/IArticle';
 
 const {useEffect, useState} = React;
-export interface IHomePageProps {};
+export interface IBlogPageProps {};
 
-const HomePage: React.FunctionComponent<IHomePageProps> = props => {
+const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
 
 	const getArticlesResults = async () => {
@@ -70,13 +69,38 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 	}, [])
 
 	return (
-		<section className="w-100">
-			
-			<HeroSection />
-			<ArticlesSection articles={_latestArticles} />
+		<div className="eb-blog-wrapper">
+			<div className="eb-blog">
+				<h1 className="eb-blog-title">Add New Blog Article</h1>
+				<div className="eb-blog-subtitle">
+					Publish a new blog article to feature in the Easybank homepage.
+				</div>
+				<div className="eb-blog-form-wrapper">
+					<div className="eb-blog-form">
+						<div>
+							<div>Author</div>
+							<input type="text" className="eb-input eb-blog-form-author" />
+						</div>
+						<div>
+							<div>Blog Title</div>
+							<input type="text" className="eb-input eb-blog-form-title" />
+						</div>
+						<div>
+							<div>Blog Content</div>
+							<textarea className="eb-input eb-blog-form-content" />
+						</div>
+					</div>
+				</div>
 
-		</section>
+				<h1 className="eb-blog-previous-title">Previous Articles</h1>
+				<div className="eb-blog-subtitle">
+					Review and edit previous blog posts published on to the homepage. 
+				</div>
+
+			</div>
+			<ArticlesSection articles={_latestArticles} />
+		</div>
 	);
 };
 
-export default HomePage;
+export default BlogPage;
