@@ -7,7 +7,7 @@ import articleImg3 from '../articleImg3.jpg';
 import articleImg4 from '../articleImg4.jpg';
 
 export interface IArticleCardComponentsProps{
-    article: IArticle;
+    article: IArticle
 }
 
 const ArticleCardComponents: React.FunctionComponent<IArticleCardComponentsProps> = props => {

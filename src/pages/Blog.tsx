@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+import BlogForm from '../components/BlogForm';
 import ArticlesSection from '../components/ArticlesSection';
+import ArticlesTable from '../components/ArticlesTable';
 import IArticle from '../interfaces/IArticle';
 
 const {useEffect, useState} = React;
@@ -9,7 +11,13 @@ export interface IBlogPageProps {};
 
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
+	const [_articles, set_articles] = useState<IArticle[]>([]);
+	const [currentlySelected, set_currentlySelected] = useState<IArticle>();
 
+	const setNewArticleToEdit = (_article: IArticle) => {
+		console.log(_article);
+		set_currentlySelected(_article)
+	}
 	const getArticlesResults = async () => {
 		// const _getArticlesResults = await axios.get("https://servicepad-post-api.herokuapp.com/articles/")
 
@@ -21,7 +29,10 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		
 		try {
 			const _getArticlesResults = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',})
-			const last4Articles = _getArticlesResults.data.data.splice(0,4)
+			const lastArticles = _getArticlesResults.data.data
+			set_articles(lastArticles)
+
+			const last4Articles = _getArticlesResults.data.data.splice(0,4).reverse()
 			console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
@@ -71,32 +82,14 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	return (
 		<div className="eb-blog-wrapper">
 			<div className="eb-blog">
-				<h1 className="eb-blog-title">Add New Blog Article</h1>
-				<div className="eb-blog-subtitle">
-					Publish a new blog article to feature in the Easybank homepage.
-				</div>
-				<div className="eb-blog-form-wrapper">
-					<div className="eb-blog-form">
-						<div>
-							<div>Author</div>
-							<input type="text" className="eb-input eb-blog-form-author" />
-						</div>
-						<div>
-							<div>Blog Title</div>
-							<input type="text" className="eb-input eb-blog-form-title" />
-						</div>
-						<div>
-							<div>Blog Content</div>
-							<textarea className="eb-input eb-blog-form-content" />
-						</div>
-					</div>
-				</div>
+
+				<BlogForm currentlySelected={currentlySelected} />
 
 				<h1 className="eb-blog-previous-title">Previous Articles</h1>
 				<div className="eb-blog-subtitle">
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
-
+				<ArticlesTable articles={_articles} onEdit={setNewArticleToEdit} />
 			</div>
 			<ArticlesSection articles={_latestArticles} />
 		</div>
