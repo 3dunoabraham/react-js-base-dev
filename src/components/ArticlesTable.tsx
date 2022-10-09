@@ -30,7 +30,7 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 	return (
 		<div className="eb-latest-articles-wrapper">
 			<div className="eb-latest-articles">
-				<div className="flex-between w-100 flex-align-start flex-align-stretch pr-200">
+				<div className="flex-between w-100 flex-align-start flex-align-stretch">
 					{ArticleComponentList}
 				</div>
 			</div>

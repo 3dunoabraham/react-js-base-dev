@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;400&display=swap');
 
 body {
     font-family: 'Public Sans', sans-serif;
+	font-weight: 200;
 	margin: 0;
 }
 :root {
@@ -84,7 +85,8 @@ body {
 }
 .eb-latest-articles-title {
 	color: var(--eb-main-text);
-	font-size: 2.1em;
+	font-size: 2.4em;
+	font-weight: 400;
 }
 .eb-latest-articles-wrapper {
 	width: 100%;
@@ -122,15 +124,16 @@ body {
 }
 .eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
-	padding: 0 100px;
+	padding: 0 150px;
 	/*width: 100%;*/
 }
 .eb-hero-title {
-	font-size: 4em;
+	font-size: 3.4em;
+	font-weight: 400;
 }
 .eb-hero-desc {
 	color: var(--eb-grey-text);
-	font-size: 1.25em;
+	font-size: 1.18em;
 	line-height: 1.6;
 	/*transition: all 0.2s ease-out;
 }
@@ -158,15 +161,18 @@ body {
 }
 .eb-hero-subsection-title {
 	font-size: 2.4em;
+	font-weight: 400;
 	color: var(--eb-main-text);
 }
 .eb-hero-subsection-desc {
 	font-size: 1.1em;
+	font-weight: 400;
 }
 
 .eb-choose-us-desc {
 	line-height: 1.5;
 	font-size: 0.95em;
+	font-weight: 400;
 }
 .eb-choose-us-circle {
 	background: linear-gradient(45deg, var(--eb-primary-color), var(--eb-secondary-color));
@@ -190,7 +196,7 @@ body {
 	border-radius: 90px;
 	color: white;
 	font-size: 1.1em;
-	font-weight: bold;
+	font-weight: 400;
 }
 .eb-cta-button:hover {
 	/*background: linear-gradient(90deg, rgb(132,225,167), rgb(129,214,219));*/
@@ -307,7 +313,7 @@ body {
 	padding: 12px 24px;
 	cursor: pointer;
 	color: #777;
-	font-size: 1.1em;
+	font-size: 1em;
 	transition: all 0.1s ease-out;
 }
 .eb-active-navigation-button {
