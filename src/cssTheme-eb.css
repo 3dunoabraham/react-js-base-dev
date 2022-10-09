@@ -302,10 +302,19 @@ body {
 
 
 
-.eb-navigation-layout {
+.eb-navigation-layout-wrapper {
 	background: white;
 	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.eb-navigation-layout {
 	max-width: 1080px;
+	width: 100%;
 }
 .eb-navigation-button-list button {
 	background: transparent;
