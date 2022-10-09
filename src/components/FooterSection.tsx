@@ -4,9 +4,9 @@ export interface IFooterSectionComponentsProps {};
 
 const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsProps> = props => {
 	return (
-		<div className="eb-footer">
+		<div className="eb-footer-wrapper">
 
-			<div className="pa-5">
+			<div className="eb-footer">
 				Footer	
 			</div>			
 
