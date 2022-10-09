@@ -47,7 +47,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					</div>
 
 					<div className="flex-between  my-100 ">
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5 ">
 							<div className="eb-choose-us-circle">
 								<img src={Vector1} />
 							</div>
@@ -55,10 +55,10 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								Online Banking
 							</h3>
 							<p className="eb-choose-us-desc">
-								Our modern web and mobile applications <br/> allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
+								Our modern web and mobile <br/> applications allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
 							</p>
 						</div>
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5">
 							<div className="eb-choose-us-circle">
 								<img src={Vector2} />
 							</div>
@@ -69,7 +69,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								See exactly where your money goes <br/> each month. Receive notifications <br/> when you’re close to hitting <br/> your limits.
 							</p>
 						</div>
-						<div className="flex-column flex-align-start eb-choose-us-element ">
+						<div className="flex-column flex-align-start eb-choose-us-element pr-5">
 							<div className="eb-choose-us-circle">
 								<img src={Vector3} />
 							</div>
