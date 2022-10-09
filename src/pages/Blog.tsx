@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+import BlogForm from '../components/BlogForm';
 import ArticlesSection from '../components/ArticlesSection';
 import IArticle from '../interfaces/IArticle';
 
@@ -9,6 +10,7 @@ export interface IBlogPageProps {};
 
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
+	const [_articles, set_articles] = useState<IArticle[]>([]);
 
 	const getArticlesResults = async () => {
 		// const _getArticlesResults = await axios.get("https://servicepad-post-api.herokuapp.com/articles/")
@@ -21,7 +23,10 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		
 		try {
 			const _getArticlesResults = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',})
-			const last4Articles = _getArticlesResults.data.data.splice(0,4)
+			const lastArticles = _getArticlesResults.data.data
+			set_articles(lastArticles)
+
+			const last4Articles = _getArticlesResults.data.data.splice(0,4).reverse()
 			console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
@@ -75,25 +80,8 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 				<div className="eb-blog-subtitle">
 					Publish a new blog article to feature in the Easybank homepage.
 				</div>
-				<div className="eb-blog-form-wrapper">
-					<div className="eb-blog-form">
-						<div>
-							<div className="pb-1">Author</div>
-							<input type="text" className="eb-input eb-blog-form-author" />
-						</div>
-						<div>
-							<div className="pb-1">Blog Title</div>
-							<input type="text" className="eb-input eb-blog-form-title" />
-						</div>
-						<div>
-							<div className="pb-1">Blog Content</div>
-							<textarea className="eb-input eb-blog-form-content" />
-						</div>
-						<div className="eb-form-save-button ">
-							Save
-						</div>
-					</div>
-				</div>
+
+				<BlogForm />
 
 				<h1 className="eb-blog-previous-title">Previous Articles</h1>
 				<div className="eb-blog-subtitle">

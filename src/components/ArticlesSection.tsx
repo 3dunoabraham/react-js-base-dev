@@ -23,14 +23,16 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 	}
 	
 	return (
-		<div className="eb-latest-articles">
+		<div className="eb-latest-articles-wrapper">
+			<div className="eb-latest-articles">
 
-			<h2 className="eb-latest-articles-title">
-				Latest Articles
-			</h2>
+				<h2 className="eb-latest-articles-title">
+					Latest Articles
+				</h2>
 
-			<div className="flex-between flex-align-start flex-align-stretch pr-200">
-				{ArticleComponentList}
+				<div className="flex-between w-100 flex-align-start flex-align-stretch pr-200">
+					{ArticleComponentList}
+				</div>
 			</div>
 		</div>
 	);
