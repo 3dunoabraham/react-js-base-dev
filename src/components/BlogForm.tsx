@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import IArticle from '../interfaces/IArticle';
 
-const {useEffect, useState} = React;
+const {useEffect, useState, useRef} = React;
 export interface IBlogFormComponentsProps {
 	currentlySelected?: IArticle;
 };
@@ -22,16 +22,10 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		// return () => {
 			if (props.currentlySelected)
 			{
-				// console.log("detected new selected article")
-				set_currentArticle(
-					(current) => ({...current,...{
-						author: props.currentlySelected!.author,
-						title: props.currentlySelected!.title,
-						content: props.currentlySelected!.content,
-					}})
-				)
+				console.log("detected new selected article")
+				set_currentArticle(props.currentlySelected)
 			} else {
-				// console.log("detected empty article selection")
+				console.log("detected empty article selection")
 			}
 		// };
 	}, [props.currentlySelected])
@@ -125,7 +119,8 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 								{props.currentlySelected && props.currentlySelected.author}
 							</div>
 						</div>
-						<input type="text" className="eb-input eb-blog-form-author"
+						<input type="text" className="eb-input eb-blog-form-author" 
+						value={_currentArticle.author}
 						onChange={
 							(e) => {
 								set_currentArticle(
@@ -141,6 +136,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 							</div>
 						</div>
 						<input type="text" className="eb-input eb-blog-form-title"
+						value={_currentArticle.title}
 						onChange={
 							(e) => {
 								set_currentArticle(
@@ -156,6 +152,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 							</div>
 						</div>
 						<textarea className="eb-input eb-blog-form-content" 
+							value={_currentArticle.content}
 							onChange={
 								(e) => {
 									set_currentArticle(

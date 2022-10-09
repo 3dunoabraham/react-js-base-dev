@@ -17,7 +17,6 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const setNewArticleToEdit = (_article: IArticle) => {
 		console.log(_article);
 		set_currentlySelected(_article)
-		alert("no")
 	}
 	const getArticlesResults = async () => {
 		// const _getArticlesResults = await axios.get("https://servicepad-post-api.herokuapp.com/articles/")
