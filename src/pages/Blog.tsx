@@ -78,16 +78,19 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 				<div className="eb-blog-form-wrapper">
 					<div className="eb-blog-form">
 						<div>
-							<div>Author</div>
+							<div className="pb-1">Author</div>
 							<input type="text" className="eb-input eb-blog-form-author" />
 						</div>
 						<div>
-							<div>Blog Title</div>
+							<div className="pb-1">Blog Title</div>
 							<input type="text" className="eb-input eb-blog-form-title" />
 						</div>
 						<div>
-							<div>Blog Content</div>
+							<div className="pb-1">Blog Content</div>
 							<textarea className="eb-input eb-blog-form-content" />
+						</div>
+						<div className="eb-form-save-button ">
+							Save
 						</div>
 					</div>
 				</div>
