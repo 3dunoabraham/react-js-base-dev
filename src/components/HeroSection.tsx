@@ -1,12 +1,12 @@
 import React from 'react';
 
-import HeroPhones from '../hero-phones.png';
-import HeroDarkShape from '../hero-dark-shape.png';
-import HeroLightShape from '../hero-light-shape.png';
-import Vector1 from '../Vector(1).png';
-import Vector2 from '../Vector(2).png';
-import Vector3 from '../Vector(3).png';
-import Vector4 from '../Vector(4).png';
+import HeroPhones from '../assets/hero-phones.png';
+import HeroDarkShape from '../assets/hero-dark-shape.png';
+import HeroLightShape from '../assets/hero-light-shape.png';
+import Vector1 from '../assets/Vector(1).png';
+import Vector2 from '../assets/Vector(2).png';
+import Vector3 from '../assets/Vector(3).png';
+import Vector4 from '../assets/Vector(4).png';
 import CTAButton from './CTAButton';
 
 export interface IHeroSectionComponentsProps {};

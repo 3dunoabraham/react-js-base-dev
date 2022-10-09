@@ -12,7 +12,7 @@ const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props 
 	
 	return (
 		<div className="flex-column pt-8">
-		
+			
 			<div className="eb-navigation-layout-wrapper w-100">
 				<div className="flex flex-justify-between eb-navigation-layout">
 					<LogoFrame />

@@ -3,11 +3,11 @@ import React from 'react';
 import FooterNavigationButtonList from './FooterNavigationButtonList';
 import CTAButton from './CTAButton';
 import LogoFrame from './LogoFrame';
-import fb from '../fb.svg';
-import yt from '../yt.svg';
-import tw from '../tw.svg';
-import pin from '../pin.svg';
-import ig from '../ig.svg';
+import fb from '../assets/fb.svg';
+import yt from '../assets/yt.svg';
+import tw from '../assets/tw.svg';
+import pin from '../assets/pin.svg';
+import ig from '../assets/ig.svg';
 
 export interface IFooterSectionComponentsProps {};
 

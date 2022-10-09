@@ -10,6 +10,10 @@ const {useEffect, useState} = React;
 export interface IBlogPageProps {};
 
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
+	useEffect(() => {
+	  window.scrollTo(0, 0)
+	}, [])
+		
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
 	const [_articles, set_articles] = useState<IArticle[]>([]);
 	const [currentlySelected, set_currentlySelected] = useState<IArticle>();
@@ -81,7 +85,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	}, [])
 
 	return (
-		<div className="eb-blog-wrapper">
+		<div className="eb-blog-wrapper" >
 			<div className="eb-blog">
 
 				<BlogForm currentlySelected={currentlySelected} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import logo from '../easybank.png';
+import logo from '../assets/easybank.png';
 
 export interface ILogoFrameComponentsProps {
 	darkmode?: boolean;

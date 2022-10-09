@@ -34,7 +34,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		if (props.currentlySelected) {
 			return (
 				<div>
-					<h1 className="eb-blog-title">Update Blog Article</h1>
+					<h1 className="eb-blog-title " >Update Blog Article</h1>
 					<div className="eb-blog-subtitle">
 						Change an existing blog article to update its content.
 					</div>
@@ -121,6 +121,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 
 	return (
 		<div>
+
 			{bannerTitle()}
 
 			<div className="eb-blog-form-wrapper">
