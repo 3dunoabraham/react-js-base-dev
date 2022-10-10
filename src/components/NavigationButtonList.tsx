@@ -8,13 +8,13 @@ const NavigationButtonListComponents: React.FunctionComponent<INavigationButtonL
 	const location = useLocation();
 	
 	return (
-		<div className="flex eb-navigation-button-list show-md_x">
+		<div className="flex eb-navigation-button-list ">
 			
 			<button className={  "show-lg_x "+ (location.pathname == "/"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}> Home </button>
-			<button className={ location.pathname == "/about"? "eb-active-navigation-button" : ""} onClick={() => { _navigate("/") }}>
+			<button className={ "show-md_x "+ (location.pathname == "/about"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
 				About	
 			</button>
-			<button className={ location.pathname == "/asd"? "eb-active-navigation-button" : ""} onClick={() => { _navigate("/") }}>
+			<button className={ "show-md_x "+ (location.pathname == "/asd"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
 				Contact
 			</button>
 			<button className={` ${location.pathname == "/blog" ? "eb-active-navigation-button" : ""}`} onClick={() => { _navigate("/blog") }}>

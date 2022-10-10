@@ -5,6 +5,7 @@ import logo from '../assets/easybank.png';
 
 export interface ILogoFrameComponentsProps {
 	darkmode?: boolean;
+	responsivemode?: string;
 };
 const LogoFrameComponents: React.FunctionComponent<ILogoFrameComponentsProps> = props => {
 	const _navigate = useNavigate();
@@ -14,7 +15,7 @@ const LogoFrameComponents: React.FunctionComponent<ILogoFrameComponentsProps> = 
 			<div className="eb-logo-bar"></div>
 			<div className="eb-logo-bar opacity-50"></div>
 			<div className="eb-logo-bar mr-1 opacity-10"></div>
-			<img style={props.darkmode ? {filter:"brightness(99)"} : {}} src={logo} alt="nologo" width="108" height="20" />
+			<img className={props.responsivemode ? props.responsivemode : ""} style={props.darkmode ? {filter:"brightness(99)"} : {}} src={logo} alt="nologo" width="108" height="20" />
 		</div>
 	);
 };
