@@ -9,10 +9,10 @@ const ArticleTableHeaderComponents: React.FunctionComponent<IArticleTableHeaderC
 	return (
 		<div className="eb-article-row w-100 eb-border-b-grey">
 			<div className="flex flex-between flex-justify-start flex-align-end " >
-				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold-300">
+				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold-300 show-md_x">
 					AUTHOR NAME
 				</h6>
-				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold-300" style={{width:"20%"}}>
+				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold-300 show-md_x" style={{width:"20%"}}>
 					TITLE
 				</h6>
 				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold-300">

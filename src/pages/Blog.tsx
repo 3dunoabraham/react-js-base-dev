@@ -63,7 +63,9 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 				<div className="eb-articles-table-paginate flex-between mt-8 opacity-75">
 					<div className="pa-5 eb-articles-table-prev tx-bold-400 flex eb-border-t flex-1 clickable opacity-hover--50" >
-						<div className="pr-2">←</div> Previous 
+						<div className="pr-2">←</div>
+						<div className="show-md_x">Previous</div>
+
 					</div>
 					<div className="eb-articles-table-pages flex tx-bold-400">
 						<div className="px-4 py-5 clickable opacity-hover--50 eb-border-t-primary">
@@ -91,7 +93,8 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 						</div>
 					</div>
 					<div className="pa-5 eb-articles-table-next tx-bold-400 flex flex-1 eb-border-t flex flex-justify-end clickable opacity-hover--50" >
-						Next <div className="pl-2">→</div>
+						<div className="show-md_x">Next</div>
+						<div className="pl-2">→</div>
 					</div>
 				</div>
 			</div>

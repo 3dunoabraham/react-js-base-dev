@@ -282,7 +282,9 @@ body {
 	max-width: 1080px;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	/*margin: 20px;*/
+	/*padding: 20px;*/
+	/*position: relative;*/
 }
 .eb-blog-title {
 	margin-top: 40px;
