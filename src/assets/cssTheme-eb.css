@@ -156,19 +156,24 @@ body {
 	position: absolute;
 	top: 0;
 	right: 0;
-}
-.eb-hero {
-	width: 100%;
-	display: block;
-	color: var(--eb-main-text);
-	/*padding: 100px 0 200px 150px;*/
-	padding-top: 100px;
-	padding-bottom: 120px;
+	max-width: 80%;
 }
 .eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
-	padding: 0 150px;
-	/*width: 100%;*/
+	display: flex;
+	justify-content: center;
+	/*padding: 0 150px;*/
+	width: 100%;
+}
+.eb-hero {
+	width: 100%;
+	max-width: 1080px;
+	display: block;
+	color: var(--eb-main-text);
+	/*padding: 100px 0 200px 150px;*/
+	padding-left: 50px;
+	padding-top: 100px;
+	padding-bottom: 120px;
 }
 .eb-hero-title {
 	font-size: 3.4em;

@@ -20,6 +20,9 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					<img className="eb-hero-phones" src={HeroDarkShape} />
 					<img className="eb-hero-phones" src={HeroLightShape} />
 					<img className="eb-hero-phones" src={HeroPhones} />
+					<div className="show-xs_xl block py-100"></div>
+					<div className="show-xs_lg block py-8"></div>
+					<div className="show-xs_md block py-8"></div>
 					<h1 className="eb-hero-title">Next generation <br/> digital banking</h1>
 					<p className="eb-hero-desc">
 						Take your financial life online.

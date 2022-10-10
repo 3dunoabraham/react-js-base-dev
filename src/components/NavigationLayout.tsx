@@ -17,9 +17,12 @@ const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props 
 				<div className="flex flex-justify-between eb-navigation-layout">
 					<LogoFrame />
 
-					<NavigationButtonList />
+					
+						<NavigationButtonList />
+					
 
 					<CTAButton />
+				
 				</div>
 			</div>
 
