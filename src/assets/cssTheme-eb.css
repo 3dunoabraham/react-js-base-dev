@@ -6,6 +6,7 @@ body {
 	margin: 0;
 }
 :root {
+	--eb-primary-highlight-color: rgb(119,189,163);
 	--eb-primary-color: rgb(49,207,112);
 	--eb-primary-color-2: rgb(119, 189, 163);
 	--eb-secondary-color: rgb(44,186,199);
@@ -32,7 +33,16 @@ body {
 .eb-tx-primary {
 	color: var(--eb-primary-color);
 }
-
+.eb-tx-hover-primary:hover *,
+.eb-tx-hover-primary:hover {
+	color: var(--eb-primary-color) !important;
+	fill: var(--eb-primary-color) !important;
+}
+.eb-tx-hover-primary-highlight:hover *,
+.eb-tx-hover-primary-highlight:hover {
+	color: var(--eb-primary-highlight-color) !important;
+	fill: var(--eb-primary-highlight-color) !important;
+}
 
 .eb-border-t-primary {
 	box-shadow: 0 -2px var(--eb-primary-color);
@@ -419,10 +429,11 @@ body {
 
 }
 .eb-footer-navigation-button-list button {
-	color: #a0a0a0;
+	color: white;
 	padding: 16px 80px 16px 22px;
 }
 
 .eb-footer-navigation-button-list button:hover {
-	color: white;
+	color: var(--eb-primary-highlight-color);
+	box-shadow: unset;
 }

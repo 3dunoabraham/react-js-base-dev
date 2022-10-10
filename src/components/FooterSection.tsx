@@ -3,11 +3,11 @@ import React from 'react';
 import FooterNavigationButtonList from './FooterNavigationButtonList';
 import CTAButton from './CTAButton';
 import LogoFrame from './LogoFrame';
-import fb from '../assets/fb.svg';
-import yt from '../assets/yt.svg';
-import tw from '../assets/tw.svg';
-import pin from '../assets/pin.svg';
-import ig from '../assets/ig.svg';
+import {ReactComponent as Iconfb} from '../assets/fb.svg';
+import {ReactComponent as Iconyt} from '../assets/yt.svg';
+import {ReactComponent as Icontw} from '../assets/tw.svg';
+import {ReactComponent as Iconpin} from '../assets/pin.svg';
+import {ReactComponent as Iconig} from '../assets/ig.svg';
 
 export interface IFooterSectionComponentsProps {};
 
@@ -19,11 +19,21 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 				<div className="flex-column flex-justify-center">
 					<LogoFrame darkmode={true} />
 					<div className="flex mt-8">
-						<i className="clickable opacity-hover--50 pa-2"><img src={fb} /></i>
-						<i className="clickable opacity-hover--50 pa-2"><img src={yt} /></i>
-						<i className="clickable opacity-hover--50 pa-2"><img src={tw} /></i>
-						<i className="clickable opacity-hover--50 pa-2"><img src={pin} /></i>
-						<i className="clickable opacity-hover--50 pa-2"><img src={ig} /></i>
+						<i className="clickable eb-tx-hover-primary-highlight pa-2">
+							<Iconfb />
+						</i>
+						<i className="clickable eb-tx-hover-primary-highlight pa-2">
+							<Iconyt />
+						</i>
+						<i className="clickable eb-tx-hover-primary-highlight pa-2">
+							<Icontw />
+						</i>
+						<i className="clickable eb-tx-hover-primary-highlight pa-2">
+							<Iconpin />
+						</i>
+						<i className="clickable eb-tx-hover-primary-highlight pa-2">
+							<Iconig />
+						</i>
 						
 					</div>
 				</div>			
