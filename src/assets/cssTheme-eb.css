@@ -178,6 +178,10 @@ body {
 .eb-hero-title {
 	font-size: 3.4em;
 	font-weight: 400;
+	/*background: linear-gradient(-90deg, #00000000 50%, var(--eb-lighter-bg));*/
+	/*text-shadow: 3px 3px 6px #00000077;*/
+	z-index: 999;
+	position: relative;
 }
 .eb-hero-desc {
 	color: var(--eb-grey-text);
