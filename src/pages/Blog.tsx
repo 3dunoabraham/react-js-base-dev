@@ -30,7 +30,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		try {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
 			const _getArticlesResults = await axios(axiosRequestData)
-			const lastArticles = _getArticlesResults.data.data.splice(0,6).reverse()
+			const lastArticles = _getArticlesResults.data.data
 			set_articles(lastArticles)
 
 			const last4Articles = _getArticlesResults.data.data.splice(0,4).reverse()
