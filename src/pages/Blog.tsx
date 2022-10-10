@@ -54,8 +54,8 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 				<BlogForm currentlySelected={currentlySelected} onCancelEdit={setCancelSelected} />
 
-				<h1 className="eb-blog-previous-title">Previous Articles</h1>
-				<div className="eb-blog-subtitle mb-8 pb-4">
+				<h1 className="eb-blog-previous-title pa-4">Previous Articles</h1>
+				<div className="eb-blog-subtitle mb-8 pa-4">
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
 
