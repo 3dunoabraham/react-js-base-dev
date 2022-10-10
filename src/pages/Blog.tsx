@@ -13,12 +13,18 @@ export interface IBlogPageProps {};
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [pagination, set_pagination] = useState({...BasePaginationObject})
 
+	const setSpecificPage = (_index:number) => {
+		const newPagination = {...pagination, ...{index: _index}};
+		set_pagination((current) => (newPagination)) 
+		setPaginatedArticles(_allArticles, newPagination)
+	}
+
 	const nextPage = () => {
 		const maxPage = parseInt((_allArticles.length/pagination.pageLength).toString())
 		console.log("max page",maxPage)
 		if (pagination.index+1 > maxPage) return set_pagination((current) => ({...current, ...{index:current.index}}))
 
-		const newPagination = {...pagination, ...{index:pagination.index+1}}
+		const newPagination = {...pagination, ...{index:pagination.index+1,maxPage}}
 		set_pagination((current) => newPagination)
 		console.log(`new index ${(pagination.index+1)}`)
 		setPaginatedArticles(_allArticles,newPagination)
@@ -64,9 +70,12 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
 			set_allArticles(allArticles)
-			console.log("set_allArticles")
+			const maxPage = parseInt((allArticles.length/pagination.pageLength).toString())
+			console.log("set_allArticles, maxPage",maxPage)
+			const newPagination = {...pagination, ...{maxPage}}
+			set_pagination((current) => newPagination)
 
-			setPaginatedArticles(allArticles, pagination)
+			setPaginatedArticles(allArticles, newPagination)
 			// prevPage()
 			// nextPage()
 
@@ -109,28 +118,31 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 					</div>
 					<div className="eb-articles-table-pages flex tx-bold-400">
-						<div className="px-4 py-5 clickable opacity-hover--50 eb-border-t-primary">
+						{false && <div className="px-4 py-5 clickable opacity-hover--50 eb-border-t-primary">
 							{pagination.index}
-						</div>
+						</div>}
+						
 						{false && <div className="pa-5 px-0 eb-border-t">
 							...
 						</div>}
 						<div className="flex">
-							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
-								2
-							</div>
-							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
-								3
-							</div>
-							<div className="pa-5 px-4 clickable opacity-hover--50 eb-border-t">
-								4
-							</div>
+							{pagination.maxPage > 2 && Array.from(Array(pagination.maxPage-1).keys())
+								.map((i,index) => (
+									<div className={(index+1 != pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opacity-hover--50 "}
+										key={index}
+										onClick={() => {
+											setSpecificPage(index+1)
+										}}>
+										{index+1}
+									</div>
+								))
+							}
 						</div>
-						<div className="pa-5 px-0 eb-border-t">
+						{false && <div className="pa-5 px-0 eb-border-t">
 							...
-						</div>
-						<div className="pa-5 clickable opacity-hover--50 eb-border-t eb-border-t">
-							10
+						</div>}
+						<div onClick={() => {setSpecificPage(pagination.maxPage) }} className={(pagination.maxPage != pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 clickable opacity-hover--50 "} >
+							{pagination.maxPage}
 						</div>
 					</div>
 					<div onClick={() => { nextPage() }} className="pa-5 eb-articles-table-next tx-bold-400 flex flex-1 eb-border-t flex flex-justify-end clickable opacity-hover--50" >
