@@ -30,10 +30,15 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		try {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
 			const _getArticlesResults = await axios(axiosRequestData)
-			const lastArticles = _getArticlesResults.data.data
+			// const lastArticles = _getArticlesResults.data.data
+			const lastArticles = [..._getArticlesResults.data.data]
+			.sort(function(a:IArticle,b:IArticle):any{console.log(Date.parse(b.date),Date.parse(a.date));return Date.parse(b.date) - Date.parse(a.date); });
+			console.log("lastArticles",lastArticles)
 			set_articles(lastArticles)
 
-			const last4Articles = _getArticlesResults.data.data.splice(0,4).reverse()
+			const last4Articles = [..._getArticlesResults.data.data]
+			.sort(function(a:IArticle,b:IArticle):any{console.log(Date.parse(b.date),Date.parse(a.date));return Date.parse(b.date) - Date.parse(a.date); })
+			.splice(0,4)
 			console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
