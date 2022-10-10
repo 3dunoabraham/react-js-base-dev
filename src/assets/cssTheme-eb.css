@@ -62,14 +62,19 @@ body {
 	background: #F4F5F7;
 }
 .eb-article-row-author {
-	width: 15%;
+	width: 12%;
 	text-align: start;
 	font-size: 0.8em;
 }
 .eb-article-row-content {
 	width: 20%;
 	flex: 1;
+	word-wrap: break-word;
 	/*text-align: start;*/
+}
+.eb-article-row-content * {
+	word-wrap: break-word;
+	/*white-space: nowrap;*/
 }
 .eb-article-row-title {
 	width: 20%;

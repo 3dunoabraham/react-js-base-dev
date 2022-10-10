@@ -47,6 +47,7 @@
 
 
 /* ------------------------------------------ DISPLAY ------------------------------------------ */
+.invisible { visibility: hidden; }
 .hidden { visibility: hidden; }
 .none { display: none; }
 .block { display: block; }
