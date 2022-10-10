@@ -13,6 +13,10 @@ export interface IBlogPageProps {};
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const [pagination, set_pagination] = useState({...BasePaginationObject})
 
+	const getMaxPage = (__articles:IArticle[],__pagination:IPagination) => {
+		const maxPage = parseInt(((__articles.length-1)/__pagination.pageLength).toString())+1
+		return maxPage
+	}
 	const setSpecificPage = (_index:number) => {
 		const newPagination = {...pagination, ...{index: _index}};
 		set_pagination((current) => (newPagination)) 
@@ -20,7 +24,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	}
 
 	const nextPage = () => {
-		const maxPage = parseInt((_allArticles.length/pagination.pageLength).toString())+1
+		const maxPage = getMaxPage(_allArticles,pagination)
 		console.log("max page",maxPage)
 		if (pagination.index+1 > maxPage) return set_pagination((current) => ({...current, ...{index:current.index}}))
 
@@ -69,8 +73,9 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			const _getArticlesResults = await axios(axiosRequestData)
 			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
+			console.log("set_allArticles",allArticles)
 			set_allArticles(allArticles)
-			const maxPage = parseInt(Math.floor(allArticles.length/pagination.pageLength).toString())+1
+			const maxPage = getMaxPage(allArticles,pagination)
 			console.log("set_allArticles, maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
@@ -86,7 +91,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		} catch (error) {
 			console.log("MockArticleList",MockArticleList)
 			set_allArticles(MockArticleList)
-			const maxPage = parseInt(Math.floor(MockArticleList.length/pagination.pageLength).toString())+1
+			const maxPage = getMaxPage(MockArticleList,pagination)
 			console.log("set_allArticles, maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
