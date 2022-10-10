@@ -20,7 +20,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	}
 
 	const nextPage = () => {
-		const maxPage = parseInt((_allArticles.length/pagination.pageLength).toString())
+		const maxPage = parseInt((_allArticles.length/pagination.pageLength).toString())+1
 		console.log("max page",maxPage)
 		if (pagination.index+1 > maxPage) return set_pagination((current) => ({...current, ...{index:current.index}}))
 
@@ -70,7 +70,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
 			set_allArticles(allArticles)
-			const maxPage = parseInt((allArticles.length/pagination.pageLength).toString())
+			const maxPage = parseInt(Math.floor(allArticles.length/pagination.pageLength).toString())+1
 			console.log("set_allArticles, maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
@@ -80,15 +80,18 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			// nextPage()
 
 
-			const last4Articles = [...allArticles]
-			.splice(0,4)
+			const last4Articles = [...allArticles].splice(0,4)
 			console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
 			console.log("MockArticleList",MockArticleList)
 			set_allArticles(MockArticleList)
+			const maxPage = parseInt(Math.floor(MockArticleList.length/pagination.pageLength).toString())+1
+			console.log("set_allArticles, maxPage",maxPage)
+			const newPagination = {...pagination, ...{maxPage}}
+			set_pagination((current) => newPagination)
 			setPaginatedArticles(MockArticleList,pagination)
-			set_latestArticles(MockArticleList);
+			set_latestArticles([...MockArticleList].splice(0,4));
 		}
 	};
 
@@ -126,16 +129,19 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 							...
 						</div>}
 						<div className="flex">
-							{pagination.maxPage > 2 && Array.from(Array(pagination.maxPage-1).keys())
-								.map((i,index) => (
-									<div className={(index+1 != pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opacity-hover--50 "}
-										key={index}
-										onClick={() => {
-											setSpecificPage(index+1)
-										}}>
-										{index+1}
-									</div>
-								))
+							{pagination.maxPage > 1 && Array.from(Array(pagination.maxPage-1).keys())
+								.map((i,index) => {
+									if (true)
+									{
+										return <div className={(index+1 != pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opacity-hover--50 "}
+											key={index}
+											onClick={() => {
+												setSpecificPage(index+1)
+											}}>
+											{index+1}
+										</div>
+									}
+								})
 							}
 						</div>
 						{false && <div className="pa-5 px-0 eb-border-t">
