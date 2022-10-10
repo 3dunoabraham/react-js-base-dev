@@ -48,12 +48,10 @@ body {
 }
 
 
-.eb-article-card:hover .eb-article-card-desc {
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
-}
-.eb-article-card:hover .eb-article-highlight {
-	color: var(--eb-primary-color-2);
-}
+
+
+
+
 .eb-article-row-header {
 	background: #F9FAFB;
 }
@@ -77,8 +75,17 @@ body {
 	width: 20%;
 	text-align: start;
 }
+.eb-article-card:hover .eb-article-card-desc {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
+}
+.eb-article-card:hover .eb-article-highlight {
+	color: var(--eb-primary-color-2);
+}
 .eb-article-card {
-	width: 280px;
+	/*width: 250px;*/
+	flex:1;
+	max-width: 420px;
+	min-width: 250px;
 	min-height: 280px;
 	padding: 10px;
 }
@@ -156,23 +163,32 @@ body {
 	position: absolute;
 	top: 0;
 	right: 0;
-}
-.eb-hero {
-	width: 100%;
-	display: block;
-	color: var(--eb-main-text);
-	/*padding: 100px 0 200px 150px;*/
-	padding-top: 100px;
-	padding-bottom: 120px;
+	max-width: 80%;
 }
 .eb-hero-wrapper {
 	background: var(--eb-lighter-bg);
-	padding: 0 150px;
-	/*width: 100%;*/
+	display: flex;
+	justify-content: center;
+	/*padding: 0 150px;*/
+	width: 100%;
+}
+.eb-hero {
+	width: 100%;
+	max-width: 1080px;
+	display: block;
+	color: var(--eb-main-text);
+	/*padding: 100px 0 200px 150px;*/
+	padding-left: 50px;
+	padding-top: 100px;
+	padding-bottom: 120px;
 }
 .eb-hero-title {
 	font-size: 3.4em;
 	font-weight: 400;
+	/*background: linear-gradient(-90deg, #00000000 50%, var(--eb-lighter-bg));*/
+	text-shadow: 2px 2px 0px var(--eb-lighter-bg), -2px -2px 0px var(--eb-lighter-bg), -2px 2px 0px var(--eb-lighter-bg) , 2px -2px 0px var(--eb-lighter-bg);
+	z-index: 888;
+	position: relative;
 }
 .eb-hero-desc {
 	color: var(--eb-grey-text);
@@ -196,7 +212,7 @@ body {
 .eb-hero-subsection-wrapper {
 	padding: 100px 0 70px 0px;
 	width: 100%;*/
-	padding: 100px 0 70px 0px;
+	padding: 100px 40px 70px 40px;
 	color: var(--eb-grey-text);
 	/*display: flex;
 	justify-content: center;
@@ -266,7 +282,9 @@ body {
 	max-width: 1080px;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	/*margin: 20px;*/
+	/*padding: 20px;*/
+	/*position: relative;*/
 }
 .eb-blog-title {
 	margin-top: 40px;

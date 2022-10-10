@@ -176,6 +176,10 @@
 .w-100-vw {width: 100vw; max-width: 100vw; }
 .w-50 {width: 50%; max-width: 50%; }
 .w-50vw {width: 50vw; max-width: 50vw; }
+.w-66 {width: 66%; max-width: 66%; }
+.w-66vw {width: 66vw; max-width: 66vw; }
+.w-75 {width: 75%; max-width: 75%; }
+.w-75vw {width: 75vw; max-width: 75vw; }
 
 .h-100 {height: 100%; max-height: 100%; }
 .h-100-vh {height: 100vh; max-height: 100vh; }
@@ -481,6 +485,8 @@
 /* Basic Range */
 
 /* From Extra Small to Small */
+@media (min-width: 0576px) { .show-xs_sm { display: none !important } }
+/* From Extra Small to Small */
 @media (min-width: 0769px) { .show-xs_md { display: none !important } }
 /* From Extra Small to Medium */
 @media (min-width: 0993px) { .show-xs_lg { display: none !important } }
@@ -489,7 +495,7 @@
 /* From Small to Medium */
 @media (min-width: 0993px) , (max-width: 0576px) { .show-sm_md { display: none !important } }
 /* From Small to Large */
-@media (min-width: 1281px) , (max-width: 0576px) { .show-sm_lg { display: none !important } }
+@media (min-width: 1281px) , (max-width: 0576px) { .show-sm_xl { display: none !important } }
 /* From Small to Infinity */
 @media (max-width: 0576px) { .show-sm_x { display: none !important } }
 /* From Medium to Large */

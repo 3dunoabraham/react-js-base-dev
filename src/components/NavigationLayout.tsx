@@ -15,11 +15,14 @@ const LayoutComponents: React.FunctionComponent<ILayoutComponentsProps> = props 
 			
 			<div className="eb-navigation-layout-wrapper w-100">
 				<div className="flex flex-justify-between eb-navigation-layout">
-					<LogoFrame />
+					<LogoFrame responsivemode="show-sm_x " />
 
-					<NavigationButtonList />
+					
+						<NavigationButtonList />
+					
 
 					<CTAButton />
+				
 				</div>
 			</div>
 
