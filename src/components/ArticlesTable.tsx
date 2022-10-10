@@ -14,7 +14,7 @@ export interface IArticlesTableComponentProps {
 const EmptyArticlesTableComponent: React.FunctionComponent<any> = props => {
 	return (
 		<div>
-			<b className="tx-ls-2 flex">IM LOADING <div className="hover-hover"> . . . </div> </b>
+			<b className="tx-ls-2 flex pa-8">IM LOADING <div className="hover-hover"> . . . </div> </b>
 		</div>
 	)
 }

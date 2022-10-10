@@ -5,17 +5,48 @@ import BlogForm from '../components/BlogForm';
 import ArticlesSection from '../components/ArticlesSection';
 import ArticlesTable from '../components/ArticlesTable';
 import IArticle, { MockArticleList } from '../constants/IArticle';
+import IPagination, { BasePaginationObject } from '../constants/IPagination';
 
 const {useEffect, useState} = React;
 export interface IBlogPageProps {};
 
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
+	const [pagination, set_pagination] = useState({...BasePaginationObject})
+
+	const nextPage = () => {
+		const maxPage = parseInt((_allArticles.length/pagination.pageLength).toString())
+		console.log("max page",maxPage)
+		if (pagination.index+1 > maxPage) return set_pagination((current) => ({...current, ...{index:current.index}}))
+
+		const newPagination = {...pagination, ...{index:pagination.index+1}}
+		set_pagination((current) => newPagination)
+		console.log(`new index ${(pagination.index+1)}`)
+		setPaginatedArticles(_allArticles,newPagination)
+	}
+	const prevPage = () => {
+		if (pagination.index <= 1) return set_pagination((current) => ({...current, ...{index:current.index}}))
+
+		console.log(`prevPage current${(pagination.index)}`)
+		const newPagination = {...pagination, ...{index:pagination.index-1}}
+		set_pagination((current) => newPagination)
+		console.log(`new index ${(pagination.index-1)}`)
+		setPaginatedArticles(_allArticles,newPagination)
+	}
+	const setPaginatedArticles = (__allArticles:IArticle[],__newPagination:IPagination) => {
+		const newOffset = (__newPagination.index-1)*__newPagination.pageLength
+		console.log(newOffset,newOffset+__newPagination.pageLength)
+		const paginatedArticles = [...__allArticles].splice(newOffset,__newPagination.pageLength)
+		console.log("paginatedArticles",paginatedArticles)
+		set_paginatedArticles(paginatedArticles)
+	}
+
 	useEffect(() => {
 	  window.scrollTo(0, 0)
 	}, [])
 		
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
-	const [_articles, set_articles] = useState<IArticle[]>([]);
+	const [_allArticles, set_allArticles] = useState<IArticle[]>([]);
+	const [_paginatedArticles, set_paginatedArticles] = useState<IArticle[]>([]);
 	const [currentlySelected, set_currentlySelected] = useState<IArticle>();
 
 	const setCancelSelected = (_article: IArticle) => {
@@ -30,19 +61,24 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		try {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
 			const _getArticlesResults = await axios(axiosRequestData)
-			// const lastArticles = _getArticlesResults.data.data
-			const lastArticles = [..._getArticlesResults.data.data]
-			.sort(function(a:IArticle,b:IArticle):any{console.log(Date.parse(b.date),Date.parse(a.date));return Date.parse(b.date) - Date.parse(a.date); });
-			console.log("lastArticles",lastArticles)
-			set_articles(lastArticles)
+			const allArticles = [..._getArticlesResults.data.data]
+			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
+			set_allArticles(allArticles)
+			console.log("set_allArticles")
 
-			const last4Articles = [..._getArticlesResults.data.data]
-			.sort(function(a:IArticle,b:IArticle):any{console.log(Date.parse(b.date),Date.parse(a.date));return Date.parse(b.date) - Date.parse(a.date); })
+			setPaginatedArticles(allArticles, pagination)
+			// prevPage()
+			// nextPage()
+
+
+			const last4Articles = [...allArticles]
 			.splice(0,4)
 			console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
 			console.log("MockArticleList",MockArticleList)
+			set_allArticles(MockArticleList)
+			setPaginatedArticles(MockArticleList,pagination)
 			set_latestArticles(MockArticleList);
 		}
 	};
@@ -64,17 +100,17 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
 
-				<ArticlesTable articles={_articles} onEdit={setNewArticleToEdit} />
+				<ArticlesTable articles={_paginatedArticles} onEdit={setNewArticleToEdit} />
 
 				<div className="eb-articles-table-paginate flex-between mt-8 opacity-75">
-					<div className="pa-5 eb-articles-table-prev tx-bold-400 flex eb-border-t flex-1 clickable opacity-hover--50" >
+					<div onClick={() => { prevPage() }} className="pa-5 eb-articles-table-prev tx-bold-400 flex eb-border-t flex-1 clickable opacity-hover--50" >
 						<div className="pr-2">←</div>
 						<div className="show-md_x">Previous</div>
 
 					</div>
 					<div className="eb-articles-table-pages flex tx-bold-400">
 						<div className="px-4 py-5 clickable opacity-hover--50 eb-border-t-primary">
-							1
+							{pagination.index}
 						</div>
 						{false && <div className="pa-5 px-0 eb-border-t">
 							...
@@ -97,7 +133,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 							10
 						</div>
 					</div>
-					<div className="pa-5 eb-articles-table-next tx-bold-400 flex flex-1 eb-border-t flex flex-justify-end clickable opacity-hover--50" >
+					<div onClick={() => { nextPage() }} className="pa-5 eb-articles-table-next tx-bold-400 flex flex-1 eb-border-t flex flex-justify-end clickable opacity-hover--50" >
 						<div className="show-md_x">Next</div>
 						<div className="pl-2">→</div>
 					</div>
