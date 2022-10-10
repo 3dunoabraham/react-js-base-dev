@@ -30,7 +30,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 		<div className="eb-latest-articles-wrapper">
 			<div className="eb-latest-articles">
 
-				<div className="flex-between">
+				<div className="flex-between pa-8">
 					<h2 className="eb-latest-articles-title">
 						Latest Articles
 					</h2>

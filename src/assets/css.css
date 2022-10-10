@@ -485,6 +485,8 @@
 /* Basic Range */
 
 /* From Extra Small to Small */
+@media (min-width: 0576px) { .show-xs_sm { display: none !important } }
+/* From Extra Small to Small */
 @media (min-width: 0769px) { .show-xs_md { display: none !important } }
 /* From Extra Small to Medium */
 @media (min-width: 0993px) { .show-xs_lg { display: none !important } }

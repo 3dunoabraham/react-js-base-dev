@@ -186,7 +186,7 @@ body {
 	font-size: 3.4em;
 	font-weight: 400;
 	/*background: linear-gradient(-90deg, #00000000 50%, var(--eb-lighter-bg));*/
-	/*text-shadow: 3px 3px 6px #00000077;*/
+	text-shadow: 2px 2px 0px var(--eb-lighter-bg), -2px -2px 0px var(--eb-lighter-bg), -2px 2px 0px var(--eb-lighter-bg) , 2px -2px 0px var(--eb-lighter-bg);
 	z-index: 888;
 	position: relative;
 }
