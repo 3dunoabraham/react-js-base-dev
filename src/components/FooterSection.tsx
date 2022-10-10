@@ -15,7 +15,7 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 	return (
 		<div className="eb-footer-wrapper">
 
-			<div className="eb-footer">
+			<div className="eb-footer flex-column-r flex-md_x-row">
 				<div className="flex-column flex-justify-center">
 					<LogoFrame darkmode={true} />
 					<div className="flex mt-8">
@@ -27,12 +27,19 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 						
 					</div>
 				</div>			
+				
+				<div className="show-xs_md block py-6"></div>
 				<FooterNavigationButtonList />
+				<div className="show-xs_md block py-6"></div>
+
 				<div >
 				</div>		
 				<div className="flex-column">
 					<CTAButton />
-					<div> © Easybank. All Rights Reserved </div>
+					<div className="flex-column flex-xl_x-row">
+						<div className="mx-1">© Easybank.</div>
+						<div>All Rights Reserved</div>
+					</div>
 				</div>			
 			</div>			
 

@@ -40,7 +40,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 					</div>}
 				</div>
 
-				<div className="flex-between w-100 flex-align-start flex-align-stretch ">
+				<div className="flex-around w-100 flex-wrap">
 					{ArticleComponentList}
 				</div>
 			</div>

@@ -7,11 +7,11 @@ const FooterNavigationButtonListComponents: React.FunctionComponent<IFooterNavig
 	const _navigate = useNavigate();
 
 	return (
-		<div className="flex eb-navigation-button-list eb-footer-navigation-button-list">
+		<div className="flex eb-navigation-button-list eb-footer-navigation-button-list flex-align-start flex-column flex-lg_x-row">
 			<div className="flex-column flex-align-start">
 				<button className="tx-start" onClick={() => { _navigate("/") }}> About </button>
 				<button className="tx-start" onClick={() => { _navigate("/") }}> Contact </button>
-				<button className="eb-active-navigation-button" onClick={() => { _navigate("/blog") }}> Blog </button>
+				<button className="tx-start" onClick={() => { _navigate("/blog") }}> Blog </button>
 			</div>
 			<div className="flex-column flex-align-start">
 				<button className="tx-start" onClick={() => { _navigate("/") }}> Careers </button>
