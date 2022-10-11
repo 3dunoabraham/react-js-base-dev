@@ -4,7 +4,7 @@ import axios from 'axios';
 import IArticle from '../constants/IArticle';
 import LoadingFloater from './parts/LoadingFloater';
 
-const {useEffect, useState, useRef} = React;
+const {useEffect, useState} = React;
 
 export interface IBlogComponentsLoading {
 	add: boolean;
@@ -101,21 +101,14 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				content: _currentArticle.content,
 			}
 			const promptResult = prompt(`Type YES to add new article`)
-			if (promptResult && promptResult.toLowerCase() == "yes")
+			if (promptResult && promptResult.toLowerCase() === "yes")
 			{
 				props.setLoading!({...props.loading!,...{add:true,reFetch:true}})
-				const _postArticlesResult = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post',
-					data: _data
-				})
-				console.log("_postArticlesResult", _postArticlesResult)
-				
-				// if (_postArticlesResult.message == "article inserted")
-				{
-					alert("success");
-					props.onCancelEdit!({...nullArticle})
-					props.setLoading!({...props.loading!,...{add:false}})
-					props.reFetch!();
-				}
+				await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post', data: _data })
+				alert("success");
+				props.onCancelEdit!({...nullArticle})
+				props.setLoading!({...props.loading!,...{add:false}})
+				props.reFetch!();
 			}
 		} catch (error) {
 			alert("error");
@@ -129,20 +122,13 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				content: _currentArticle.content,
 			}
 			const promptResult = prompt(`Type YES to add update article`)
-			if (promptResult && promptResult.toLowerCase() == "yes")
+			if (promptResult && promptResult.toLowerCase() === "yes")
 			{
-				const _postArticlesResult = await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_currentArticle.id}`, method: 'put',
-					data: _data
-				})
-				console.log("_postArticlesResult", _postArticlesResult)
-				
-				// if (_postArticlesResult.message == "article inserted")
-				{
-					alert("success");
-					props.onCancelEdit!({...nullArticle})
-					props.setLoading!({...props.loading!,...{add:false}})
-					props.reFetch!();
-				}
+				await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_currentArticle.id}`, method: 'put', data: _data })
+				alert("success");
+				props.onCancelEdit!({...nullArticle})
+				props.setLoading!({...props.loading!,...{add:false}})
+				props.reFetch!();
 			}
 		} catch (error) {
 			alert("error");

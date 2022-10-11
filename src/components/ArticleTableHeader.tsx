@@ -1,7 +1,5 @@
 import React from 'react';
 
-import IArticle from '../constants/IArticle';
-
 export interface IArticleTableHeaderComponentsProps{
 }
 
