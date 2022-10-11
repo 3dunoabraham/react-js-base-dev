@@ -254,9 +254,6 @@ body {
 	color: var(--eb-text-main);
 	font-size: 2.35em;
 }
-.eb-blog-subtitle {
-	color: var(--eb-text-grey);
-}
 .eb-blog-form-wrapper {
 	width: 100%;
 	display: flex;

@@ -46,7 +46,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			return (
 				<div className="pa-6 ">
 					<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4 " >Update Blog Article</div>
-					<div className="eb-blog-subtitle">
+					<div className="eb-tx-grey">
 						Change an existing blog article to update its content.
 					</div>
 				</div>
@@ -55,7 +55,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		return (
 			<div className="pa-6">
 				<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4">Add New Blog Article</div>
-				<div className="eb-blog-subtitle">
+				<div className="eb-tx-grey">
 					Publish a new blog article to feature in the Easybank homepage.
 				</div>
 			</div>
