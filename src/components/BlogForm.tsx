@@ -44,8 +44,8 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	const bannerTitle = () => {
 		if (props.currentlySelected) {
 			return (
-				<div className="pa-6">
-					<h1 className="eb-blog-title " >Update Blog Article</h1>
+				<div className="pa-6 ">
+					<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4 " >Update Blog Article</div>
 					<div className="eb-blog-subtitle">
 						Change an existing blog article to update its content.
 					</div>
@@ -54,7 +54,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		}
 		return (
 			<div className="pa-6">
-				<h1 className="eb-blog-title">Add New Blog Article</h1>
+				<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4">Add New Blog Article</div>
 				<div className="eb-blog-subtitle">
 					Publish a new blog article to feature in the Easybank homepage.
 				</div>
