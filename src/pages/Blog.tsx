@@ -39,7 +39,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
 			// console.table(axiosRequestData)
 			const _getArticlesResults = await axios(axiosRequestData)
-			const allArticles = [..._getArticlesResults.data.data, ...MockArticleList].splice(0,31)
+			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
 			// console.log("result set_allArticles",allArticles)
 			set_allArticles(allArticles)
