@@ -2,7 +2,6 @@ interface wordOcurrence {
 	word: string;
 	occurrences: number;
 }
-
 describe("logic tests",() => {
 	it("solves for any number in the fibonacci series", () => {
 		function binet(n:number) {
@@ -18,7 +17,9 @@ describe("logic tests",() => {
 		const wordList = testString.match(/\b(\w+)\b/g)!.map(item => item.toLowerCase());
 		const uniqueWordList = wordList.filter((item, index) => wordList.indexOf(item) === index);
 		uniqueWordList.map((item, index) => {
-			const occurrences:number = wordList.reduce(function(n:number, val:string) {return parseInt(n.toString()) + parseInt((val === item).toString()); }, 0);
+			const occurrences:number = wordList.reduce((n:number, val:string) => {
+				return n + (val === item ? 1 : 0);
+			}, 0);
 			repetitionsPerWorld[item] = {
 				word: item,
 				occurrences,
@@ -46,7 +47,6 @@ describe("logic tests",() => {
 				}
 			}
 
-			// surpriseNumberList[(index+1) as keyof string] = calculatedSurprise;
 			surpriseNumberList.push(calculatedSurprise);
 		})
 		console.table(surpriseNumberList);
