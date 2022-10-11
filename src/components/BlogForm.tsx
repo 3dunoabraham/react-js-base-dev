@@ -44,7 +44,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	const bannerTitle = () => {
 		if (props.currentlySelected) {
 			return (
-				<div className="pa-4">
+				<div className="pa-6">
 					<h1 className="eb-blog-title " >Update Blog Article</h1>
 					<div className="eb-blog-subtitle">
 						Change an existing blog article to update its content.
@@ -53,7 +53,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			);
 		}
 		return (
-			<div className="pa-4">
+			<div className="pa-6">
 				<h1 className="eb-blog-title">Add New Blog Article</h1>
 				<div className="eb-blog-subtitle">
 					Publish a new blog article to feature in the Easybank homepage.
@@ -150,7 +150,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}
 
 	return (
-		<div>
+		<div className="w-100">
 
 			{bannerTitle()}
 
