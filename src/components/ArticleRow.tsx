@@ -43,15 +43,15 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 				</h4>
 				<div className="eb-article-row-action  ma-0  tx-bold-400 flex-column" >
 
-					<div className=" clickable  tx-xs opacity-hover-25" onClick={(e) => {
-						props.onDelete(props.article)
-					}}>
-						Delete
-					</div>
 					<div className=" clickable pa-2 eb-tx-primary opacity-hover-50 pulse-npulse-hover" onClick={(e) => {
 						props.onEdit(props.article)
 					}}>
 						Edit
+					</div>
+					<div className=" clickable  tx-xs  opacity-hover-25" onClick={(e) => {
+						props.onDelete(props.article)
+					}}>
+						Delete
 					</div>
 				</div>
 			</div>
