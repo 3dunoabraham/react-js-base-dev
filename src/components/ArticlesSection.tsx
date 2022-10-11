@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import IArticle from '../constants/IArticle';
 import ArticleCard from './ArticleCard';
-import LoadingFloater from './LoadingFloater';
+import LoadingFloater from './parts/LoadingFloater';
 
 export interface IArticlesSectionComponentProps {
     articles: IArticle[];

@@ -7,7 +7,7 @@ import ArticlesSection from '../components/ArticlesSection';
 import ArticlesTable from '../components/ArticlesTable';
 import IArticle, { MockArticleList } from '../constants/IArticle';
 import IPagination, { BasePaginationObject } from '../constants/IPagination';
-import LoadingFloater from '../components/LoadingFloater';
+import LoadingFloater from '../components/parts/LoadingFloater';
 
 const {useEffect, useState} = React;
 export interface IBlogPageProps {};

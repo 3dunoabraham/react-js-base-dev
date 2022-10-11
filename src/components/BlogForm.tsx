@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import IArticle from '../constants/IArticle';
-import LoadingFloater from './LoadingFloater';
+import LoadingFloater from './parts/LoadingFloater';
 
 const {useEffect, useState, useRef} = React;
 
