@@ -1,11 +1,11 @@
-#React Blog Front-End
+# React Blog Front-End #
 
-##Techstack
+## Techstack ##
 * React
 * Typescript
 * Axios
 
-##Features
+## Features ##
 * List the articles in the section "Previous Articles” with: GET
 * List the articles in the section “Latest Articles” with: GET
 * Create new articles with: POST
@@ -16,14 +16,14 @@
 * Logic Test 2: Repetitions (displays the number of repetitions of each word)
 * Logic Test 3: Fizz buzz (displays the numbers from 1 to 100 with a catch)
 
-#Tutorial
+# Tutorial #
 * npm install
 * npm run jest --run
 * npm start
 
 - - - -
 
-##TODO
+## TODO ##
 * Urgent
 	* fix double request call on desktop
 	* Add css resetter for semantic html5
