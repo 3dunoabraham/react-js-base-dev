@@ -353,6 +353,7 @@
 
 
 /* ------------------------------------------ ANIMATING ------------------------------------------ */
+.pulse-npulse-hover:hover { animation: pulsenpulse 2s;  animation-iteration-count: infinite }
 .pulse-npulse { animation: pulsenpulse 2s;  animation-iteration-count: infinite }
 @keyframes pulsenpulse { 0%{ transform: scale(1); } 50%{ transform: scale(.85); } 100%{ transform: scale(1); }   }
 .rock-nroll { animation: rocknroll 2s;  animation-iteration-count: infinite }
@@ -360,7 +361,7 @@
 .spin-spin { animation: spinspin 2s;  animation-iteration-count: infinite }
 @keyframes spinspin { 0%{ transform: rotate(90deg); } 100% { transform: rotate(450deg); } }
 .spin-nback { animation: spinnback 4s;  animation-iteration-count: infinite }
-@keyframes spinnback { 0%{ transform: rotate(-90deg); } 50% { transform: rotate(-450deg); } 100% { transform: rotate(-90deg); } }
+@keyframes spinnback { 0%{ transform: rotate(0deg); } 50% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
 
 .shake-shake { animation: shakeshake 1s;  animation-iteration-count: infinite }
 @keyframes shakeshake { 0%{ transform: rotate(0deg); } 35%{ transform: rotate(-5deg); } 50% { transform: rotate(15deg); } 100% { transform: rotate(0deg); } }
@@ -395,11 +396,11 @@
 .opacity-hover-25:hover {filter: opacity(1); }  .opacity-hover-25 {filter: opacity(0.25); }
 .opacity-hover-10:hover {filter: opacity(1); }  .opacity-hover-10 {filter: opacity(0.1); }
 .opacity-hover-5:hover {filter: opacity(0.5); }  .opacity-hover-5 {filter: opacity(0.05); }
-.opacity-hover--75:hover {filter: opacity(0.75) }  .opacity-hover-75 {filter: opacity(1); }
-.opacity-hover--50:hover {filter: opacity(0.5) }  .opacity-hover-50 {filter: opacity(1); }
-.opacity-hover--25:hover {filter: opacity(0.25) }  .opacity-hover-25 {filter: opacity(1); }
-.opacity-hover--10:hover {filter: opacity(0.1) }  .opacity-hover-10 {filter: opacity(1); }
-.opacity-hover--5:hover {filter: opacity(0.05) }  .opacity-hover-10 {filter: opacity(1); }
+.opacity-hover--75:hover {filter: opacity(0.75) }  .opacity-hover--75 {filter: opacity(1); }
+.opacity-hover--50:hover {filter: opacity(0.5) }  .opacity-hover--50 {filter: opacity(1); }
+.opacity-hover--25:hover {filter: opacity(0.25) }  .opacity-hover--25 {filter: opacity(1); }
+.opacity-hover--10:hover {filter: opacity(0.1) }  .opacity-hover--10 {filter: opacity(1); }
+.opacity-hover--5:hover {filter: opacity(0.05) }  .opacity-hover--10 {filter: opacity(1); }
 
 
 

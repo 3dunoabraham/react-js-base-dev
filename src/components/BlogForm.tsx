@@ -2,11 +2,20 @@ import React from 'react';
 import axios from 'axios';
 
 import IArticle from '../constants/IArticle';
+import LoadingFloater from './LoadingFloater';
 
 const {useEffect, useState, useRef} = React;
+
+export interface IBlogComponentsLoading {
+	add: boolean;
+	reFetch: boolean;
+}
 export interface IBlogFormComponentsProps {
 	currentlySelected?: IArticle;
+    setLoading?: (arg0: IBlogComponentsLoading) => void;
     onCancelEdit?: (arg0: IArticle) => void;
+    reFetch?: () => void;
+    loading?: IBlogComponentsLoading;
 };
 
 const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = props => {
@@ -24,10 +33,10 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 		// return () => {
 			if (props.currentlySelected)
 			{
-				console.log("detected new selected article")
+				// console.log("detected new selected article")
 				set_currentArticle(props.currentlySelected)
 			} else {
-				console.log("detected empty article selection")
+				// console.log("detected empty article selection")
 			}
 		// };
 	}, [props.currentlySelected])
@@ -54,7 +63,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}
 
 	const executeRequestButton = () => {
-		if (props.currentlySelected) {
+		if (props.currentlySelected && props.currentlySelected.id > 0) {
 			return (
 				<div>
 					<div className="eb-form-save-button eb-form-update-button" onClick={() => {
@@ -91,9 +100,10 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				title: _currentArticle.title,
 				content: _currentArticle.content,
 			}
-			const promptResult = prompt("Type confirm to add article")
-			if (promptResult == "confirm")
+			const promptResult = prompt(`Type YES to add new article`)
+			if (promptResult && promptResult.toLowerCase() == "yes")
 			{
+				props.setLoading!({...props.loading!,...{add:true,reFetch:true}})
 				const _postArticlesResult = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post',
 					data: _data
 				})
@@ -102,6 +112,9 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				// if (_postArticlesResult.message == "article inserted")
 				{
 					alert("success");
+					props.onCancelEdit!({...nullArticle})
+					props.setLoading!({...props.loading!,...{add:false}})
+					props.reFetch!();
 				}
 			}
 		} catch (error) {
@@ -115,8 +128,8 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				title: _currentArticle.title,
 				content: _currentArticle.content,
 			}
-			const promptResult = prompt("Type confirm to update article")
-			if (promptResult == "confirm")
+			const promptResult = prompt(`Type YES to add update article`)
+			if (promptResult && promptResult.toLowerCase() == "yes")
 			{
 				const _postArticlesResult = await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_currentArticle.id}`, method: 'put',
 					data: _data
@@ -126,6 +139,9 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				// if (_postArticlesResult.message == "article inserted")
 				{
 					alert("success");
+					props.onCancelEdit!({...nullArticle})
+					props.setLoading!({...props.loading!,...{add:false}})
+					props.reFetch!();
 				}
 			}
 		} catch (error) {
@@ -140,6 +156,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 
 			<div className="eb-blog-form-wrapper">
 				<div className="eb-blog-form">
+					{props.loading!.add && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />New Article...</div> }
 					<div>
 						<div className="pb-1">
 							<span className="tx-bold-400">Author</span>
@@ -195,6 +212,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 						/>
 					</div>
 					{executeRequestButton()}
+					{props.loading!.add && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />New Article...</div> }
 				</div>
 			</div>
 		</div>

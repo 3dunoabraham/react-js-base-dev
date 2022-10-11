@@ -5,6 +5,7 @@ import IArticle from '../constants/IArticle';
 export interface IArticleRowComponentsProps{
     article: IArticle;
     onEdit: (arg0: IArticle) => void;
+    onDelete: (arg0: IArticle) => void;
 }
 
 const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> = props => {
@@ -40,10 +41,18 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 				<h4 className="eb-article-row-author eb-article-highlight ma-0 pa-4 tx-bold-200 show-md_x" style={{width:"10%"}}>
 					{dateWithSlashes}
 				</h4>
-				<div className="eb-article-row-action eb-tx-primary ma-0 noborder clickable pa-4 opacity-hover--50 tx-bold-400" onClick={(e) => {
-					props.onEdit(props.article)
-				}}>
-					Edit
+				<div className="eb-article-row-action  ma-0  tx-bold-400 flex-column" >
+
+					<div className=" clickable pa-2 eb-tx-primary opacity-hover-50 pulse-npulse-hover" onClick={(e) => {
+						props.onEdit(props.article)
+					}}>
+						Edit
+					</div>
+					<div className=" clickable  tx-xs  opacity-hover-25" onClick={(e) => {
+						props.onDelete(props.article)
+					}}>
+						Delete
+					</div>
 				</div>
 			</div>
 		</div>

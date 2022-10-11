@@ -3,17 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import IArticle from '../constants/IArticle';
 import ArticleCard from './ArticleCard';
+import LoadingFloater from './LoadingFloater';
 
 export interface IArticlesSectionComponentProps {
     articles: IArticle[];
 	addmode?: boolean;
-}
-const EmptyArticlesSectionComponent: React.FunctionComponent<any> = props => {
-	return (
-		<div>
-			<b className="tx-ls-2 flex">IM LOADING <div className="hover-hover"> . . . </div> </b>
-		</div>
-	)
 }
 const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponentProps> = props => {
 	const _navigate = useNavigate();
@@ -21,7 +15,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 	let ArticleComponentList;
 	if (!props.articles.length)
 	{
-		ArticleComponentList = (<EmptyArticlesSectionComponent/>);//;
+		ArticleComponentList = <div className="pa-8"><LoadingFloater /></div>;//;
 	} else {
 		ArticleComponentList = props.articles.map((article) => <ArticleCard key={article.id} article={article} />) ;
 	}
