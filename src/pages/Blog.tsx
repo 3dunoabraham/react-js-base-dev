@@ -33,6 +33,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		// return () => {
 			getArticlesResults()
 		// };
+	// eslint-disable-next-line
 	}, [])
 	const getArticlesResults = async () => {
 		try {

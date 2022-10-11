@@ -2,7 +2,6 @@ import React from 'react';
 
 import IPagination from '../constants/IPagination';
 
-const {useState} = React;
 export interface IBlogPageNavigationComponentsProps {
 	pagination: IPagination;
     prev: () => void;

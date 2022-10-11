@@ -22,9 +22,9 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 	
 	return (
 		<div className="eb-latest-articles-wrapper">
-			<div className="eb-latest-articles">
+			<div className="eb-latest-articles ">
 
-				<div className="flex-between pa-8">
+				<div className="flex-between  flex-column flex-md_x-row pa-8" style={{justifyContent:"space-between"}}>
 					<h2 className="tx-lgx tx-bold-4 eb-tx-main">
 						Latest Articles
 					</h2>

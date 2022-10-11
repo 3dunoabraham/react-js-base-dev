@@ -104,9 +104,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			if (promptResult && promptResult.toLowerCase() === "yes")
 			{
 				props.setLoading!({...props.loading!,...{add:true,reFetch:true}})
-				const _postArticlesResult = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post',
-					data: _data
-				})
+				await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post', data: _data })
 				alert("success");
 				props.onCancelEdit!({...nullArticle})
 				props.setLoading!({...props.loading!,...{add:false}})
@@ -126,9 +124,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			const promptResult = prompt(`Type YES to add update article`)
 			if (promptResult && promptResult.toLowerCase() === "yes")
 			{
-				const _postArticlesResult = await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_currentArticle.id}`, method: 'put',
-					data: _data
-				})
+				await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_currentArticle.id}`, method: 'put', data: _data })
 				alert("success");
 				props.onCancelEdit!({...nullArticle})
 				props.setLoading!({...props.loading!,...{add:false}})
