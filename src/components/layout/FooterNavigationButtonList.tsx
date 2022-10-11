@@ -9,14 +9,14 @@ const FooterNavigationButtonListComponents: React.FunctionComponent<IFooterNavig
 	return (
 		<div className="flex eb-navigation-button-list eb-footer-navigation-button-list flex-align-start flex-row">
 			<div className="flex-column flex-align-start">
-				<button className="tx-start" onClick={() => { _navigate("/") }}> About </button>
-				<button className="tx-start" onClick={() => { _navigate("/") }}> Contact </button>
-				<button className="tx-start" onClick={() => { _navigate("/blog") }}> Blog </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/") }}> About </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/") }}> Contact </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/blog") }}> Blog </button>
 			</div>
 			<div className="flex-column flex-align-start">
-				<button className="tx-start" onClick={() => { _navigate("/") }}> Careers </button>
-				<button className="tx-start" onClick={() => { _navigate("/") }}> Support </button>
-				<button className="tx-start" onClick={() => { _navigate("/") }}> Privacy Policy </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/") }}> Careers </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/") }}> Support </button>
+				<button className="eb-footer-navigation-button-list-button eb-navigation-button-list-item tx-start" onClick={() => { _navigate("/") }}> Privacy Policy </button>
 			</div>
 		</div>
 	);
