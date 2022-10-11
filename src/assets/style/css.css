@@ -42,18 +42,18 @@
 .flex-between { display: flex; justify-content: space-between; align-items: center }
 .flex-around { display: flex; justify-content: space-around; align-items: center }
 
-.flex-align-stetch { display: flex; align-items: stretch !important; }
 .flex-align-start { display: flex; align-items: flex-start !important; }
 .flex-align-end { display: flex; align-items: flex-end !important; }
-.flex-justify-stretch { display: flex; justify-content: stretch !important; }
+.flex-align-stetch { display: flex; align-items: stretch !important; }
 .flex-justify-start { display: flex; justify-content: flex-start !important; }
 .flex-justify-end { display: flex; justify-content: flex-end !important; }
+.flex-justify-stretch { display: flex; justify-content: stretch !important; }
 .flex-justify-between { display: flex; justify-content: space-between !important; }
 .flex-justify-around { display: flex; justify-content: space-around !important; }
 
-.flex-self-align-start { align-self: flex-start !important; }
-.flex-self-align-center { align-self: center !important; }
-.flex-self-align-end { align-self: flex-end !important; }
+.flex-align-self-start { align-self: flex-start !important; }
+.flex-align-self-center { align-self: center !important; }
+.flex-align-self-end { align-self: flex-end !important; }
 
 .flex-1 { flex: 1; }
 
@@ -61,32 +61,26 @@
 
 
 
+
 /* ------------------------------------------ SHAPING ------------------------------------------ */
 .noborder {border: none; }
-.border-r-100p { border-radius: 100%; }
-.border-r-5 { border-radius: 5px; }
-.border-r-10 { border-radius: 10px; }
-.border-r-15 { border-radius: 15px; }
-.border-r-25 { border-radius: 25px; }
-.border-r-50 { border-radius: 50px; }
 
-.border-r-l-5 { border-radius: 5px 0 0 5px; }
-.border-r-l-10 { border-radius: 10px 0 0 10px; }
-.border-r-l-15 { border-radius: 15px 0 0 15px; }
-.border-r-l-25 { border-radius: 25px 0 0 25px; }
-.border-r-l-50 { border-radius: 50px 0 0 50px; }
+/* ALL */
+.border-r-5 { border-radius: 5px; } .border-r-10 { border-radius: 10px; } .border-r-15 { border-radius: 15px; }
+.border-r-25 { border-radius: 25px; } .border-r-50 { border-radius: 50px; } .border-r-100p { border-radius: 100%; }
 
-.border-r-r-5 { border-radius: 0 5px 5px 0; }
-.border-r-r-10 { border-radius: 0 10px 10px 0; }
-.border-r-r-15 { border-radius: 0 15px 15px 0; }
-.border-r-r-25 { border-radius: 0 25px 25px 0; }
-.border-r-r-50 { border-radius: 0 50px 50px 0; }
-
-.border-r-t-5 { border-radius: 5px 5px 0 0; }
-.border-r-t-10 { border-radius: 10px 10px 0 0; }
-.border-r-t-15 { border-radius: 15px 15px 0 0; }
-.border-r-t-25 { border-radius: 25px 25px 0 0; }
-.border-r-t-50 { border-radius: 50px 50px 0 0; }
+/* LEFT */
+.border-r-l-5 { border-radius: 5px 0 0 5px; } .border-r-l-10 { border-radius: 10px 0 0 10px; } .border-r-l-15 { border-radius: 15px 0 0 15px; }
+.border-r-l-25 { border-radius: 25px 0 0 25px; } .border-r-l-50 { border-radius: 50px 0 0 50px; }
+/* RIGHT */
+.border-r-r-5 { border-radius: 0 5px 5px 0; } .border-r-r-10 { border-radius: 0 10px 10px 0; } .border-r-r-15 { border-radius: 0 15px 15px 0; }
+.border-r-r-25 { border-radius: 0 25px 25px 0; } .border-r-r-50 { border-radius: 0 50px 50px 0; }
+/* TOP RIGHT */
+.border-t-r-5 { border-radius: 5px 5px 0 0; } .border-t-r-10 { border-radius: 10px 10px 0 0; } .border-t-r-15 { border-radius: 15px 15px 0 0; }
+.border-t-r-25 { border-radius: 25px 25px 0 0; } .border-t-r-50 { border-radius: 50px 50px 0 0; }
+/* TOP LEFT */
+/* BOTTOM RIGHT */
+/* BOTTOM LEFT */
 
 
 
@@ -301,9 +295,6 @@
 
 
 
-
-
-
 /* ------------------------------------------ MEDIA QUERY ------------------------------------------ */
 
 /* ------------------------------------------ DISPLAY ------------------------------------------ */
@@ -362,7 +353,6 @@
 }
 
 
-
 /* show | display | none */
 /* Basic */
 
@@ -376,7 +366,6 @@
 @media (min-width: 1281px) , (max-width: 0992px) { .show-lg { display: none !important } }
 /* Only Extra Large */
 @media (max-width: 1280px) { .show-xl { display: none !important } }
-
 
 
 /* Basic Range */
