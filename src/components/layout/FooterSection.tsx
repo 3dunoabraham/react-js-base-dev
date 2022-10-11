@@ -1,13 +1,13 @@
 import React from 'react';
 
 import FooterNavigationButtonList from './FooterNavigationButtonList';
-import CTAButton from './parts/CTAButton';
-import LogoFrame from './LogoFrame';
-import {ReactComponent as Iconfb} from '../assets/svg/fb.svg';
-import {ReactComponent as Iconyt} from '../assets/svg/yt.svg';
-import {ReactComponent as Icontw} from '../assets/svg/tw.svg';
-import {ReactComponent as Iconpin} from '../assets/svg/pin.svg';
-import {ReactComponent as Iconig} from '../assets/svg/ig.svg';
+import CTAButton from './../parts/CTAButton';
+import LogoFrame from './../parts/LogoFrame';
+import {ReactComponent as Iconfb} from '../../assets/svg/fb.svg';
+import {ReactComponent as Iconyt} from '../../assets/svg/yt.svg';
+import {ReactComponent as Icontw} from '../../assets/svg/tw.svg';
+import {ReactComponent as Iconpin} from '../../assets/svg/pin.svg';
+import {ReactComponent as Iconig} from '../../assets/svg/ig.svg';
 
 export interface IFooterSectionComponentsProps {};
 
