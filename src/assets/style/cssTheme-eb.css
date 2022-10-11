@@ -129,11 +129,6 @@ body {
 	min-height: 60px;
 	cursor: pointer;
 }
-.eb-latest-articles-title {
-	color: var(--eb-text-main);
-	font-size: 2.4em;
-	font-weight: 400;
-}
 .eb-articles-table-wrapper {
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 	color: var(--eb-text-main);

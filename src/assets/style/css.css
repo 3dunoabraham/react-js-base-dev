@@ -91,7 +91,8 @@
 .tx-xxs {font-size: 0.35em; } .tx-xs {font-size: 0.55em; }
 .tx-sm {font-size: 0.8em; } .tx-smd {font-size: 0.92em; }
 .tx-md {font-size: 1em; } .tx-mdl {font-size: 1.3em; }
-.tx-lg {font-size: 1.4em; } .tx-xl {font-size: 2.5em; }
+.tx-lg {font-size: 1.4em; } .tx-lgx {font-size: 2.4em; }
+.tx-xl {font-size: 3em; }
 .tx-xxl {font-size: 3.5em; } .tx-xxxl {font-size: 4.5em; }
 .tx-white {color: white;} .tx-black {color: black;}
 .tx-red {color: red;} .tx-green {color: green;} .tx-blue {color: blue;} .tx-orange {color: orange;}

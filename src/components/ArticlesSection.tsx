@@ -25,7 +25,7 @@ const ArticlesSectionComponent: React.FunctionComponent<IArticlesSectionComponen
 			<div className="eb-latest-articles">
 
 				<div className="flex-between pa-8">
-					<h2 className="eb-latest-articles-title">
+					<h2 className="tx-lgx tx-bold-4 eb-tx-main">
 						Latest Articles
 					</h2>
 
