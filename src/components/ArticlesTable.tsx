@@ -8,6 +8,7 @@ import LoadingFloater from './LoadingFloater';
 export interface IArticlesTableComponentProps {
     articles: IArticle[];
     onEdit: (arg0: IArticle) => void;
+    onDelete: (arg0: IArticle) => void;
 	// currentlySelected?: IArticle;
     // set_currentlySelected?: (arg0: IArticle) => IArticle;
 
@@ -21,7 +22,7 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 		ArticleComponentList = (
 			<div className="w-100">
 				<ArticleTableHeader />
-				{props.articles.map((article) => <ArticleRow onEdit={props.onEdit} key={article.id} article={article} />)}
+				{props.articles.map((article) => <ArticleRow onEdit={props.onEdit} onDelete={props.onDelete} key={article.id} article={article} />)}
 			</div>
 		) ;
 	}

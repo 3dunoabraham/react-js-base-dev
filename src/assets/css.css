@@ -353,6 +353,7 @@
 
 
 /* ------------------------------------------ ANIMATING ------------------------------------------ */
+.pulse-npulse-hover:hover { animation: pulsenpulse 2s;  animation-iteration-count: infinite }
 .pulse-npulse { animation: pulsenpulse 2s;  animation-iteration-count: infinite }
 @keyframes pulsenpulse { 0%{ transform: scale(1); } 50%{ transform: scale(.85); } 100%{ transform: scale(1); }   }
 .rock-nroll { animation: rocknroll 2s;  animation-iteration-count: infinite }
@@ -395,11 +396,11 @@
 .opacity-hover-25:hover {filter: opacity(1); }  .opacity-hover-25 {filter: opacity(0.25); }
 .opacity-hover-10:hover {filter: opacity(1); }  .opacity-hover-10 {filter: opacity(0.1); }
 .opacity-hover-5:hover {filter: opacity(0.5); }  .opacity-hover-5 {filter: opacity(0.05); }
-.opacity-hover--75:hover {filter: opacity(0.75) }  .opacity-hover-75 {filter: opacity(1); }
-.opacity-hover--50:hover {filter: opacity(0.5) }  .opacity-hover-50 {filter: opacity(1); }
-.opacity-hover--25:hover {filter: opacity(0.25) }  .opacity-hover-25 {filter: opacity(1); }
-.opacity-hover--10:hover {filter: opacity(0.1) }  .opacity-hover-10 {filter: opacity(1); }
-.opacity-hover--5:hover {filter: opacity(0.05) }  .opacity-hover-10 {filter: opacity(1); }
+.opacity-hover--75:hover {filter: opacity(0.75) }  .opacity-hover--75 {filter: opacity(1); }
+.opacity-hover--50:hover {filter: opacity(0.5) }  .opacity-hover--50 {filter: opacity(1); }
+.opacity-hover--25:hover {filter: opacity(0.25) }  .opacity-hover--25 {filter: opacity(1); }
+.opacity-hover--10:hover {filter: opacity(0.1) }  .opacity-hover--10 {filter: opacity(1); }
+.opacity-hover--5:hover {filter: opacity(0.05) }  .opacity-hover--10 {filter: opacity(1); }
 
 
 

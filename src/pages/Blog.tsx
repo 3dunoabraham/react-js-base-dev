@@ -37,14 +37,14 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const getArticlesResults = async () => {
 		try {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
-			console.table(axiosRequestData)
+			// console.table(axiosRequestData)
 			const _getArticlesResults = await axios(axiosRequestData)
 			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
-			console.log("result set_allArticles",allArticles)
+			// console.log("result set_allArticles",allArticles)
 			set_allArticles(allArticles)
 			const maxPage = getMaxPage(allArticles,pagination)
-			console.log("set_allArticles, maxPage",maxPage)
+			// console.log("set_allArticles, maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
 
@@ -55,13 +55,13 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 
 			const last4Articles = [...allArticles].splice(0,4)
-			console.log("last4Articles",last4Articles)
+			// console.log("last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
-			console.log("MockArticleList",MockArticleList)
+			// console.log("MockArticleList",MockArticleList)
 			set_allArticles(MockArticleList)
 			const maxPage = getMaxPage(MockArticleList,pagination)
-			console.log("maxPage",maxPage)
+			// console.log("maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
 			setPaginatedArticles(MockArticleList,pagination)
@@ -95,14 +95,14 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		console.log(`prevPage current${(pagination.index)}`)
 		const newPagination = {...pagination, ...{index:pagination.index-1}}
 		set_pagination((current) => newPagination)
-		console.log(`new index ${(pagination.index-1)}`)
+		// console.log(`new index ${(pagination.index-1)}`)
 		setPaginatedArticles(_allArticles,newPagination)
 	}
 	const setPaginatedArticles = (__allArticles:IArticle[],__newPagination:IPagination) => {
 		const newOffset = (__newPagination.index-1)*__newPagination.pageLength
-		console.log("pagination offset|page number",newOffset,newOffset+__newPagination.pageLength)
+		// console.log("pagination offset|page number",newOffset,newOffset+__newPagination.pageLength)
 		const paginatedArticles = [...__allArticles].splice(newOffset,__newPagination.pageLength)
-		console.log("paginatedArticles",paginatedArticles)
+		// console.log("paginatedArticles",paginatedArticles)
 		set_paginatedArticles(paginatedArticles)
 	}
 	const _setLoading = (_loading: IBlogComponentsLoading) => {
@@ -111,6 +111,23 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 	const setCancelSelected = (_article: IArticle) => {
 		set_currentlySelected(_article)
+	}
+	const deleteArticle = async (_article: IArticle) => {
+		console.log(_article);
+		const promptResult = prompt(`Type YES to delete article "${_article.title}"`)
+		if (promptResult && promptResult.toLowerCase() == "yes")
+		{
+			try {
+				const _postArticlesResult = await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_article.id}`, method: 'delete',
+					// data: _data
+				})
+				setLoading({...loading,...{reFetch:true}})
+				getArticlesResults()
+				alert("success");
+			} catch (error) {
+				alert("error");
+			}
+		}
 	}
 	const setNewArticleToEdit = (_article: IArticle) => {
 		console.log(_article);
@@ -130,7 +147,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 				</div>
 
 				{loading.reFetch && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />Refreshing Articles...</div> }
-				<ArticlesTable articles={_paginatedArticles} onEdit={setNewArticleToEdit} />
+				<ArticlesTable articles={_paginatedArticles} onEdit={setNewArticleToEdit} onDelete={deleteArticle} />
 				<BlogPageNavigation pagination={pagination} setPage={setSpecificPage} prev={prevPage} next={nextPage}  />
 
 			</div>
