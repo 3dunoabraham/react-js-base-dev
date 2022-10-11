@@ -3,7 +3,7 @@ import React from 'react';
 import IArticle from '../constants/IArticle';
 import ArticleRow from './ArticleRow';
 import ArticleTableHeader from './ArticleTableHeader';
-import LoadingFloater from './LoadingFloater';
+import LoadingFloater from './parts/LoadingFloater';
 
 export interface IArticlesTableComponentProps {
     articles: IArticle[];

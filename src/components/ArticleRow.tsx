@@ -19,36 +19,36 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 
 	return (
 		<div className="eb-article-row w-100">
-			<div className="flex flex-between flex-justify-start flex-align-end ">
-				<h6 className="eb-article-row-author ma-0 pa-4 py-3 tx-bold show-md_x">
+			<div className="flex flex-between flex-justify-start  flex-align-start ">
+				<div className="w-12  ma-0 pa-4 py-3 tx-smd tx-bold-400 show-md_x">
 					{props.article.author}
-				</h6>
-				<h4 className="eb-article-row-title eb-article-highlight ma-0 pa-4 tx-bold-200 show-md_x" >
+				</div>
+				<div className="w-20 eb-article-highlight ma-0 pa-4 py-3 tx-bold-400 eb-tx-darkgrey show-md_x " >
 					{props.article.title}
-				</h4>
-				<div className="eb-article-row-content ma-0 pa-4 tx-bold-200">
+				</div>
+				<div className="flex-1 ma-0 pa-4 py-3 tx-md ">
 					<div className="show-xs_md flex tx-sm mb-3">
 						<div className=" tx-bold mr-2">
 							{props.article.author}
 						</div>
-						<div className="tx-sm opacity-75">
+						<div className="tx-sm opac-75">
 							({dateWithSlashes})
 						</div>
 					</div>
 					<div className="show-xs_md tx-lg mb-3">{props.article.title}</div>
-					<div>{props.article.content}</div>
+					<div className="eb-tx-darkgrey tx-bold-400 tx-smd">{props.article.content}</div>
 				</div>
-				<h4 className="eb-article-row-author eb-article-highlight ma-0 pa-4 tx-bold-200 show-md_x" style={{width:"10%"}}>
+				<div className="w-10 eb-article-highlight ma-0 pa-4 py-3 tx-bold-400 eb-tx-darkgrey show-md_x">
 					{dateWithSlashes}
-				</h4>
-				<div className="eb-article-row-action  ma-0  tx-bold-400 flex-column" >
+				</div>
+				<div className="  ma-0  tx-bold flex-column" >
 
-					<div className=" clickable pa-2 eb-tx-primary opacity-hover-50 pulse-npulse-hover" onClick={(e) => {
+					<div className=" clickable pa-2 eb-tx-primary opac-hover-50 " onClick={(e) => {
 						props.onEdit(props.article)
 					}}>
 						Edit
 					</div>
-					<div className=" clickable  tx-xs  opacity-hover-25" onClick={(e) => {
+					<div className=" clickable tx-bold-200  tx-xs  opac-hover-25" onClick={(e) => {
 						props.onDelete(props.article)
 					}}>
 						Delete

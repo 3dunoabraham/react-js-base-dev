@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import IArticle from '../constants/IArticle';
-import LoadingFloater from './LoadingFloater';
+import LoadingFloater from './parts/LoadingFloater';
 
 const {useEffect, useState, useRef} = React;
 
@@ -160,7 +160,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 					<div>
 						<div className="pb-1">
 							<span className="tx-bold-400">Author</span>
-							<div className="opacity-50">
+							<div className="opac-50">
 								{props.currentlySelected && props.currentlySelected.author}
 							</div>
 						</div>
@@ -177,7 +177,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 					<div>
 						<div className="pb-1">
 							<span className="tx-bold-400">Blog Title</span>
-							<div className="opacity-50">
+							<div className="opac-50">
 								{props.currentlySelected && props.currentlySelected.title}
 							</div>
 						</div>
@@ -196,7 +196,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 							<span className="tx-bold-400">Blog Content</span>
 							({_currentArticle.content.length}/50)
 							{_currentArticle.content.length > 50 && " *Too many characters*"}
-							<div className="opacity-50">
+							<div className="opac-50">
 								{props.currentlySelected && props.currentlySelected.content}
 							</div>
 						</div>

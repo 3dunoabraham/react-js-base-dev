@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom';
 
 import NavigationButtonList from './NavigationButtonList';
 import FooterSection from './FooterSection';
-import CTAButton from './CTAButton';
-import LogoFrame from './LogoFrame';
+import CTAButton from '../parts/CTAButton';
+import LogoFrame from '../parts/LogoFrame';
 
 export interface ILayoutComponentsProps {};
 
