@@ -27,7 +27,7 @@ describe("logic tests",() => {
 		})
 		console.table(repetitionsPerWorld);
 	});
-	it("displays the numbers from 1 to 100 with a surprise", () => {
+	it("displays the numbers from 1 to 100 with a catch", () => {
 
 		const numberList = [...Array(100)]
 		let surpriseNumberList:string[] = []
