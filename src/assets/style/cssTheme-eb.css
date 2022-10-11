@@ -134,6 +134,7 @@ body {
 	color: var(--eb-text-main);
 	border-radius: 15px;
 	overflow: hidden;
+	min-height: 360px;
 }
 .eb-latest-articles-wrapper {
 	width: 100%;
