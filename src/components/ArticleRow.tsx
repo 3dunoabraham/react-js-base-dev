@@ -31,7 +31,7 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 						<div className=" tx-bold mr-2">
 							{props.article.author}
 						</div>
-						<div className="tx-sm opacity-75">
+						<div className="tx-sm opac-75">
 							({dateWithSlashes})
 						</div>
 					</div>
@@ -43,12 +43,12 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 				</div>
 				<div className="  ma-0  tx-bold flex-column" >
 
-					<div className=" clickable pa-2 eb-tx-primary opacity-hover-50 " onClick={(e) => {
+					<div className=" clickable pa-2 eb-tx-primary opac-hover-50 " onClick={(e) => {
 						props.onEdit(props.article)
 					}}>
 						Edit
 					</div>
-					<div className=" clickable  tx-xs  opacity-hover-25" onClick={(e) => {
+					<div className=" clickable tx-bold-200  tx-xs  opac-hover-25" onClick={(e) => {
 						props.onDelete(props.article)
 					}}>
 						Delete
