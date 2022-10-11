@@ -58,7 +58,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<div className="eb-choose-us-circle">
 									<img src={Vector1} />
 								</div>
-								<h3 className="eb-tx-main tx-bold-400 tx-lg">
+								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Online Banking
 								</h3>
 								<p className="eb-choose-us-desc">
@@ -69,7 +69,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<div className="eb-choose-us-circle">
 									<img src={Vector2} />
 								</div>
-								<h3 className="eb-tx-main tx-bold-400 tx-lg">
+								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Simple Budgeting
 								</h3>
 								<p className="eb-choose-us-desc">
@@ -85,7 +85,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<div className="eb-choose-us-circle">
 									<img src={Vector3} />
 								</div>
-								<h3 className="eb-tx-main tx-bold-400 tx-lg">
+								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Fast Onboarding
 								</h3>
 								<p className="eb-choose-us-desc">
@@ -96,7 +96,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<div className="eb-choose-us-circle">
 									<img src={Vector4} />
 								</div>
-								<h3 className="eb-tx-main tx-bold-400 tx-lg">
+								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Open API
 								</h3>
 								<p className="eb-choose-us-desc">
