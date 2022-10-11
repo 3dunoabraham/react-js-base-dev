@@ -221,8 +221,10 @@ body {
 	justify-content: center;
 }
 .eb-hero-subsection {
-	max-width: 1080px;
-	/*max-width: 1080px;
+	max-width: 1120px;
+	width: 100%;
+	/*max-width: 1080px;*/
+	/*
 }
 .eb-hero-subsection-wrapper {
 	padding: 100px 0 70px 0px;
