@@ -7,7 +7,7 @@ export interface IArticleTableHeaderComponentsProps{
 
 const ArticleTableHeaderComponents: React.FunctionComponent<IArticleTableHeaderComponentsProps> = props => {
 	return (
-		<div className="eb-article-row w-100 eb-border-b-grey">
+		<div className="eb-bg-table-row-header w-100 eb-border-b-grey">
 			<div className="flex flex-between flex-justify-start flex-align-end tx-sm" >
 				<div className="w-12  ma-0 px-4 pa-3 tx-bold-200   show-md_x">
 					AUTHOR NAME

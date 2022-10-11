@@ -12,6 +12,8 @@ body {
 	--eb-secondary-color: rgb(44,186,199);
 
 	--eb-dark-bg: rgb(44,48,77);
+	--eb-table-row-dark: rgb(244,245,247);
+	--eb-table-row-header: rgb(249,250,251);
 	--eb-lightgrey-bg: rgb(222, 222, 222);
 	--eb-light-bg: rgb(245, 245, 245);
 	--eb-lighter-bg: rgb(250, 250, 250);
@@ -39,6 +41,15 @@ body {
 }
 .eb-tx-darkgrey {
 	color: var(--eb-darkgrey-text);
+}
+.eb-bg-lighter {
+	background: var(--eb-lighter-bg);
+}
+.eb-bg-table-row-dark {
+	background: var(--eb-table-row-dark);
+}
+.eb-bg-table-row-header {
+	background: var(--eb-table-row-header);
 }
 	
 
@@ -71,14 +82,14 @@ body {
 
 
 
-.eb-article-row-header {
+/*.eb-article-row-header {
 	background: #F9FAFB;
-}
+}*/
 .eb-article-row:nth-child(even) {
 	background: white;
 }
 .eb-article-row:nth-child(odd) {
-	background: #F4F5F7;
+	background: var(--eb-table-row-dark);
 }
 
 .eb-article-card:hover .eb-article-card-desc {
