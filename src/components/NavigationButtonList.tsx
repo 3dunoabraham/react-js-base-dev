@@ -8,20 +8,32 @@ const NavigationButtonListComponents: React.FunctionComponent<INavigationButtonL
 	const location = useLocation();
 	
 	return (
-		<div className="flex eb-navigation-button-list ">
+		<div className="flex eb-navigation-button-list flex-align-end">
 			
-			<button className={  "show-lg_x "+ (location.pathname == "/"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}> Home </button>
+			<button className={  "show-lg_x "+ (location.pathname == "/"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
+				<div> <span >
+						Home
+				</span> </div>
+			</button>
 			<button className={ "show-md_x "+ (location.pathname == "/about"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
-				About	
+				<div> <span >
+					About	
+				</span> </div>
 			</button>
 			<button className={ "show-md_x "+ (location.pathname == "/asd"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
-				Contact
+				<div> <span >
+					Contact
+				</span> </div>
 			</button>
 			<button className={` ${location.pathname == "/blog" ? "eb-active-navigation-button" : ""}`} onClick={() => { _navigate("/blog") }}>
-				Blog
+				<div> <span >
+					Blog
+				</span> </div>
 			</button>
 			<button className={ "show-lg_x "+ (location.pathname == "/asd"? "eb-active-navigation-button" : "")} onClick={() => { _navigate("/") }}>
-				Careers
+				<div> <span >
+					Careers
+				</span> </div>
 			</button>
 		</div>
 	);
