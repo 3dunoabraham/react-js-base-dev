@@ -41,14 +41,14 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 				<div className="w-10 eb-article-highlight ma-0 pa-4 py-3 tx-bold-4 eb-tx-darkgrey show-md_x">
 					{dateWithSlashes}
 				</div>
-				<div className="  ma-0  tx-bold flex-column" >
+				<div className="  ma-0  tx-bold flex-column flex-align-self-center" >
 
-					<div className=" clickable pa-2 eb-tx-primary opac-hover-50 " onClick={(e) => {
+					<div className=" clickable pa-2 pb-1 eb-tx-primary opac-hover-50 " onClick={(e) => {
 						props.onEdit(props.article)
 					}}>
 						Edit
 					</div>
-					<div className=" clickable tx-bold-2  tx-xs  opac-hover-25" onClick={(e) => {
+					<div className=" clickable tx-bold-2 pb-1 tx-red  tx-xs  opac-hover-25" onClick={(e) => {
 						props.onDelete(props.article)
 					}}>
 						Delete

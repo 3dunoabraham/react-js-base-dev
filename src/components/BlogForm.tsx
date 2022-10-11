@@ -42,7 +42,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}, [props.currentlySelected])
 
 	const bannerTitle = () => {
-		if (props.currentlySelected) {
+		if (props.currentlySelected && props.currentlySelected.id > 0) {
 			return (
 				<div className="pa-6 ">
 					<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4 " >Update Blog Article</div>

@@ -51,10 +51,10 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 						</p>
 					</div>
 
-					<div className="flex-between flex-column flex-xl_x-row my-100 ">
-						<div className="flex-between  w-100 flex-align-start flex-column flex-md_x-row">
+					<div className="flex-  flex-column flex-center flex-xl_x-row my-100 ">
+						<div className="flex-  w-100 flex-align- flex-column flex-md_x-row">
 
-							<div className="flex-column flex-align-start eb-choose-us-element pr-5 ">
+							<div className="flex-column flex-align-start eb-choose-us-element px-2 ">
 								<div className="eb-choose-us-circle">
 									<img src={Vector1} />
 								</div>
@@ -65,7 +65,8 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 									Our modern web and mobile <br/> applications allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
 								</p>
 							</div>
-							<div className="flex-column flex-align-start eb-choose-us-element pr-5">
+							<div className="show-sm_lg block py-3"></div>
+							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
 									<img src={Vector2} />
 								</div>
@@ -80,8 +81,8 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 
 						<div className="show-sm_lg block py-6"></div>
 
-						<div className="flex-between  w-100 flex-align-start flex-column flex-md_x-row">
-							<div className="flex-column flex-align-start eb-choose-us-element pr-5">
+						<div className="flex-between  w-100 flex-align- flex-column flex-md_x-row">
+							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
 									<img src={Vector3} />
 								</div>
@@ -92,7 +93,8 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 									We don’t do branches. Open your <br/> account in minutes online and start <br/> taking control of your finances right <br/> away. 
 								</p>
 							</div>
-							<div className="flex-column flex-align-start eb-choose-us-element ">
+							<div className="show-sm_lg block py-3"></div>
+							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
 									<img src={Vector4} />
 								</div>
