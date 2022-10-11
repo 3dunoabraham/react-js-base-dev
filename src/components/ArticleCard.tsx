@@ -16,7 +16,7 @@ const ArticleCardComponents: React.FunctionComponent<IArticleCardComponentsProps
 	return (
 		<div className="eb-article-card">
 			
-			{false && <img src={articleImgs[props.article.id]} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>}
+			{false && <img alt="thumbnail" src={articleImgs[props.article.id]} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>}
 			{<div className="eb-article-thumbnail">
 				<img src={props.article.image_url} className="w-100" style={{borderRadius:"10px 10px 0 0"}}/>
 			</div>}

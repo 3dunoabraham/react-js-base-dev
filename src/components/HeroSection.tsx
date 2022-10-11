@@ -17,10 +17,10 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 		<div >
 			<div className="eb-hero-wrapper  pos-relative">
 				<div className="eb-hero ">
-					<img className="eb-hero-phones " src={HeroDarkShape} />
-					<img className="eb-hero-phones " src={HeroLightShape} />
-					<img className="eb-hero-phones show-lg_x" src={HeroPhones} />
-					{<img className="eb-hero-phones w-66 show-xs_lg" src={HeroPhones} />}
+					<img alt="HeroDarkShape" className="eb-hero-phones " src={HeroDarkShape} />
+					<img alt="HeroLightShape" className="eb-hero-phones " src={HeroLightShape} />
+					<img alt="HeroPhones" className="eb-hero-phones show-lg_x" src={HeroPhones} />
+					{<img alt="HeroPhones" className="eb-hero-phones w-66 show-xs_lg" src={HeroPhones} />}
 					<div className="show-md block my-8 py-8"></div>
 					<div className="show-sm_xl block py-100 pb-200 my-8"></div>
 					<div className="show-xs_sm block py-8 my-8"></div>
@@ -56,7 +56,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 
 							<div className="flex-column flex-align-start eb-choose-us-element px-2 ">
 								<div className="eb-choose-us-circle">
-									<img src={Vector1} />
+									<img alt="vector1" src={Vector1} />
 								</div>
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Online Banking
@@ -68,7 +68,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 							<div className="show-sm_lg block py-3"></div>
 							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
-									<img src={Vector2} />
+									<img alt="vector1" src={Vector2} />
 								</div>
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Simple Budgeting
@@ -84,7 +84,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 						<div className="flex-between  w-100 flex-align- flex-column flex-md_x-row">
 							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
-									<img src={Vector3} />
+									<img alt="vector1" src={Vector3} />
 								</div>
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Fast Onboarding
@@ -96,7 +96,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 							<div className="show-sm_lg block py-3"></div>
 							<div className="flex-column flex-align-start eb-choose-us-element px-2">
 								<div className="eb-choose-us-circle">
-									<img src={Vector4} />
+									<img alt="vector1" src={Vector4} />
 								</div>
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Open API

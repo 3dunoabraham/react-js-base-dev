@@ -115,12 +115,10 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const deleteArticle = async (_article: IArticle) => {
 		console.log(_article);
 		const promptResult = prompt(`Type YES to delete article "${_article.title}"`)
-		if (promptResult && promptResult.toLowerCase() == "yes")
+		if (promptResult && promptResult.toLowerCase() === "yes")
 		{
 			try {
-				const _postArticlesResult = await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_article.id}`, method: 'delete',
-					// data: _data
-				})
+				await axios({url:`https://servicepad-post-api.herokuapp.com/articles/${_article.id}`, method: 'delete', })
 				setLoading({...loading,...{reFetch:true}})
 				getArticlesResults()
 				alert("success");
