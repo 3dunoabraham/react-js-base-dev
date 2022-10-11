@@ -68,9 +68,9 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 	};
 
 	useEffect(() => {
-		return () => {
+		// return () => {
 			getArticlesResults()
-		};
+		// };
 	}, [])
 
 	return (
