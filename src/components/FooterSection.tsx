@@ -15,7 +15,7 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 	return (
 		<div className="eb-footer-wrapper">
 
-			<div className="eb-footer flex-column-r flex-md_x-row">
+			<div className="eb-footer flex-column-r flex-lg_x-row">
 				<div className="flex-column flex-justify-center">
 					<LogoFrame darkmode={true} />
 					<div className="flex mt-8">
@@ -38,9 +38,9 @@ const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsP
 					</div>
 				</div>			
 				
-				<div className="show-xs_md block py-6"></div>
+				<div className="show-xs_lg block py-6"></div>
 				<FooterNavigationButtonList />
-				<div className="show-xs_md block py-6"></div>
+				<div className="show-xs_lg block py-6"></div>
 
 				<div >
 				</div>		

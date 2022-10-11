@@ -221,8 +221,10 @@ body {
 	justify-content: center;
 }
 .eb-hero-subsection {
-	max-width: 1080px;
-	/*max-width: 1080px;
+	max-width: 1120px;
+	width: 100%;
+	/*max-width: 1080px;*/
+	/*
 }
 .eb-hero-subsection-wrapper {
 	padding: 100px 0 70px 0px;
@@ -395,17 +397,46 @@ body {
 .eb-navigation-button-list button {
 	background: transparent;
 	border: none;
-	padding: 12px 24px;
 	cursor: pointer;
 	color: #777;
 	font-size: 1em;
 	transition: all 0.1s ease-out;
+	padding: 24px 20px;
 }
-.eb-active-navigation-button {
-	box-shadow: inset 0 -2px var(--eb-primary-color) !important;
+.eb-navigation-button-list button span {
+	padding: 24px 0;
+	/*padding: 24px 0;*/
+	position: relative;
 }
+.eb-navigation-button-list button:hover span::after {
+	content: "";
+	width: 100%;
+	left: 0;
+
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-secondary-color));
+	height: 3px;
+	animation: pulsenpulse 2s;  animation-iteration-count: infinite;
+}
+.eb-active-navigation-button  span::after {
+
+	/*box-shadow: inset 0 -3px var(--eb-primary-color) !important;*/
+	content: "";
+	width: 100%;
+	left: 0;
+
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-secondary-color));
+	height: 3px;
+}
+/*.eb-navigation-button-list button:hover span {
+	box-shadow: inset 0 -3px var(--eb-primary-color);
+}*/
 .eb-navigation-button-list button:hover {
-	box-shadow: inset 0 -2px var(--eb-primary-color);
 	color: black;
 }
 
@@ -419,11 +450,15 @@ body {
 	width: 100%;
 	background: var(--eb-dark-bg);
 	color: white;
+	display: flex;
+	justify-content: center;
 }
 .eb-footer {
-	padding: 40px 100px;
+	padding: 40px 0px;
 	display: flex;
 	justify-content: space-between;
+	max-width: 1080px;
+	width: 100%;
 }
 .eb-footer-navigation-button-list {
 

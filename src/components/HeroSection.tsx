@@ -23,10 +23,11 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					{<img className="eb-hero-phones w-66 show-xs_lg" src={HeroPhones} />}
 					<div className="show-md block my-8 py-8"></div>
 					<div className="show-sm_xl block py-100 pb-200 my-8"></div>
-					<div className="show-xs_sm block py-100 my-8"></div>
+					<div className="show-xs_sm block py-8 my-8"></div>
 					<h1 className="eb-hero-title">Next generation <br/> digital banking</h1>
 					<p className="eb-hero-desc pr-5">
-						Take your financial life online.
+						<span className="show-md_x">Take your financial life online.</span>
+						<span className="show-xs_md">Take your financial life online. <br/><br/></span>
 						Your Easybank account <br/> will be a one-stop-shop
 						for spending, savin,<br/>budgeting, investing, and much more.
 					</p>
