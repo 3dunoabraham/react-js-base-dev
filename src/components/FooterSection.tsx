@@ -3,11 +3,11 @@ import React from 'react';
 import FooterNavigationButtonList from './FooterNavigationButtonList';
 import CTAButton from './CTAButton';
 import LogoFrame from './LogoFrame';
-import {ReactComponent as Iconfb} from '../assets/fb.svg';
-import {ReactComponent as Iconyt} from '../assets/yt.svg';
-import {ReactComponent as Icontw} from '../assets/tw.svg';
-import {ReactComponent as Iconpin} from '../assets/pin.svg';
-import {ReactComponent as Iconig} from '../assets/ig.svg';
+import {ReactComponent as Iconfb} from '../assets/svg/fb.svg';
+import {ReactComponent as Iconyt} from '../assets/svg/yt.svg';
+import {ReactComponent as Icontw} from '../assets/svg/tw.svg';
+import {ReactComponent as Iconpin} from '../assets/svg/pin.svg';
+import {ReactComponent as Iconig} from '../assets/svg/ig.svg';
 
 export interface IFooterSectionComponentsProps {};
 

@@ -18,6 +18,7 @@ body {
 	
 	--eb-main-text: rgb(45, 49, 78);
 	--eb-grey-text: rgb(149, 148, 153);
+	--eb-darkgrey-text: rgb(107, 114, 128);
 
 }
 .eb-logo-bar {
@@ -33,6 +34,14 @@ body {
 .eb-tx-primary {
 	color: var(--eb-primary-color);
 }
+.eb-tx-grey {
+	color: var(--eb-grey-text);
+}
+.eb-tx-darkgrey {
+	color: var(--eb-darkgrey-text);
+}
+	
+
 .eb-tx-hover-primary:hover *,
 .eb-tx-hover-primary:hover {
 	color: var(--eb-primary-color) !important;
@@ -71,25 +80,7 @@ body {
 .eb-article-row:nth-child(odd) {
 	background: #F4F5F7;
 }
-.eb-article-row-author {
-	width: 12%;
-	text-align: start;
-	font-size: 0.8em;
-}
-.eb-article-row-content {
-	width: 20%;
-	flex: 1;
-	word-wrap: break-word;
-	/*text-align: start;*/
-}
-.eb-article-row-content * {
-	word-wrap: break-word;
-	/*white-space: nowrap;*/
-}
-.eb-article-row-title {
-	width: 20%;
-	text-align: start;
-}
+
 .eb-article-card:hover .eb-article-card-desc {
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
 }
