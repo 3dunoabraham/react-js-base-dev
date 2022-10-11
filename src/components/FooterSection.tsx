@@ -13,7 +13,7 @@ export interface IFooterSectionComponentsProps {};
 
 const FooterSectionComponents: React.FunctionComponent<IFooterSectionComponentsProps> = props => {
 	return (
-		<div className="eb-footer-wrapper">
+		<div className="eb-bg-dark w-100 flex-center tx-white">
 
 			<div className="eb-footer flex-column-r flex-lg_x-row">
 				<div className="flex-column flex-justify-center">
