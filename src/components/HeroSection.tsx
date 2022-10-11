@@ -7,7 +7,7 @@ import Vector1 from '../assets/img/Vector(1).png';
 import Vector2 from '../assets/img/Vector(2).png';
 import Vector3 from '../assets/img/Vector(3).png';
 import Vector4 from '../assets/img/Vector(4).png';
-import CTAButton from './CTAButton';
+import CTAButton from './parts/CTAButton';
 
 export interface IHeroSectionComponentsProps {};
 

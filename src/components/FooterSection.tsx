@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FooterNavigationButtonList from './FooterNavigationButtonList';
-import CTAButton from './CTAButton';
+import CTAButton from './parts/CTAButton';
 import LogoFrame from './LogoFrame';
 import {ReactComponent as Iconfb} from '../assets/svg/fb.svg';
 import {ReactComponent as Iconyt} from '../assets/svg/yt.svg';
