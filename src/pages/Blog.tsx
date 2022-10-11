@@ -30,9 +30,9 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 
 	useEffect(() => {
 	  window.scrollTo(0, 0)
-		return () => {
+		// return () => {
 			getArticlesResults()
-		};
+		// };
 	}, [])
 	const getArticlesResults = async () => {
 		try {
