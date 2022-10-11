@@ -7,16 +7,19 @@ import ArticlesSection from '../components/ArticlesSection';
 import ArticlesTable from '../components/ArticlesTable';
 import IArticle, { MockArticleList } from '../constants/IArticle';
 import IPagination, { BasePaginationObject } from '../constants/IPagination';
+import LoadingFloater from '../components/LoadingFloater';
 
 const {useEffect, useState} = React;
 export interface IBlogPageProps {};
 
 export interface IBlogComponentsLoading {
 	add: boolean;
+	reFetch: boolean;
 }
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const baseLoading = {
 		add:false,
+		reFetch:false,
 	}
 	const [loading, setLoading] = useState<IBlogComponentsLoading>({...baseLoading});
 	const [pagination, set_pagination] = useState({...BasePaginationObject})
@@ -46,6 +49,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			set_pagination((current) => newPagination)
 
 			setPaginatedArticles(allArticles, newPagination)
+			setLoading({...loading,...{reFetch:false}})
 			// prevPage()
 			// nextPage()
 
@@ -125,6 +129,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
 
+				{loading.reFetch && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />Refreshing Articles...</div> }
 				<ArticlesTable articles={_paginatedArticles} onEdit={setNewArticleToEdit} />
 				<BlogPageNavigation pagination={pagination} setPage={setSpecificPage} prev={prevPage} next={nextPage}  />
 

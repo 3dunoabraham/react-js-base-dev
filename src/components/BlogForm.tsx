@@ -8,6 +8,7 @@ const {useEffect, useState, useRef} = React;
 
 export interface IBlogComponentsLoading {
 	add: boolean;
+	reFetch: boolean;
 }
 export interface IBlogFormComponentsProps {
 	currentlySelected?: IArticle;
@@ -102,7 +103,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			const promptResult = prompt("Type confirm to add article")
 			if (promptResult == "confirm")
 			{
-				props.setLoading!({...props.loading!,...{add:true}})
+				props.setLoading!({...props.loading!,...{add:true,reFetch:true}})
 				const _postArticlesResult = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post',
 					data: _data
 				})
@@ -112,8 +113,8 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				{
 					alert("success");
 					props.onCancelEdit!({...nullArticle})
-					props.reFetch!();
 					props.setLoading!({...props.loading!,...{add:false}})
+					props.reFetch!();
 				}
 			}
 		} catch (error) {
