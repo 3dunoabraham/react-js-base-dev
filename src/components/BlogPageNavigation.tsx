@@ -45,9 +45,9 @@ const BlogPageNavigationComponents: React.FunctionComponent<IBlogPageNavigationC
 							{(!isLongList || !isOverLongIndex) && Array.from(Array(4).keys())
 								.map((i,index) => {
 									// if (index == 0) return <></>
-									if (!isLongList && index+1 == props.pagination.maxPage) return <></>
+									if (!isLongList && index+1 == props.pagination.maxPage) return <div key={index+1}></div>
 									return <div className={(index+1 != props.pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opac-hover--50 "}
-										key={index}
+										key={index+1}
 										onClick={() => {
 											props.setPage(index+1)
 										}}>
@@ -58,10 +58,10 @@ const BlogPageNavigationComponents: React.FunctionComponent<IBlogPageNavigationC
 							{isLongList && isOverLongIndex &&
 								Array.from(Array(3).keys())
 									.map((i,index) => {
-										if (index == 0) return <></>
-										if (props.pagination.index+index-2 == props.pagination.maxPage) return <></>
+										if (index == 0) return <div key={props.pagination.index+index-2} ></div>
+										if (props.pagination.index+index-2 == props.pagination.maxPage) return <div key={props.pagination.index+index-2} ></div>
 										return <div className={(props.pagination.index+index-2 != props.pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opac-hover--50 "}
-											key={index}
+											key={props.pagination.index+index-2}
 											onClick={() => {
 												props.setPage(props.pagination.index+index-2)
 											}}>
