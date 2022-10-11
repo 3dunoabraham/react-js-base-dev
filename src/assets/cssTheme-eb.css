@@ -450,11 +450,15 @@ body {
 	width: 100%;
 	background: var(--eb-dark-bg);
 	color: white;
+	display: flex;
+	justify-content: center;
 }
 .eb-footer {
-	padding: 40px 100px;
+	padding: 40px 0px;
 	display: flex;
 	justify-content: space-between;
+	max-width: 1080px;
+	width: 100%;
 }
 .eb-footer-navigation-button-list {
 
