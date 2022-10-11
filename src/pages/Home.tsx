@@ -21,11 +21,13 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
 
 		
 		try {
-			const _getArticlesResults = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',})
+			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
+			console.table(axiosRequestData)
+			const _getArticlesResults = await axios(axiosRequestData)
 			const allArticles = _getArticlesResults.data.data
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
 			const last4Articles = allArticles.splice(0,4)
-			console.log("last4Articles",last4Articles)
+			console.log("result last4Articles",last4Articles)
 			set_latestArticles(last4Articles)
 		} catch (error) {
 			set_latestArticles([

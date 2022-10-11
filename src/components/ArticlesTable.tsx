@@ -3,6 +3,7 @@ import React from 'react';
 import IArticle from '../constants/IArticle';
 import ArticleRow from './ArticleRow';
 import ArticleTableHeader from './ArticleTableHeader';
+import LoadingFloater from './LoadingFloater';
 
 export interface IArticlesTableComponentProps {
     articles: IArticle[];
@@ -11,18 +12,11 @@ export interface IArticlesTableComponentProps {
     // set_currentlySelected?: (arg0: IArticle) => IArticle;
 
 }
-const EmptyArticlesTableComponent: React.FunctionComponent<any> = props => {
-	return (
-		<div>
-			<b className="tx-ls-2 flex pa-8">IM LOADING <div className="hover-hover"> . . . </div> </b>
-		</div>
-	)
-}
 const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentProps> = props => {
 	let ArticleComponentList;
 	if (!props.articles.length)
 	{
-		ArticleComponentList = (<EmptyArticlesTableComponent/>);//;
+		ArticleComponentList = <div className="pa-8"><LoadingFloater /></div>;//;
 	} else {
 		ArticleComponentList = (
 			<div className="w-100">

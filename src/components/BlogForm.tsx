@@ -2,11 +2,19 @@ import React from 'react';
 import axios from 'axios';
 
 import IArticle from '../constants/IArticle';
+import LoadingFloater from './LoadingFloater';
 
 const {useEffect, useState, useRef} = React;
+
+export interface IBlogComponentsLoading {
+	add: boolean;
+}
 export interface IBlogFormComponentsProps {
 	currentlySelected?: IArticle;
+    setLoading?: (arg0: IBlogComponentsLoading) => void;
     onCancelEdit?: (arg0: IArticle) => void;
+    reFetch?: () => void;
+    loading?: IBlogComponentsLoading;
 };
 
 const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = props => {
@@ -54,7 +62,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}
 
 	const executeRequestButton = () => {
-		if (props.currentlySelected) {
+		if (props.currentlySelected && props.currentlySelected.id > 0) {
 			return (
 				<div>
 					<div className="eb-form-save-button eb-form-update-button" onClick={() => {
@@ -94,6 +102,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 			const promptResult = prompt("Type confirm to add article")
 			if (promptResult == "confirm")
 			{
+				props.setLoading!({...props.loading!,...{add:true}})
 				const _postArticlesResult = await axios({url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'post',
 					data: _data
 				})
@@ -102,6 +111,9 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 				// if (_postArticlesResult.message == "article inserted")
 				{
 					alert("success");
+					props.onCancelEdit!({...nullArticle})
+					props.reFetch!();
+					props.setLoading!({...props.loading!,...{add:false}})
 				}
 			}
 		} catch (error) {
@@ -140,6 +152,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 
 			<div className="eb-blog-form-wrapper">
 				<div className="eb-blog-form">
+					{props.loading!.add && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />New Article...</div> }
 					<div>
 						<div className="pb-1">
 							<span className="tx-bold-400">Author</span>
@@ -195,6 +208,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 						/>
 					</div>
 					{executeRequestButton()}
+					{props.loading!.add && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />New Article...</div> }
 				</div>
 			</div>
 		</div>

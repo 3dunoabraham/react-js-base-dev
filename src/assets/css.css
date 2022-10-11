@@ -360,7 +360,7 @@
 .spin-spin { animation: spinspin 2s;  animation-iteration-count: infinite }
 @keyframes spinspin { 0%{ transform: rotate(90deg); } 100% { transform: rotate(450deg); } }
 .spin-nback { animation: spinnback 4s;  animation-iteration-count: infinite }
-@keyframes spinnback { 0%{ transform: rotate(-90deg); } 50% { transform: rotate(-450deg); } 100% { transform: rotate(-90deg); } }
+@keyframes spinnback { 0%{ transform: rotate(0deg); } 50% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
 
 .shake-shake { animation: shakeshake 1s;  animation-iteration-count: infinite }
 @keyframes shakeshake { 0%{ transform: rotate(0deg); } 35%{ transform: rotate(-5deg); } 50% { transform: rotate(15deg); } 100% { transform: rotate(0deg); } }

@@ -11,7 +11,14 @@ import IPagination, { BasePaginationObject } from '../constants/IPagination';
 const {useEffect, useState} = React;
 export interface IBlogPageProps {};
 
+export interface IBlogComponentsLoading {
+	add: boolean;
+}
 const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
+	const baseLoading = {
+		add:false,
+	}
+	const [loading, setLoading] = useState<IBlogComponentsLoading>({...baseLoading});
 	const [pagination, set_pagination] = useState({...BasePaginationObject})
 	const [_latestArticles, set_latestArticles] = useState<IArticle[]>([]);
 	const [_allArticles, set_allArticles] = useState<IArticle[]>([]);
@@ -27,10 +34,11 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	const getArticlesResults = async () => {
 		try {
 			const axiosRequestData = {url:"https://servicepad-post-api.herokuapp.com/articles/", method: 'get',};
+			console.table(axiosRequestData)
 			const _getArticlesResults = await axios(axiosRequestData)
 			const allArticles = [..._getArticlesResults.data.data]
 			.sort(function(a:IArticle,b:IArticle):any{return Date.parse(b.date) - Date.parse(a.date); });
-			console.log("set_allArticles",allArticles)
+			console.log("result set_allArticles",allArticles)
 			set_allArticles(allArticles)
 			const maxPage = getMaxPage(allArticles,pagination)
 			console.log("set_allArticles, maxPage",maxPage)
@@ -49,7 +57,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 			console.log("MockArticleList",MockArticleList)
 			set_allArticles(MockArticleList)
 			const maxPage = getMaxPage(MockArticleList,pagination)
-			console.log("set_allArticles, maxPage",maxPage)
+			console.log("maxPage",maxPage)
 			const newPagination = {...pagination, ...{maxPage}}
 			set_pagination((current) => newPagination)
 			setPaginatedArticles(MockArticleList,pagination)
@@ -88,10 +96,13 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	}
 	const setPaginatedArticles = (__allArticles:IArticle[],__newPagination:IPagination) => {
 		const newOffset = (__newPagination.index-1)*__newPagination.pageLength
-		console.log(newOffset,newOffset+__newPagination.pageLength)
+		console.log("pagination offset|page number",newOffset,newOffset+__newPagination.pageLength)
 		const paginatedArticles = [...__allArticles].splice(newOffset,__newPagination.pageLength)
 		console.log("paginatedArticles",paginatedArticles)
 		set_paginatedArticles(paginatedArticles)
+	}
+	const _setLoading = (_loading: IBlogComponentsLoading) => {
+		setLoading(_loading)
 	}
 
 	const setCancelSelected = (_article: IArticle) => {
@@ -107,7 +118,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 		<div className="eb-blog-wrapper" >
 			<div className="eb-blog">
 
-				<BlogForm currentlySelected={currentlySelected} onCancelEdit={setCancelSelected} />
+				<BlogForm currentlySelected={currentlySelected} onCancelEdit={setCancelSelected} reFetch={getArticlesResults} loading={loading} setLoading={_setLoading} />
 
 				<h1 className="eb-blog-previous-title pa-4">Previous Articles</h1>
 				<div className="eb-blog-subtitle mb-8 pa-4">
@@ -115,7 +126,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 				</div>
 
 				<ArticlesTable articles={_paginatedArticles} onEdit={setNewArticleToEdit} />
-				<BlogPageNavigation pagination={pagination} setPage={setSpecificPage} prev={prevPage} next={nextPage} />
+				<BlogPageNavigation pagination={pagination} setPage={setSpecificPage} prev={prevPage} next={nextPage}  />
 
 			</div>
 			<ArticlesSection articles={_latestArticles} />
