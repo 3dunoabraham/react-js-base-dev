@@ -24,7 +24,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					<div className="show-md block my-8 py-8"></div>
 					<div className="show-sm_xl block py-100 pb-200 my-8"></div>
 					<div className="show-xs_sm block py-8 my-8"></div>
-					<h1 className="eb-hero-title">Next generation <br/> digital banking</h1>
+					<h1 className="eb-hero-title tx-xxl tx-bold-4">Next generation <br/> digital banking</h1>
 					<p className="eb-hero-desc pr-5">
 						<span className="show-md_x">Take your financial life online.</span>
 						<span className="show-xs_md">Take your financial life online. <br/><br/></span>

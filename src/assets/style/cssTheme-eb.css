@@ -174,18 +174,13 @@ body {
 	max-width: 1080px;
 	display: block;
 	color: var(--eb-text-main);
-	/*padding: 100px 0 200px 150px;*/
 	padding-left: 50px;
 	padding-top: 100px;
 	padding-bottom: 120px;
 }
 .eb-hero-title {
-	font-size: 3.4em;
-	font-weight: 400;
-	/*background: linear-gradient(-90deg, #00000000 50%, var(--eb-bg-lighter));*/
 	text-shadow: 2px 2px 0px var(--eb-bg-lighter), -2px -2px 0px var(--eb-bg-lighter), -2px 2px 0px var(--eb-bg-lighter) , 2px -2px 0px var(--eb-bg-lighter);
 	z-index: 888;
-	position: relative;
 }
 .eb-hero-desc {
 	color: var(--eb-text-grey);
