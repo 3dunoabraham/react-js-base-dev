@@ -416,8 +416,10 @@ body {
 	z-index: 9999;
 	background: linear-gradient(90deg, var(--eb-primary-color), var(--eb-secondary-color));
 	height: 3px;
+	animation: pulsenpulse 2s;  animation-iteration-count: infinite;
 }
 .eb-active-navigation-button  span::after {
+
 	/*box-shadow: inset 0 -3px var(--eb-primary-color) !important;*/
 	content: "";
 	width: 100%;
