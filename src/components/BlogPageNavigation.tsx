@@ -20,7 +20,7 @@ const BlogPageNavigationComponents: React.FunctionComponent<IBlogPageNavigationC
 	const isAtSecondToLastPage = props.pagination.maxPage-1 == props.pagination.index;
 	if (props.pagination.maxPage > 1) {
 		return (
-			<div>
+			<div className="w-100">
 				<div className="eb-articles-table-paginate flex-between flex-column flex-sm_x-row mt-8 opac-75">
 					<div onClick={() => { props.prev() }} className="pa-5 eb-articles-table-prev tx-bold-400 flex eb-border-t flex-1 clickable opac-hover--50" >
 						<div className="pr-2">←</div>
