@@ -25,7 +25,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 					<div className="show-sm_xl block py-100 pb-200 my-8"></div>
 					<div className="show-xs_sm block py-8 my-8"></div>
 					<h1 className="eb-hero-title tx-xxl tx-bold-4">Next generation <br/> digital banking</h1>
-					<p className="eb-hero-desc pr-5">
+					<p className="eb-hero-desc pr-5 tx-bold-4">
 						<span className="show-md_x">Take your financial life online.</span>
 						<span className="show-xs_md">Take your financial life online. <br/><br/></span>
 						Your Easybank account <br/> will be a one-stop-shop
