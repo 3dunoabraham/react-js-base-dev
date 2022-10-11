@@ -218,7 +218,7 @@ body {
 .eb-hero-subsection-wrapper {
 	padding: 100px 0 70px 0px;
 	width: 100%;*/
-	padding: 100px 40px 70px 40px;
+	padding: 100px 40px 0px 40px;
 	color: var(--eb-text-grey);
 	/*display: flex;
 	justify-content: center;
