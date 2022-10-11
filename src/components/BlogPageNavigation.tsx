@@ -21,7 +21,7 @@ const BlogPageNavigationComponents: React.FunctionComponent<IBlogPageNavigationC
 	if (props.pagination.maxPage > 1) {
 		return (
 			<div className="w-100">
-				<div className="eb-articles-table-paginate flex-between flex-column flex-sm_x-row mt-8 opac-75">
+				<div className="eb-articles-table-paginate flex-between flex-column flex-sm_x-row mt-8  eb-tx-grey">
 					<div onClick={() => { props.prev() }} className="pa-5 eb-articles-table-prev tx-bold-4 flex eb-border-t flex-1 clickable opac-hover--50" >
 						<div className="pr-2">←</div>
 						<div className="show-md_x">Previous</div>
@@ -73,7 +73,7 @@ const BlogPageNavigationComponents: React.FunctionComponent<IBlogPageNavigationC
 						{isLongerList && !isAtLastPage && !isAtSecondToLastPage && <div className="pa-5 px-0 eb-border-t">
 							. . .
 						</div>}
-						<div onClick={() => {props.setPage(props.pagination.maxPage) }} className={(props.pagination.maxPage != props.pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 clickable opac-hover--50 "} >
+						<div onClick={() => {props.setPage(props.pagination.maxPage) }} className={(props.pagination.maxPage != props.pagination.index ? "eb-border-t" : "eb-border-t-primary")+" pa-5 px-4 clickable opac-hover--50 "} >
 							{props.pagination.maxPage}
 						</div>
 					</div>
