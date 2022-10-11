@@ -39,10 +39,10 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 
 			<div className="eb-hero-subsection-wrapper ">
 				<div className="eb-hero-subsection ">
-					<h2 className="eb-hero-subsection-title">
+					<h2 className="tx-lgx tx-bold-4 eb-tx-main">
 						Why choose Easybank?
 					</h2>
-					<div className="eb-hero-subsection-desc">
+					<div className="eb-hero-subsection-desc tx-bold-4">
 						<p className="my-1">
 							We leverage Open Banking to turn your bank acount into your financial hub.
 						</p>
@@ -61,7 +61,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Online Banking
 								</h3>
-								<p className="eb-choose-us-desc">
+								<p className="tx-smd tx-bold-4 tx-lh-150">
 									Our modern web and mobile <br/> applications allow you to keep track <br/> of your finances wherever you are in <br/> the world. 
 								</p>
 							</div>
@@ -72,7 +72,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Simple Budgeting
 								</h3>
-								<p className="eb-choose-us-desc">
+								<p className="tx-smd tx-bold-4 tx-lh-150">
 									See exactly where your money goes <br/> each month. Receive notifications <br/> when you’re close to hitting <br/> your limits.
 								</p>
 							</div>
@@ -88,7 +88,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Fast Onboarding
 								</h3>
-								<p className="eb-choose-us-desc">
+								<p className="tx-smd tx-bold-4 tx-lh-150">
 									We don’t do branches. Open your <br/> account in minutes online and start <br/> taking control of your finances right <br/> away. 
 								</p>
 							</div>
@@ -99,7 +99,7 @@ const HeroSectionComponents: React.FunctionComponent<IHeroSectionComponentsProps
 								<h3 className="eb-tx-main tx-bold-4 tx-lg">
 									Open API
 								</h3>
-								<p className="eb-choose-us-desc">
+								<p className="tx-smd tx-bold-4 tx-lh-150">
 									Manage your savings, investments, <br/> pension, and much more from one <br/> account. Tracking your money has <br/> never been easier. 
 								</p>
 							</div>

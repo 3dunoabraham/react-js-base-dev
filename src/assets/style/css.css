@@ -108,6 +108,7 @@
 .tx-start, .tx-left {text-align: left; }
 .tx-italic {font-style: italic; }
 
+.tx-lh-100 {line-height: 1; } .tx-lh-150 {line-height: 1.5; } .tx-lh-200 {line-height: 2; }
 .tx-ls-1 {letter-spacing: 1px; } .tx-ls-2 {letter-spacing: 2px; } .tx-ls-3 {letter-spacing: 3px; }
 .tx-ls-5 {letter-spacing: 5px; } .tx-ls-6 {letter-spacing: 6px; } .tx-ls-8 {letter-spacing: 8px; }
 .tx-ls-10 {letter-spacing: 10px; } .tx-ls-15 {letter-spacing: 15px; } .tx-ls-25 {letter-spacing: 25px; }
