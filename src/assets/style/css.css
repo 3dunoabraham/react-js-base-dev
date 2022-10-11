@@ -89,16 +89,18 @@
 
 /* ------------------------------------------ TEXTING ------------------------------------------ */
 .tx-xxs {font-size: 0.35em; } .tx-xs {font-size: 0.55em; }
-.tx-sm {font-size: 0.8em; } .tx-smd {font-size: 0.92em; } .tx-md {font-size: 1em; }
-.tx-xxl {font-size: 3.5em; } .tx-xxxl {font-size: 4.5em; }
-.tx-lg {font-size: 1.4em; } .tx-xl {font-size: 2.5em; }
+.tx-sm {font-size: 0.8em; } .tx-smd {font-size: 0.92em; }
+.tx-md {font-size: 1em; } .tx-mdl {font-size: 1.3em; }
+.tx-lg {font-size: 1.4em; } .tx-lgx {font-size: 2.4em; }
+.tx-xl {font-size: 3em; }
+.tx-xxl {font-size: 3.4em; } .tx-xxxl {font-size: 4.5em; }
 .tx-white {color: white;} .tx-black {color: black;}
 .tx-red {color: red;} .tx-green {color: green;} .tx-blue {color: blue;} .tx-orange {color: orange;}
 
-.tx-bold-200 {font-weight: 200}
-.tx-bold-300 {font-weight: 300}
-.tx-bold-400 {font-weight: 400}
-.tx-bold-500 {font-weight: 500}
+.tx-bold-2 {font-weight: 200}
+.tx-bold-3 {font-weight: 300}
+.tx-bold-4 {font-weight: 400}
+.tx-bold-5 {font-weight: 500}
 .tx-bold {font-weight: bold; }
 
 .tx-center {text-align: center; }
@@ -106,6 +108,7 @@
 .tx-start, .tx-left {text-align: left; }
 .tx-italic {font-style: italic; }
 
+.tx-lh-100 {line-height: 1; } .tx-lh-150 {line-height: 1.5; } .tx-lh-200 {line-height: 2; }
 .tx-ls-1 {letter-spacing: 1px; } .tx-ls-2 {letter-spacing: 2px; } .tx-ls-3 {letter-spacing: 3px; }
 .tx-ls-5 {letter-spacing: 5px; } .tx-ls-6 {letter-spacing: 6px; } .tx-ls-8 {letter-spacing: 8px; }
 .tx-ls-10 {letter-spacing: 10px; } .tx-ls-15 {letter-spacing: 15px; } .tx-ls-25 {letter-spacing: 25px; }
@@ -122,6 +125,23 @@
 
 
 /* ------------------------------------------ SPACING ------------------------------------------ */
+.page-standard-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.page-standard-inner {
+	width: 100%;
+	max-width: 1080px;
+}
+.page-standard-inner-padded {
+	width: 100%;
+	max-width: 980px;
+	padding: 50px;
+}
+
 .w-10 {width: 10%; max-width: 10%; } .w-10vw {width: 10vw; max-width: 10vw; }
 .w-12 {width: 12%; max-width: 12%; } .w-12vw {width: 12vw; max-width: 12vw; }
 .w-20 {width: 20%; max-width: 20%; } .w-20vw {width: 20vw; max-width: 20vw; }

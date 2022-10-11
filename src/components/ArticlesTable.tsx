@@ -28,7 +28,7 @@ const ArticlesTableComponent: React.FunctionComponent<IArticlesTableComponentPro
 	}
 	
 	return (
-		<div className="eb-articles-table-wrapper">
+		<div className="eb-articles-table-wrapper w-100">
 			<div className="eb-articles-table">
 				<div className="flex-between w-100 flex-align-start flex-align-stretch">
 					{ArticleComponentList}

@@ -136,13 +136,13 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = props => {
 	}
 
 	return (
-		<div className="eb-blog-wrapper" >
-			<div className="eb-blog">
+		<div className="page-standard-wrapper eb-bg-lighter" >
+			<div className="page-standard-inner flex-column flex-align-start">
 
 				<BlogForm currentlySelected={currentlySelected} onCancelEdit={setCancelSelected} reFetch={getArticlesResults} loading={loading} setLoading={_setLoading} />
 
-				<h1 className="eb-blog-previous-title pa-4">Previous Articles</h1>
-				<div className="eb-blog-subtitle mb-8 pa-4">
+				<div className="tx-lgx eb-tx-main tx-bold-4 pa-4">Previous Articles</div>
+				<div className="eb-tx-grey mb-8 pa-4">
 					Review and edit previous blog posts published on to the homepage. 
 				</div>
 

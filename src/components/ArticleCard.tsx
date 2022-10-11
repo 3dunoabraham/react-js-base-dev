@@ -25,7 +25,7 @@ const ArticleCardComponents: React.FunctionComponent<IArticleCardComponentsProps
 				<h6 className="eb-article-card-author">
 					By {props.article.author}
 				</h6>
-				<h4 className="eb-article-card-title eb-article-highlight mb-0">
+				<h4 className="eb-article-card-title eb-article-highlight mb-0 tx-bold-4">
 					{props.article.title}
 				</h4>
 				<p className="eb-article-card-content mt-0 pt-3">

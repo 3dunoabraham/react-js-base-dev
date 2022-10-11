@@ -44,18 +44,18 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	const bannerTitle = () => {
 		if (props.currentlySelected) {
 			return (
-				<div className="pa-4">
-					<h1 className="eb-blog-title " >Update Blog Article</h1>
-					<div className="eb-blog-subtitle">
+				<div className="pa-6 ">
+					<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4 " >Update Blog Article</div>
+					<div className="eb-tx-grey">
 						Change an existing blog article to update its content.
 					</div>
 				</div>
 			);
 		}
 		return (
-			<div className="pa-4">
-				<h1 className="eb-blog-title">Add New Blog Article</h1>
-				<div className="eb-blog-subtitle">
+			<div className="pa-6">
+				<div className="tx-lgx eb-tx-main tx-bold-4 pt-8 my-4">Add New Blog Article</div>
+				<div className="eb-tx-grey">
 					Publish a new blog article to feature in the Easybank homepage.
 				</div>
 			</div>
@@ -150,7 +150,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 	}
 
 	return (
-		<div>
+		<div className="w-100">
 
 			{bannerTitle()}
 
@@ -159,7 +159,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 					{props.loading!.add && <div className="pb-4 w-100 flex flex-center"><LoadingFloater />New Article...</div> }
 					<div>
 						<div className="pb-1">
-							<span className="tx-bold-400">Author</span>
+							<span className="tx-bold-4">Author</span>
 							<div className="opac-50">
 								{props.currentlySelected && props.currentlySelected.author}
 							</div>
@@ -176,7 +176,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 					</div>
 					<div>
 						<div className="pb-1">
-							<span className="tx-bold-400">Blog Title</span>
+							<span className="tx-bold-4">Blog Title</span>
 							<div className="opac-50">
 								{props.currentlySelected && props.currentlySelected.title}
 							</div>
@@ -193,7 +193,7 @@ const BlogFormComponents: React.FunctionComponent<IBlogFormComponentsProps> = pr
 					</div>
 					<div style={_currentArticle.content.length > 50 ? {color: "red"} : {}}>
 						<div className="pb-1" >
-							<span className="tx-bold-400">Blog Content</span>
+							<span className="tx-bold-4">Blog Content</span>
 							({_currentArticle.content.length}/50)
 							{_currentArticle.content.length > 50 && " *Too many characters*"}
 							<div className="opac-50">

@@ -20,10 +20,10 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 	return (
 		<div className="eb-article-row w-100">
 			<div className="flex flex-between flex-justify-start  flex-align-start ">
-				<div className="w-12  ma-0 pa-4 py-3 tx-smd tx-bold-400 show-md_x">
+				<div className="w-12  ma-0 pa-4 py-3 tx-smd tx-bold-4 show-md_x">
 					{props.article.author}
 				</div>
-				<div className="w-20 eb-article-highlight ma-0 pa-4 py-3 tx-bold-400 eb-tx-darkgrey show-md_x " >
+				<div className="w-20 eb-article-highlight ma-0 pa-4 py-3 tx-bold-4 eb-tx-darkgrey show-md_x " >
 					{props.article.title}
 				</div>
 				<div className="flex-1 ma-0 pa-4 py-3 tx-md ">
@@ -36,9 +36,9 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 						</div>
 					</div>
 					<div className="show-xs_md tx-lg mb-3">{props.article.title}</div>
-					<div className="eb-tx-darkgrey tx-bold-400 tx-smd">{props.article.content}</div>
+					<div className="eb-tx-darkgrey tx-bold-4 tx-smd">{props.article.content}</div>
 				</div>
-				<div className="w-10 eb-article-highlight ma-0 pa-4 py-3 tx-bold-400 eb-tx-darkgrey show-md_x">
+				<div className="w-10 eb-article-highlight ma-0 pa-4 py-3 tx-bold-4 eb-tx-darkgrey show-md_x">
 					{dateWithSlashes}
 				</div>
 				<div className="  ma-0  tx-bold flex-column" >
@@ -48,7 +48,7 @@ const ArticleRowComponents: React.FunctionComponent<IArticleRowComponentsProps> 
 					}}>
 						Edit
 					</div>
-					<div className=" clickable tx-bold-200  tx-xs  opac-hover-25" onClick={(e) => {
+					<div className=" clickable tx-bold-2  tx-xs  opac-hover-25" onClick={(e) => {
 						props.onDelete(props.article)
 					}}>
 						Delete
